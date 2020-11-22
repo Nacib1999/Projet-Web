@@ -1,4 +1,15 @@
+<?php
+include  "../model/Article.php";
+include  "../controller/ArticleC.php";
+$articleC= new articleC();
+$liste=$articleC->afficherarticle();
+
+?>
+
+
+
 <!doctype html>
+
 <html>
 
 
@@ -116,14 +127,12 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news.html">News</a>
+                                   <a href="news.html">BLOG</a>
                                     <ul>
-                                        <li><a class="waves" href="news.html">News right sidebar</a></li>
-                                        <li><a class="waves" href="news-2.html">News left sidebar</a></li>
-                                        <li><a class="waves" href="news-3.html">News no sidebar</a></li>
-                                        <li><a class="waves" href="news-single.html">News single</a></li>
+                                        <li><a class="waves" href="news.html">Ajouter un blog</a></li>
+                                        <li><a class="waves" href="news-3.html">Blog</a></li>
+                                      
                                     </ul>
-                                </li>
                                 <li class="dropdown">
                                     <a href="contact.html">Contact</a>
                                     <ul>
@@ -152,7 +161,7 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1>BLOG</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -164,72 +173,8 @@
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
 
-                        <div class="blog-article">
-
-                            <div class="blog-article-thumbnail">
-
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>15</span>
-                                    <small>2019</small>
-                                </a>
-                                <a href="news-single.html"><img src="images/blog/image-5.jpg" alt=""></a>
-
-                            </div><!-- blog-article-thumbnail -->
-
-                            <h4 class="blog-article-title"><a href="news-single.html">Causes and treatment of gingivitis</a></h4>
-
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Stomatology</a>
-                                <a class="comments" href="#">2 comments</a>
-                            </div><!-- blog-article-details -->
-
-                            <div class="blog-article-content">
-
-                                <p>Quisque facilisis neque cursus eros pharetra, id hendrerit nunc porta ut nulla lobortis, accumsan arcu vitae, semper
-                                    justo. Praesent ante leo, feugiat in lacus non, posuere ultricies nibh. Sed in sapien ut augue volutpat ultrices non
-                                    pharetra ante. Suspendisse urna nibh, pellentesque ac tincidunt egestas, luctus non nulla...</p>
-
-                                <a href="news-single.html">Read More</a>
-
-                            </div><!-- blog-article-content -->
-
-                        </div><!-- blog-article -->
-
-                        <div class="blog-article">
-
-                            <div class="blog-article-thumbnail">
-
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>12</span>
-                                    <small>2019</small>
-                                </a>
-                                <a href="news-single.html"><img src="images/blog/image-6.jpg" alt=""></a>
-
-                            </div><!-- blog-article-thumbnail -->
-
-                            <h4 class="blog-article-title"><a href="news-single.html">Is Chemotherapy on the Way Out?</a></h4>
-
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Oncology</a>
-                                <a class="comments" href="#">4 comments</a>
-                            </div><!-- blog-article-details -->
-
-                            <div class="blog-article-content">
-
-                                <p>Praesent ante leo, feugiat in lacus non, posuere ultricies nibh. Sed in sapien ut augue volutpat ultrices non pharetra
-                                    ante. Suspendisse urna nibh, pellentesque ac tincidunt egestas, luctus non nulla. Aliquam cursus vitae elit eget
-                                    mollis. Duis accumsan rhoncus nunc, sed ultricies...</p>
-
-                                <a href="news-single.html">Read More</a>
-
-                            </div><!-- blog-article-content -->
-
-                        </div><!-- blog-article -->
-
+                        <?php foreach($liste as $row){ ?>
+                       
                         <div class="blog-article">
 
                             <div class="blog-article-thumbnail">
@@ -239,11 +184,13 @@
                                     <span>10</span>
                                     <small>2019</small>
                                 </a>
-                                <a href="news-single.html"><img src="images/blog/image-7.jpg" alt=""></a>
+                            <?php  echo  "<a href='news-single.html'>";
+							echo"<img src='", $row['image'], "' alt=''></a>" ;
+							?>
 
                             </div><!-- blog-article-thumbnail -->
 
-                            <h4 class="blog-article-title"><a href="news-single.html">Developing a 'universal' blood test</a></h4>
+                            <h4 class="blog-article-title"><a href="news-single.html"> <?php echo $row['titre'] ?> </a></h4>
 
                             <div class="blog-article-details">
                                 by <a class="author" href="#">Admin</a>
@@ -257,23 +204,118 @@
                                     arcu vitae, semper justo. Praesent ante leo, feugiat in lacus non, posuere ultricies nibh. Sed in sapien ut augue
                                     volutpat ultrices non pharetra ante. Suspendisse urna nibh, pellentesque ac tincidunt egestas...</p>
 
-                                <a href="news-single.html">Read More</a>
+                                <a href="news-single.html">Voir plus</a>
 
                             </div><!-- blog-article-content -->
-
                         </div><!-- blog-article -->
+					<?php } ?>
+					
+					
+					
+					
+					
 
                         <ul class="pagination">
-                            <li class="active"><a href="#">1</a></li>
+                            <li class="active">
+							<a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
                         </ul>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						    <!-- PAGE CONTENT -->
+        <div id="page-content">
 
+            <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
+                 style="background-image: url(images/backgrounds/page-header-4.jpg);">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h1>Ajouter un blog</h1>
+
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->
+
+            </div><!-- page-header -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="headline text-center">
+
+                            <h6>Best medical solutions</h6>
+                            <h2>ajouter un blog</h2>
+
+                        </div><!-- headline -->
+<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+
+					
+
+					<form id="contact-form" name="contact-form" method="post" action="">
+						<fieldset>
+
+							<div id="alert-area"></div>
+
+							
+
+                                        <p>
+                                            <input class="col-12" id="titre" type="text" name="titre"  >
+                                            <span></span>
+                                            <label for="titre">TITRE</label>
+                                        </p>
+							 <p>
+                                            <input class="col-12" id="date" type="date" name="date" required>
+                                            <span></span>
+                                            <label for="date">Date</label>
+                                        </p>
+
+							 <p>
+                                            <input class="col-12" id="image" type="file" name="image" accept="image/png, image/jpeg" >
+                                            <span></span>
+                                            <label for="first_name">IMAGE</label>
+                                        </p>
+										
+                                         <p>
+                                            <input class="col-12" id="doc" type="text" name="doc" >
+                                            <span></span>
+                                            <label for="doc">Docteur</label>
+                                        </p>
+
+							
+                                <p>
+                                    <textarea class="col-12" id="description" name="description" rows="5" cols="25" placeholder="" required></textarea>
+                                    <span></span>
+                                    <label for="descruption">Descriptions</label>
+                                </p>
+
+							<button class="btn btn-default btn-outline waves waves-dark" id="submit" type="submit" name="submit" value="">Ajouter un blog <i class="decode-icon-cursor"></i></button>
+
+						</fieldset>
+					</form>
+
+				</div><!-- col -->
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
-
         </div><!-- PAGE CONTENT -->
 
 
@@ -310,7 +352,7 @@
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:info@smart-pixel.xyz">info@smart-pixel.xyz</a>
+                                        <a href="mailto:info@smart-pixel.xyz">info@santek-pixel.xyz</a>
                                     </li>
                                 </ul>
 
@@ -334,7 +376,7 @@
                                 <div>
 
                                     <p class="copyright">
-                                        <small>Template by <a href="#">SmartPixel</a> &copy; All rights reserved</small>
+                                        <small>Template by <a href="#">SantekPixel</a> &copy; All rights reserved</small>
                                     </p>
 
                                 </div>
@@ -428,3 +470,20 @@
 
 <!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
 </html>
+<?php 
+if(isset($_POST['titre'])&&isset($_POST['datepub'])&&isset($_POST['image']),&&isset($_POST['idmed']),&&isset($_POST['description']))
+ {if(!empty($_POST['titre'])&& !empty($_POST['datepub'])&& !empty($_POST['image']),&& !empty($_POST['idmed']),&& !empty($_POST['description']))
+	 { $article= new Article(
+$_POST['titre'],
+$_POST['datepub'],
+$_POST['image'],$_POST['idmed'],$_POST['description']);
+$articlec= new articleC();
+$articlec->ajouterarticle($article);
+
+$articleC= new articleC();
+$liste=$articleC->afficherarticle();
+
+header('Location:news-3.html');
+	 }
+ }
+ ?>
