@@ -152,7 +152,7 @@ a:focus {
 
 /* IMAGES */
 img {
-	max-width: 100%;
+	max-width: 40%;
 	height: auto;
 }
 
@@ -2198,7 +2198,7 @@ blockquote footer small:before {
 }
 
 blockquote footer img {
-	border-radius: 50%;
+	border-radius: 10%;
 	margin-right: 10px;
 }
 
