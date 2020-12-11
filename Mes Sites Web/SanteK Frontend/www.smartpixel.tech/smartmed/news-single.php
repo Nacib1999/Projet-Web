@@ -1,11 +1,26 @@
 <?php
-include  "../model/Article.php";
-include  "../controller/ArticleC.php";
+include  "../Model/commentaire.php";
+include  "../Controller/commentaireC.php";
+include  "../Model/Question.php";
+include  "../Controller/questionC.php";
+include  "../Model/Article.php";
+include  "../Controller/ArticleC.php";
 
-  $id=$_GET['id'];
-
+include  "../model/jaime.php";
+include  "../controller/likedislikeC.php";
+$id=$_GET['id'];
+$iduser=3;
 	$articleC= new articleC();
 	$article=$articleC->recupererarticle($id);
+	
+	
+$questionC= new questionC();
+$liste=$questionC->afficherquestion($id);
+
+
+  
+
+
 	
 
 ?>
@@ -68,9 +83,11 @@ include  "../controller/ArticleC.php";
 
 </head>
 
-<body class="sticky-header header-classic footer-parallax">
+<body >
+
 
     <div id="main-container">
+	
 
         <!-- HEADER -->
         <header id="header">
@@ -82,7 +99,7 @@ include  "../controller/ArticleC.php";
                         <!-- LOGO -->
                         <div id="logo">
                             <a href="index-2.html">
-                                <img src="assets/images/logo.png" alt="">
+                                <img src="assets/images/logo.png" width="100" height="100" alt="">
                             </a>
                         </div><!-- LOGO -->
 
@@ -96,7 +113,7 @@ include  "../controller/ArticleC.php";
 
                             <ul class="menu clearfix" id="menu">
                                 <li class="dropdown">
-                                    <a href="index-2.html">Home</a>
+                                    <a href="index-2.html">Acceuil</a>
                                     <ul>
                                         <li><a class="waves" href="index-2.html">Home 1</a></li>
                                         <li><a class="waves" href="index-3.html">Home 2</a></li>
@@ -104,21 +121,21 @@ include  "../controller/ArticleC.php";
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="about.html">About</a>
+                                    <a href="about.html">A propos</a>
                                     <ul>
                                         <li><a class="waves" href="about.html">About 1</a></li>
                                         <li><a class="waves" href="about-2.html">About 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="services.html">Services</a>
+                                    <a href="services.html">Evennement</a>
                                     <ul>
                                         <li><a class="waves" href="services.html">Services 1</a></li>
                                         <li><a class="waves" href="services-2.html">Services 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="team.html">Team</a>
+                                    <a href="team.html">Produits</a>
                                     <ul>
                                         <li><a class="waves" href="team.html">Chris Martin</a></li>
                                         <li><a class="waves" href="team.html">Marisa Carter</a></li>
@@ -127,16 +144,11 @@ include  "../controller/ArticleC.php";
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news.html">News</a>
-                                    <ul>
-                                        <li><a class="waves" href="news.html">News right sidebar</a></li>
-                                        <li><a class="waves" href="news-2.html">News left sidebar</a></li>
-                                        <li><a class="waves" href="news-3.html">News no sidebar</a></li>
-                                        <li><a class="waves" href="news-single.html">News single</a></li>
-                                    </ul>
+                                    <a href="news.html">Article</a>
+                                    
                                 </li>
                                 <li class="dropdown">
-                                    <a href="contact.html">Contact</a>
+                                    <a href="contact.html">Contactez nous</a>
                                     <ul>
                                         <li><a class="waves" href="contact.html">Contact 1</a></li>
                                         <li><a class="waves" href="contact-2.html">Contact 2</a></li>
@@ -152,7 +164,8 @@ include  "../controller/ArticleC.php";
 
         </header><!-- HEADER -->
 
-
+ 
+					 
 		
 		
 		
@@ -160,6 +173,7 @@ include  "../controller/ArticleC.php";
 		
         <!-- PAGE CONTENT -->
         <div id="page-content">
+		
 
             <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
                  style="background-image: url(images/backgrounds/page-header-4.jpg);">
@@ -168,7 +182,7 @@ include  "../controller/ArticleC.php";
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1>Article</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -176,55 +190,167 @@ include  "../controller/ArticleC.php";
 
             </div><!-- page-header -->
 
-            <div class="container">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+                        
+						
+
+            <div class="container"  >
                 <div class="row">
+				
+				<div class="col-md-2">
+				</div>
                     <div class="col-md-8">
- <?php foreach($article as $row){ ?>
-                        <div class="blog-article">
+					
+					
 
-                            <div class="blog-article-thumbnail">
+                        <div class="widget widget-search">
 
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>15</span>
-                                    <small>2019</small>
+                            <form name="search" novalidate method="get" action="chercherarticle.php">
+							
+                                <fieldset>
+                                     <!--<input id="s" type="search" name="search" placeholder="" required>-->
+									  <div class="form-group">
+									 <select  class="custom-select" id="speciality" name="search" required >
+                                                
+												<option value="all" >Afficher tout</option>
+												<option value="tri" >afficher par nb likes</option>
+                                                    <option value="Cardiology ">Cardiologie</option>
+                                                <option value="Neurology">Neurologie</option>
+                                                <option value="Surgery" >Surgerie</option>
+                                                <option value="Gynaecology">Gynaecologie</option>
+                                                <option value="Ophthalmology">Ophthalmologie</option>
+                                                <option value="Stomatology">Stomatologie</option>
+                                            </select>
+                                     
+                                     
+									 </div>
+                                    <span></span>
+                                   <input  type="submit" name="submit" value="">
+                                </fieldset>
+                            </form>
+
+                        </div><!-- widget-search -->
+					
+					
+					<?php $i=0;?>
+					
+					<?php foreach($article as $row){ ?>
+                       
+					   <?php $i++; ?>
+					   
+					   
+                        <div onmouseover='okk("<?php echo "mois".$i ?>","<?php echo "jour".$i ?>","<?php echo "annee".$i ?>","<?php echo $row['datepub']?>")' class="blog-article">
+		
+					<script>
+						function okk(jour,mois,annee,date) {
+		console.log(annee);
+		 
+		 
+		document.getElementById(jour).textContent=date.substring(8,10);
+		m=date.substring(5,7);
+		// alert(m);
+	
+		// alert(j);
+		document.getElementById(annee).textContent=date.substring(0,4);
+		if(m==01)
+				document.getElementById(mois).textContent="Jan"
+		else if (m==02)	
+			document.getElementById(mois).textContent="Fev"
+		else if (m==03)	
+			document.getElementById(mois).textContent="Mar"
+		else if (m==04)	
+			document.getElementById(mois).textContent="Avr"
+		else if (m==05)	
+			document.getElementById(mois).textContent="Mai"
+		else if (m==06)	
+			document.getElementById(mois).textContent="Jun"
+		else if (m==07)	
+			document.getElementById(mois).textContent="Jui"
+		else if (m==08)	
+			document.getElementById(mois).textContent="Aou"
+		else if (m==09)	
+			document.getElementById(mois).textContent="Sep"
+		else if (m==10)	
+			document.getElementById(mois).textContent="Oct"
+		else if (m==11)	
+			document.getElementById(mois).textContent="Nov"
+		
+		else if (m==12)	
+			document.getElementById(mois).textContent="Dec"
+			
+	
+	}
+	
+	
+	
+	
+					
+					</script>
+					
+                            <div   class="blog-article-thumbnail" >
+<div >
+                                <a class="date" >
+                                    <small id="<?php echo "mois".$i ?>"></small>
+                                    <span id="<?php echo "jour".$i ?>"></span>
+                                    <small id="<?php echo "annee".$i ?>"></small>
                                 </a>
-                               <?php echo"<img src='", $row['image'], "' alt=''>" ;?>
+							</div>	
+                            <?php 
+							echo"<img src='", $row['image'], "' alt=''></a> " ;
+							?>
+							
+							<br><br>
+			
+							              <div class="blog-article-details">
+                              <a class="author" style="color:#26C4EC">Mr:Admin</a>
+                                <a class="category" style="color:#26C4EC"><?php echo $row['specialite'] ?></a>
+								<a class="category" style="color:#26C4EC" ><?php echo $row['nbcomment'] ?> commentaires </a>
+                               <?php  
+								$likedislikeC= new likedislikeC();
+								?>
+								<a href="like.php?idarticle=<?= $id ?>" >  <?php
+								echo $likedislikeC->sommelike($id);
+								?>  <i class="fa fa-thumbs-o-up" data-toggle="tooltip" title="J'aime"></i></a>
+								
+								
 
-                            </div><!-- blog-article-thumbnail -->
-                           <h4 class="blog-article-title"> <?php echo $row['titre'] ?> </h4>
-
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Stomatology</a>
-                                <a class="comments" href="#">2 comments</a>
+ 
+ <a href="dislike.php?idarticle=<?= $id ?>" >  <?php echo  $likedislikeC->sommedislike($id);
+								
+                                           
+								?> <i class="fa fa-thumbs-o-down" data-toggle="tooltip" title="Je n'aime pas"></i> </a>
+ 
+								
                             </div><!-- blog-article-details -->
+                            </div><!-- blog-article-thumbnail -->
 
-                            <div class="blog-article-content">
+                            <h4 class="blog-article-title"><a > <?php echo $row['titre'] ?> </a></h4>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque odio, pulvinar ut urna
-                                    ut, venenatis vene natis nisi. Nulla tempus. Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Sed neque odio, pulvinar ut urna ut, venenatis venenatis nisinulla tempus.</p>
+              <br>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet metus
-                                    pellentesque, iaculis nisl convallis, posuere orci. Ut in metus sed magna gravida porta.
-                                    Aliquam eu mi quam. Ut placerat auctor lacus, vel viverra nisi finibus eget. Aenean et nibh
-                                    id dolor fringilla aliquet. Nam rutrum, tellus id placerat congue, justo eros venenatis nisl,
-                                    sed tincidunt justo purus ut mauris. Nullam ultricies magna vel felis suscipit, eu varius
-                                    dolor cursus. In hac habitasse platea dictumst. Suspendisse tempor faucibus enim. Donec
-                                    euismod lobortis justo, et vestibulum purus mattis vitae. Quisque rutrum, quam sed gravida
-                                    congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi. Aenean
-                                    urna diam, scelerisque at eros sed, vulputate tincidunt nibh. Quisque rutrum, quam sed
-                                    gravida congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi.</p>
+                            <div  >
 
+                                <h6 class="blog-article-title" ><?php echo $row['description'] ?></h6>
+                              
                             </div><!-- blog-article-content -->
-
+				
+							
+							
+							
                         </div><!-- blog-article -->
-
-						
- <?php }?>
+					<?php } ?>
 						
 						
 						
@@ -234,29 +360,128 @@ include  "../controller/ArticleC.php";
 						
 						
 						
-						
-						
-						
-						
-						
-						
-                        <div class="blog-article-author">
+											 
+<script >
+						 
+						  
+						function ok(y,x) {
+							
+   document.getElementById(y).hidden = false;
+   
+   document.getElementById(x).hidden = true; 
+}	
+							
+							
+						  
+ 
+						  
+						  </script>	
+	
+		    				
+		<?php   $i=0; ?>
+		
+<?php foreach($liste as $row){ ?>
+         
+			  <div class="blog-article-author">
 
                             <img src="images/blog/blog-post/post-author.jpg" alt="">
 
                             <div class="blog-article-author-details">
+					
+                            <?php   $i++;
+							?>
+							
+							
+					 
+						
+                 <form action="recupererquestion.php" method="post" >
+			
+								
+								
+								
+								<div id="<?php echo "qest".$i ?>" hidden> 
+								 
+								<input class="form-control" type="text" id="question" name="question" value="<?php echo $row['question']?>">
+								<input type="text" name="idquest" value="<?php echo  $row['id']?>" hidden>
+								<input type="text" name="id" value=" <?php echo $_GET['id']; ?>" hidden  >
+								 <br>
+								 <input  class="btn btn-outline-primary"  type="submit" value="Sauvgarder"  >
+								
+								</div>
+								
+								<div id="<?php echo "aff".$i ?>">
+								
+								
+						 <div class="row">
+				
+				<div class="col-md-9">
+								
+				<label  class="form-label"><?php echo $row['question']?></label>	 <br>			
+                   
+				   
+				   
+				
+				</div>
+                    <div class="col-md-3">
+					
+						
+						
+						
+						
+						
+			   <?php  if($iduser==$row['iduser']) { 
+			   echo "  <a class='btn btn-icon js-sweetalert' href='supprimerquestion.php?id=" , $row['id'] , "&idq=",$_GET['id'],"' title='Delete' data-type='confirm'><i class='fa fa-trash-o text-danger'></i></a>";
+			 // echo "<a  class='comment-reply-link' href='supprimerquestion.php?id=" , $row['id'] , "&idq=",$_GET['id'],"'>  supprimer  </a>"; 
+                 ?>			  
+				 
+				 <button type="button" class="btn btn-icon" onclick='ok("<?php echo "qest".$i ?>","<?php echo "aff".$i ?>")'  title="Edit"><i class="fa fa-edit"></i></button>
+				 
 
-                                <h6>Daniel Wilson <span>(Author)</span></h6>
+<?php } ?>
+				
+					
 
-                                <p>Pellentesque et erat accumsan, porttitor ipsum at, accumsan enim. Nulla sodales eros eget
-                                    gravida ultricies. Mauris vel mattis sem. Morbi dui risus, dictum quis.</p>
 
-                            </div><!-- blog-article-author-details -->
 
-                        </div><!-- blog-article-author -->
 
-                        <h6 class="commentlist-title">Comments (2)</h6>
 
+
+					</div>
+						</div>			
+		
+			  </div>
+				 
+				 
+</form>
+
+<!-- commentaire -->
+
+
+                            <?php   
+							
+							
+$commentaireC= new commentaireC();
+$listecomm=$commentaireC->affichercommentaire($row['id']);
+							
+						$idq=$row['id'];	?>
+							
+			<?php foreach($listecomm as $row){ ?>	 
+				 
+				  
+				 
+			
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+     
                         <ul class="commentlist">
                             <li class="comment depth-1">
                                 <div class="comment-body">
@@ -267,126 +492,142 @@ include  "../controller/ArticleC.php";
 
                                             <img class="avatar" src="images/blog/blog-post/author-comment-1.jpg" alt="">
                                             <a class="fn" href="#">Jane Doe</a>
-                                            <span class="says">says:</span>
-
+                                         
+										
                                         </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
+<label>  <?php echo $row['commentaire']?></label>
+										  
 
                                     </div><!-- comment-meta -->
 
-                                    <div class="comment-content">
+                                   <?php if($iduser==$row['iduser']) {  ?>
 
-                                        <p>Morbi accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam
-                                            non rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
+                                   <div class="reply">
+								   
+                                        <?php   echo "<a  class='comment-reply-link' href='supprimercommentaire.php?id=" , $row['id'] , "&idq=",$_GET['id'],"'>  supprimer  </a>"; ?>
+									  
                                     </div><!-- reply -->
-
+								   <?php  }?>
                                 </div><!-- comment-body -->
-                            </li>
-                            <li class="comment depth-1">
-                                <div class="comment-body">
+   
+						   </li>
+							
 
-                                    <div class="comment-meta">
-
-                                        <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-2.jpg" alt="">
-                                            <a class="fn" href="#">Jane Smith</a>
-                                            <span class="says">says:</span>
-
-                                        </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
-
-                                    </div><!-- comment-meta -->
-
-                                    <div class="comment-content">
-
-                                        <p>Accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam non
-                                            rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
-                                    </div><!-- reply -->
-
-                                </div><!-- comment-body -->
-                            </li>
-                        </ul>
-
-                        <h6 class="commentform-title">Leave a comment</h6>
-
-                        <form id="commentform" name="commentform" novalidate method="post" action="#">
-                            <fieldset>
-
-                                <p class="commentform-author">
-                                    <input id="name" class="col-12" type="text" name="name" placeholder="" required>
-                                    <span></span>
-                                    <label for="name">Name</label>
-                                </p>
-
-                                <p class="commentform-email">
-                                    <input id="email" class="col-12" type="text" name="email" placeholder="" required>
-                                    <span></span>
-                                    <label for="email">E-mail</label>
-                                </p>
-
-                                <p class="commentform-url">
-                                    <input id="url" class="col-12" type="text" name="url" placeholder="" required>
-                                    <span></span>
-                                    <label for="url">URL</label>
-                                </p>
-
-                                <p class="commentform-comment">
-                                    <textarea id="comment" class="col-12" name="comment" rows="6" cols="25" placeholder="" required></textarea>
-                                    <span></span>
-                                    <label for="comment">Comment</label>
-                                </p>
-
-                                <p class="commentform-submit">
-                                    <button class="btn btn-default btn-outline waves waves-dark" id="submit" type="submit" name="submit" value="">Send
-                                        comment <i class="decode-icon-cursor"></i></button>
-                                </p>
-
-                            </fieldset>
-                        </form>
-
-                    </div><!-- col -->
-                    <div class="col-md-4 pl-xl-5">
-
-                        <div class="widget widget-search">
-
-                            <form name="search" novalidate method="get" action="#">
-                                <fieldset>
-                                    <input id="s" type="search" name="search" placeholder="" required>
-                                    <label for="s">Search</label>
-                                    <span></span>
-                                    <input type="submit" name="submit" value="">
-                                </fieldset>
-                            </form>
-
-                        </div><!-- widget-search -->
-                        </div><!-- col -->
+   </ul>
+<?php } ?>
                         
+<form action="ajoutercommentaire.php" method="post" > 
+<table border="0">
+<tr>
 
-                        
-                 
-                </div><!-- row -->
-            </div><!-- container -->
+<td>
 
+      <textarea class="form-control" id="comm" name="comm" rows="0" cols="0" required  ></textarea>
+						
+					</td><td>	
+						<input type="text" name="id" value=" <?php echo ($idq);?>" hidden  >
+				<input type="text" name="idart" value=" <?php echo $_GET['id']; ?>" hidden  >
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp			
+				</td>
+                      <td>  <input class="btn btn-outline-primary" type="submit" value="Repondre"  ></td>
+						</tr>
+						</table>
+</form>
+	 
+
+                            </div><!-- blog-article-author-details -->
+
+                        </div><!-- blog-article-author -->
+						 
+		
+
+<script>						
+											
+											
+											function saisirquestion() {
+        //Regex for Valid Characters i.e.  Numbers.
+        var regex = /^[0-9]+$/
+		 
+		
+        //Validate TextBox value against the Regex.
+        var isValid = regex.test(document.getElementById("ques").value);
+		 
+		ok=true;
+		
+		
+        if (isValid) {
+          
+		   document.getElementById("val").textContent="La question ne doit pas contenir seulement des lettres alphanumériques.";
+		   ok=false;
+        }
+		
+		
+		
+		
+		
+		
+ 
+        return ok ;
+    }		
+						 
+	</script>					 
+<?php }
+
+					 
+				?>		 
+						 
+													 
+					<!-- Bloc Ajouter -->	 
+						 <div class="form-group">
+						 
+			  <div class="blog-article-author">
+
+                            
+
+                            <div class="blog-article-author-details">
+					
+                           
+				 
+						<form  onsubmit="return saisirquestion()" action="ajouterquestion.php" method="post" >
+						
+						<input type="text" name="id" value=" <?php echo $_GET['id']; ?>" hidden  >
+						<label class="fn" >Commentaire</label>
+						 <textarea class="form-control" id="ques" name="ques" rows="0" cols="0" required  ></textarea>
+						
+						<p id="val" style="color:red" > </p>
+                       
+						
+						<input type="text" name="i" hidden value=" <?php echo $i ; ?>"   >
+						
+						
+						<center ><input  class="btn btn-outline-primary"  type="submit" value="   publier    "  ></center>
+						
+						
+						</form>
+						
+				 
+				 
+                            </div><!-- blog-article-author-details -->
+
+                        </div><!-- blog-article-author -->
+						 
+			
+						 
+					</div>
+						
+                   
+                       
+                  <!--  Fin Bloc Ajouter -->          
+                     
+ 
         </div><!-- PAGE CONTENT -->
+</div>
+</div>
+
+
+
+
+
 
 
         <!-- FOOTER -->
@@ -422,7 +663,7 @@ include  "../controller/ArticleC.php";
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:info@smart-pixel.xyz">info@smart-pixel.xyz</a>
+                                        <a href="mailto:info@smart-pixel.xyz">info@santek-pixel.xyz</a>
                                     </li>
                                 </ul>
 
@@ -431,12 +672,12 @@ include  "../controller/ArticleC.php";
                             <div class="widget widget-pages">
 
                                 <ul class="inline">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Acceuil</a></li>
+                                    <li><a href="#">A propos</a></li>
+                                    <li><a href="#">Evennement</a></li>
+                                    <li><a href="#">Produits</a></li>
+                                    <li><a href="#">Articles</a></li>
+                                    <li><a href="#">Contactez nous</a></li>
                                 </ul>
 
                             </div><!-- widget-pages -->

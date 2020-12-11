@@ -1,51 +1,34 @@
-
 <?php
-include  "../model/Article.php";
-include  "../controller/ArticleC.php";
-$articleC= new articleC();
+include  "../Model/commentaire.php";
+include  "../Controller/commentaireC.php";
+include  "../Model/Question.php";
+include  "../Controller/questionC.php";
+include  "../Model/Article.php";
+include  "../Controller/ArticleC.php";
+
+include  "../model/jaime.php";
+include  "../controller/likedislikeC.php";
+$id=$_GET['id'];
+$iduser=3;
+	$articleC= new articleC();
+	$article=$articleC->recupererarticle($id);
+	
+	
+$questionC= new questionC();
+$liste=$questionC->afficherquestion($id);
 
 
+  
 
 
-
-if(isset($_GET['page']) && !empty($_GET['page'])){
-    $currentPage = (int) strip_tags($_GET['page']);
-}else{
-    $currentPage = 1;
-}
-$parPage=4;
-$premier = ($currentPage * $parPage) - $parPage;
-$liste=$articleC->pagination($premier , $parPage);
-$nbArticles=$articleC->countt();
-
-
-
-$pages = ceil($nbArticles / $parPage);
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 ?>
-
-
-
-
-
 <!doctype html>
-
 <html>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -100,14 +83,16 @@ $pages = ceil($nbArticles / $parPage);
 
 </head>
 
-<body  >
+<body >
 
-    <div  id="main-container"  >
+
+    <div id="main-container">
+	
 
         <!-- HEADER -->
         <header id="header">
 
-            <div  class="container">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-3">
 
@@ -150,7 +135,7 @@ $pages = ceil($nbArticles / $parPage);
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="team.html">Produit</a>
+                                    <a href="team.html">Produits</a>
                                     <ul>
                                         <li><a class="waves" href="team.html">Chris Martin</a></li>
                                         <li><a class="waves" href="team.html">Marisa Carter</a></li>
@@ -159,7 +144,7 @@ $pages = ceil($nbArticles / $parPage);
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news-3.php">Article</a>
+                                    <a href="news.html">Article</a>
                                     
                                 </li>
                                 <li class="dropdown">
@@ -179,9 +164,16 @@ $pages = ceil($nbArticles / $parPage);
 
         </header><!-- HEADER -->
 
-
+ 
+					 
+		
+		
+		
+		
+		
         <!-- PAGE CONTENT -->
         <div id="page-content">
+		
 
             <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
                  style="background-image: url(images/backgrounds/page-header-4.jpg);">
@@ -197,13 +189,24 @@ $pages = ceil($nbArticles / $parPage);
                 </div><!-- container -->
 
             </div><!-- page-header -->
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			
                         
 						
 
-            <div class="container">
+            <div class="container"  >
                 <div class="row">
 				
 				<div class="col-md-2">
@@ -220,15 +223,15 @@ $pages = ceil($nbArticles / $parPage);
                                      <!--<input id="s" type="search" name="search" placeholder="" required>-->
 									  <div class="form-group">
 									 <select  class="custom-select" id="speciality" name="search" required >
-                                            
-												<option value="all" >Afficher tout</option>
+                                                <option value="-1" disabled selected>search</option>
+												<option value="all" >afficher tous</option>
 												<option value="tri" >afficher par nb likes</option>
-                                                <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                <option value="Cardiology">Cardiology</option>
+                                                <option value="Neurology">Neurology</option>
+                                                <option value="Surgery">Surgery</option>
+                                                <option value="Gynaecology">Gynaecology</option>
+                                                <option value="Ophthalmology">Ophthalmology</option>
+                                                <option value="Stomatology">Stomatology</option>
                                             </select>
                                      
 									 </div>
@@ -242,148 +245,371 @@ $pages = ceil($nbArticles / $parPage);
 					
 					<?php $i=0;?>
 					
-					<?php foreach($liste as $row){ ?>
+					<?php foreach($article as $row){ ?>
                        
 					   <?php $i++; ?>
 					   
 					   
-                        <div onmouseover='ok("<?php echo "mois".$i ?>","<?php echo "jour".$i ?>","<?php echo "annee".$i ?>","<?php echo $row['datepub']  ?>","<?php echo "desc".$i ?>", "<?php echo $row['description']  ?>")' class="blog-article">
+                        <div onmouseover='okk("<?php echo "mois".$i ?>","<?php echo "jour".$i ?>","<?php echo "annee".$i ?>")' class="blog-article">
 		
-					 <script>
-						function ok(jour,mois,annee,date,desc,text) {
-		console.log(annee);
+					<script>
+						function okk(x,y,z) {
+		console.log(x);
 		 
-		 
-		document.getElementById(jour).textContent=date.substring(8,10);
-		m=date.substring(5,7);
+		 d="<?php echo $row['datepub'] ; ?>";
+		
+		document.getElementById(x).textContent=d.substring(5,7);
 		// alert(m);
-	
+		document.getElementById(y).textContent=d.substring(8,10);
 		// alert(j);
-		document.getElementById(annee).textContent=date.substring(0,4);
-		if(m==01)
-				document.getElementById(mois).textContent="Jan"
-		else if (m==02)	
-			document.getElementById(mois).textContent="Fev"
-		else if (m==03)	
-			document.getElementById(mois).textContent="Mar"
-		else if (m==04)	
-			document.getElementById(mois).textContent="Avr"
-		else if (m==05)	
-			document.getElementById(mois).textContent="Mai"
-		else if (m==06)	
-			document.getElementById(mois).textContent="Jun"
-		else if (m==07)	
-			document.getElementById(mois).textContent="Jui"
-		else if (m==08)	
-			document.getElementById(mois).textContent="Aou"
-		else if (m==09)	
-			document.getElementById(mois).textContent="Sep"
-		else if (m==10)	
-			document.getElementById(mois).textContent="Oct"
-		else if (m==11)	
-			document.getElementById(mois).textContent="Nov"
-		
-		else if (m==12)	
-			document.getElementById(mois).textContent="Dec"
-			
-		document.getElementById(desc).textContent=text.substring(0,(text.length/3))+"...";
+		document.getElementById(z).textContent=d.substring(0,4);
+			//alert(d.substring(0,4)); 
 	}
 	
-	
+	function description(x){
+		
+		d="<?php echo $row['description'] ; ?>";
+		
+		document.getElementById(x).textContent=d.substring(0,(d.length/3))+"...";
+		
+		
+	}
 	
 	
 	
 	
 					
 					</script>
+					
                             <div   class="blog-article-thumbnail" >
 <div >
                                 <a class="date" >
-								 <small id="<?php echo "mois".$i ?>"></small>
-                                  <span id="<?php echo "jour".$i ?>"></span>
-								
-								
+                                    <small id="<?php echo "mois".$i ?>"></small>
+                                    <span id="<?php echo "jour".$i ?>"></span>
                                     <small id="<?php echo "annee".$i ?>"></small>
                                 </a>
 							</div>	
-                            <?php  echo  "<a href='news-single.php?id=", $row['id'] ,  " '>";
+                            <?php 
 							echo"<img src='", $row['image'], "' alt=''></a> " ;
 							?>
+							
+							<br><br>
+			
+							              <div class="blog-article-details">
+                              <a class="author" style="color:#26C4EC">Mr:Admin</a>
+                                <a class="category" style="color:#26C4EC"><?php echo $row['specialite'] ?></a>
+								<a class="category" style="color:#26C4EC" ><?php echo $row['nbcomment'] ?> commentaires </a>
+                               <?php  
+								$likedislikeC= new likedislikeC();
+								?>
+								<a href="like.php?idarticle=<?= $id ?>" >  <?php
+								echo $likedislikeC->sommelike($id);
+								?>  <i class="fa fa-thumbs-o-up" data-toggle="tooltip" title="J'aime"></i></a>
+								
+								
 
+ 
+ <a href="dislike.php?idarticle=<?= $id ?>" >  <?php echo  $likedislikeC->sommedislike($id);
+								
+                                           
+								?> <i class="fa fa-thumbs-o-down" data-toggle="tooltip" title="Je n'aime pas"></i> </a>
+ 
+								
+                            </div><!-- blog-article-details -->
                             </div><!-- blog-article-thumbnail -->
 
-                            <h4 class="blog-article-title"><a href="news-single.html"> <?php echo $row['titre'] ?> </a></h4>
+                            <h4 class="blog-article-title"><a > <?php echo $row['titre'] ?> </a></h4>
 
-                            <div class="blog-article-details">
-                              <a class="author" style="color:#26C4EC">Mr:Admin</a>
-							 	
-                                <a class="category" style="color:#26C4EC"><?php echo $row['specialite'] ?></a>
-                                 <a class="likes" style="color:#26C4EC" ><?php echo $row['nblike'] ?></a>
-                            </div><!-- blog-article-details -->
+              <br>
 
-                            <div    class="blog-article-content">
+                            <div  >
 
-                                <p id="<?php echo "desc".$i ?>"></p>
-
-                               <?php echo  "<a href='news-single.php?id=", $row['id'] , " '>voir plus</a>";?>
-
-
+                                <h6 class="blog-article-title" ><?php echo $row['description'] ?></h6>
+                              
                             </div><!-- blog-article-content -->
+				
+							
+							
+							
                         </div><!-- blog-article -->
 					<?php } ?>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					 <nav>
-                    <ul class="pagination">
-                       		<?php if ($currentPage == 1) {		} 
-							else 
-								{?>
-									
-								 <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-            <a href="news-3.php?page=<?= $currentPage - 1 ?>" ><</a>
-        </li>
-								
-							<?php	} ?>
-	  
-                        <?php for($page = 1; $page <= $pages; $page++): ?>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+											 
+<script >
+						 
+						  
+						function ok(y,x) {
+							
+   document.getElementById(y).hidden = false;
+   
+   document.getElementById(x).hidden = true; 
+}	
+							
+							
+						  
+ 
+						  
+						  </script>	
+	
+		    				
+		<?php   $i=0; ?>
 		
-                          <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->
-                          <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                                <a href="news-3.php?page=<?= $page ?>" ><?= $page ?></a>
-                            </li>
-                        <?php endfor ?>
-						
-						
-						<?php if ($currentPage == $pages) {		} 
-							else {?>
-                  <li class="page-item <?= ($currentPage == $pages) ? "disabled" : "" ?>">
-            <a href="news-3.php?page=<?= $currentPage + 1 ?>" >></a>
-        </li>
-		<?php	}
+<?php foreach($liste as $row){ ?>
+         
+			  <div class="blog-article-author">
+
+                            <img src="images/blog/blog-post/post-author.jpg" alt="">
+
+                            <div class="blog-article-author-details">
+					
+                            <?php   $i++;
 							?>
-                    </ul>
-                </nav>
-                      
+							
+							
+					 
+						
+                 <form action="recupererquestion.php" method="post" >
+			
+								
+								
+								
+								<div id="<?php echo "qest".$i ?>" hidden> 
+								 
+								<input class="form-control" type="text" id="question" name="question" value="<?php echo $row['question']?>">
+								<input type="text" name="idquest" value="<?php echo  $row['id']?>" hidden>
+								<input type="text" name="id" value=" <?php echo $_GET['id']; ?>" hidden  >
+								 <br>
+								 <input  class="btn btn-outline-primary"  type="submit" value="Sauvgarder"  >
+								
+								</div>
+								
+								<div id="<?php echo "aff".$i ?>">
+								
+								
+						 <div class="row">
+				
+				<div class="col-md-9">
+								
+				<label  class="form-label"><?php echo $row['question']?></label>	 <br>			
+                   
+				   
+				   
+				
+				</div>
+                    <div class="col-md-3">
+					
+						
+						
+						
+						
+						
+			   <?php  if($iduser==$row['iduser']) { 
+			   echo "  <a class='btn btn-icon js-sweetalert' href='supprimerquestion.php?id=" , $row['id'] , "&idq=",$_GET['id'],"' title='Delete' data-type='confirm'><i class='fa fa-trash-o text-danger'></i></a>";
+			 // echo "<a  class='comment-reply-link' href='supprimerquestion.php?id=" , $row['id'] , "&idq=",$_GET['id'],"'>  supprimer  </a>"; 
+                 ?>			  
+				 
+				 <button type="button" class="btn btn-icon" onclick='ok("<?php echo "qest".$i ?>","<?php echo "aff".$i ?>")'  title="Edit"><i class="fa fa-edit"></i></button>
+				 
 
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- container -->
+<?php } ?>
+				
+					
 
+
+
+
+
+
+					</div>
+						</div>			
+		
+			  </div>
+				 
+				 
+</form>
+
+<!-- commentaire -->
+
+
+                            <?php   
+							
+							
+$commentaireC= new commentaireC();
+$listecomm=$commentaireC->affichercommentaire($row['id']);
+							
+						$idq=$row['id'];	?>
+							
+			<?php foreach($listecomm as $row){ ?>	 
+				 
+				  
+				 
+			
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+     
+                        <ul class="commentlist">
+                            <li class="comment depth-1">
+                                <div class="comment-body">
+
+                                    <div class="comment-meta">
+
+                                        <div class="comment-author">
+
+                                            <img class="avatar" src="images/blog/blog-post/author-comment-1.jpg" alt="">
+                                            <a class="fn" href="#">Jane Doe</a>
+                                         
+										
+                                        </div><!-- comment-author -->
+<label>  <?php echo $row['commentaire']?></label>
+										  
+
+                                    </div><!-- comment-meta -->
+
+                                   
+
+                                   <div class="reply">
+                                        <?php   echo "<a  class='comment-reply-link' href='supprimercommentaire.php?id=" , $row['id'] , "&idq=",$_GET['id'],"'>  supprimer  </a>"; ?>
+									  
+                                    </div><!-- reply -->
+
+                                </div><!-- comment-body -->
+   
+						   </li>
+							
+
+   </ul>
+<?php }
+?>
+                        
+<form action="ajoutercommentaire.php" method="post" > 
+<table border="0">
+<tr>
+
+<td>
+
+      <textarea class="form-control" id="comm" name="comm" rows="0" cols="0" required  ></textarea>
+						
+					</td><td>	
+						<input type="text" name="id" value=" <?php echo ($idq);?>" hidden  >
+				<input type="text" name="idart" value=" <?php echo $_GET['id']; ?>" hidden  >
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp			
+				</td>
+                      <td>  <input class="btn btn-outline-primary" type="submit" value="Repondre"  ></td>
+						</tr>
+						</table>
+</form>
+	 
+
+                            </div><!-- blog-article-author-details -->
+
+                        </div><!-- blog-article-author -->
+						 
+		
+
+<script>						
+											
+											
+											function saisirquestion() {
+        //Regex for Valid Characters i.e.  Numbers.
+        var regex = /^[0-9]+$/
+		 
+		
+        //Validate TextBox value against the Regex.
+        var isValid = regex.test(document.getElementById("ques").value);
+		 
+		ok=true;
+		
+		
+        if (isValid) {
+          
+		   document.getElementById("val").textContent="La question ne doit pas contenir seulement des lettres alphanumériques.";
+		   ok=false;
+        }
+		
+		
+		
+		
+		
+		
+ 
+        return ok ;
+    }		
+						 
+	</script>					 
+<?php }
+
+					 
+				?>		 
+						 
+													 
+					<!-- Bloc Ajouter -->	 
+						 <div class="form-group">
+						 
+			  <div class="blog-article-author">
+
+                            
+
+                            <div class="blog-article-author-details">
+					
+                           
+				 
+						<form  onsubmit="return saisirquestion()" action="ajouterquestion.php" method="post" >
+						
+						<input type="text" name="id" value=" <?php echo $_GET['id']; ?>" hidden  >
+						<label class="fn" >Commentaire</label>
+						 <textarea class="form-control" id="ques" name="ques" rows="0" cols="0" required  ></textarea>
+						
+						<p id="val" style="color:red" > </p>
+                       
+						
+						<input type="text" name="i" value=" <?php echo $i ; ?>"   >
+						
+						
+						<center ><input  class="btn btn-outline-primary"  type="submit" value="   publier    "  ></center>
+						
+						
+						</form>
+						
+				 
+				 
+                            </div><!-- blog-article-author-details -->
+
+                        </div><!-- blog-article-author -->
+						 
+			
+						 
+					</div>
+						
+                   
+                       
+                  <!--  Fin Bloc Ajouter -->          
+                     
+ 
         </div><!-- PAGE CONTENT -->
+</div>
+</div>
+
+
+
+
+
 
 
         <!-- FOOTER -->
@@ -428,11 +654,11 @@ $pages = ceil($nbArticles / $parPage);
                             <div class="widget widget-pages">
 
                                 <ul class="inline">
-                               <li><a href="#">Acceuil</a></li>
+                                    <li><a href="#">Acceuil</a></li>
                                     <li><a href="#">A propos</a></li>
                                     <li><a href="#">Evennement</a></li>
-                                    <li><a href="#">Produit</a></li>
-                                    <li><a href="#">Article</a></li>
+                                    <li><a href="#">Produits</a></li>
+                                    <li><a href="#">Articles</a></li>
                                     <li><a href="#">Contactez nous</a></li>
                                 </ul>
 
@@ -443,7 +669,7 @@ $pages = ceil($nbArticles / $parPage);
                                 <div>
 
                                     <p class="copyright">
-                                        <small>Template by <a href="#">WebON</a> &copy; All rights reserved</small>
+                                        <small>Template by <a href="#">SmartPixel</a> &copy; All rights reserved</small>
                                     </p>
 
                                 </div>
@@ -535,5 +761,5 @@ $pages = ceil($nbArticles / $parPage);
 </body>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:08 GMT -->
 </html>
