@@ -18,7 +18,7 @@ $_POST['desc'],$_POST['spec']);
 $articlec= new articleC();
 $articlec->ajouterarticle($article);
 
-header('Location:ajouterarticle.php');
-// }
+header('Location:news-3doc.php');
+ //}
  //}
  ?>

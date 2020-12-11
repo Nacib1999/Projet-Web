@@ -1,20 +1,23 @@
-
 <?php
+
 include  "../model/Article.php";
 include  "../controller/ArticleC.php";
-$articleC= new articleC();
-$liste=$articleC->afficherarticle();
+	$id=$_GET['id'];
 
-?>
+	
+	$articleC= new articleC();
+	$article=$articleC->recupererarticle($id);
 
+	?>
+	
+	
 
-
-<!doctype html>
-
+	
+	<!doctype html>
 <html>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/appointment.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:08 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -66,12 +69,20 @@ $liste=$articleC->afficherarticle();
     <!-- ALTERNATIVE STYLES -->
     <link rel="stylesheet" href="#" data-style="styles">
 
+<link rel="stylesheet"
+	href="../resources/assets/plugins/bootstrap/css/bootstrap.min.css" />
+	
+	<link rel="stylesheet" href="../resources/assets/css/main.css"/>
+<link rel="stylesheet" href="../resources/assets/css/theme2.css"/>
 
 </head>
 
-<body class="sticky-header header-classic footer-parallax">
 
-    <div id="main-container">
+	
+<body class="sticky-header header-classic footer-parallax" onload="liste()">
+
+
+<div id="main-container">
 
         <!-- HEADER -->
         <header id="header">
@@ -127,9 +138,13 @@ $liste=$articleC->afficherarticle();
                                         <li><a class="waves" href="team.html">Martha Davis</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown active">
-                                    <a href="news-3.php">News</a>
-                                    
+                                <li class="dropdown">
+                                    <a href="news.html">Article</a>
+                                    <ul>
+                                        <li><a class="waves" href="news.html">Consulter article</a></li>
+                                        <li><a class="waves" href="news-3.html">Article</a></li>
+                                        
+                                    </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="contact.html">Contact</a>
@@ -149,7 +164,7 @@ $liste=$articleC->afficherarticle();
         </header><!-- HEADER -->
 
 
-        <!-- PAGE CONTENT -->
+						    <!-- PAGE CONTENT -->
         <div id="page-content">
 
             <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
@@ -159,7 +174,7 @@ $liste=$articleC->afficherarticle();
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1 >Modifier un article</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -169,67 +184,111 @@ $liste=$articleC->afficherarticle();
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto">
+                    <div class="col-md-12">
 
-					
-					
-					
-					
-					
-					
-					<?php foreach($liste as $row){ ?>
-                       
-                        <div class="blog-article">
+                        <div class="headline text-center">
 
-                            <div class="blog-article-thumbnail">
-
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>10</span>
-                                    <small>2019</small>
-                                </a>
-                            <?php  echo  "<a href='news-single.html'>";
-							echo"<img src='", $row['image'], "' alt=''></a> " ;
-							?>
-
-                            </div><!-- blog-article-thumbnail -->
-
-                            <h4 class="blog-article-title"><a href="news-single.html"> <?php echo $row['titre'] ?> </a></h4>
-
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Cardiology</a>
-                                <a class="comments" href="#">2 comments</a>
-                            </div><!-- blog-article-details -->
-
-                            <div class="blog-article-content">
-
-                                <p>Aliquam erat volutpat. Quisque facilisis neque cursus eros pharetra, id hendrerit nunc porta ut nulla lobortis, accumsan
-                                    arcu vitae, semper justo. Praesent ante leo, feugiat in lacus non, posuere ultricies nibh. Sed in sapien ut augue
-                                    volutpat ultrices non pharetra ante. Suspendisse urna nibh, pellentesque ac tincidunt egestas...</p>
-
-                                <a href="news-single.html">Voir plus</a>
-
-                            </div><!-- blog-article-content -->
-                        </div><!-- blog-article -->
-					<?php } ?>
-
-                        <ul class="pagination">
-                            <li class="active">
-							<a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                        </ul>
-
-                    </div><!-- col -->
+                            <h6 class="page-title">Best medical solutions</h6>
+                            <h1 class="page-title">Modifier votre article</h1>
+		</div><!-- col -->
+                    
                 </div><!-- row -->
             </div><!-- container -->
+                        </div><!-- headline -->
+						
 
-        </div><!-- PAGE CONTENT -->
 
 
-        <!-- FOOTER -->
+
+
+
+
+
+
+<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					
+<?php
+	foreach($article as $row){
+					
+						echo"<form action='recupererarticle.php' method='post' >";
+						echo "<input type='text' name='id' value= " , $row['id'] ," hidden >";
+					echo"<div class='form-group'>";
+					echo" <label  class='form-label'>Titre</label>";
+				echo "<input  type='text' name='titre' class='form-control' placeholder='Titre..' value=",$row['titre']," > ";
+					echo "</div>";
+					
+					
+					
+					 
+					  echo"<div class='form-group'>";
+					   echo"<label   class='form-label'>Image</label>";
+					 echo "<input  id='image' type='file' name='image' class='form-control'  accept='image/png, image/jpeg' value=",$row['image'],"> ";
+					echo "</div>";
+					
+					 echo"<div class='form-group'>";
+					   echo"<label   class='form-label'>Description</label>";
+					echo " <input type='text' name='desc' class='form-control' placeholder='description..' value=",$row['description']," >" ;
+					echo "</div>";
+				?>	
+<br>
+<script> 
+function liste()
+{
+	
+
+	
+	var liste, texte,x;
+liste = document.getElementById("liste");
+x="<?php echo $row['specialite'] ; ?>";
+
+for (let i = 0; i < liste.options.length; i++) {
+ texte = liste.options[i].text;
+ if (texte==x)
+ {
+	 liste.options[i].selected = true;
+ 
+ 
+}
+
+
+
+
+
+
+}
+	
+	
+	
+
+}
+
+ </script>
+
+				<div class="form-group">
+				 
+					   <label   class="form-label">Description</label>
+					<select class="custom-select" id="liste" name="specialite">
+                                                
+                                                <option value="Cardiology ">Cardiology</option>
+                                                <option value="Neurology">Neurology</option>
+                                                <option value="Surgery" >Surgery</option>
+                                                <option value="Gynaecology">Gynaecology</option>
+                                                <option value="Ophthalmology">Ophthalmology</option>
+                                                <option value="Stomatology">Stomatology</option>
+                                            </select>
+											</div>
+				<?php	
+					
+					echo "<center ><input type='submit'  class='col-md-6' value='modifier'></center >";
+					
+				echo"	</form>";
+	}
+	?>
+		<br>	
+ <!-- FOOTER -->
         <footer id="footer-container">
 
             <div id="footer">
@@ -275,7 +334,7 @@ $liste=$articleC->afficherarticle();
                                     <li><a href="#">About</a></li>
                                     <li><a href="#">Services</a></li>
                                     <li><a href="#">Team</a></li>
-                                    <li><a href="#">News</a></li>
+                                    <li><a href="#">Article</a></li>
                                     <li><a href="#">Contact</a></li>
                                 </ul>
 
@@ -286,7 +345,7 @@ $liste=$articleC->afficherarticle();
                                 <div>
 
                                     <p class="copyright">
-                                        <small>Template by <a href="#">WebON</a> &copy; All rights reserved</small>
+                                        <small>Template by <a href="#">WebONPixel</a> &copy; All rights reserved</small>
                                     </p>
 
                                 </div>
@@ -378,5 +437,7 @@ $liste=$articleC->afficherarticle();
 </body>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
-</html>
+<!-- Mirrored from www.smartpixel.tech/smartmed/appointment.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:08 GMT -->
+</html>			
+					
+

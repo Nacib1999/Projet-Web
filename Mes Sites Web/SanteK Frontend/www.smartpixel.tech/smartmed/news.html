@@ -1,4 +1,3 @@
-
 <?php
 include  "../model/Article.php";
 include  "../controller/ArticleC.php";
@@ -10,11 +9,10 @@ $liste=$articleC->afficherarticle();
 
 
 <!doctype html>
-
 <html>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:38:37 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -128,8 +126,12 @@ $liste=$articleC->afficherarticle();
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news-3.php">News</a>
-                                    
+                                    <a href="news.html">BLOG</a>
+                                    <ul>
+                                        <li><a class="waves" href="news.html">Ajouter un blog</a></li>
+                                        <li><a class="waves" href="news-3.html">Blog</a></li>
+                                      
+                                    </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="contact.html">Contact</a>
@@ -159,7 +161,7 @@ $liste=$articleC->afficherarticle();
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1>BLOG</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -169,15 +171,13 @@ $liste=$articleC->afficherarticle();
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto">
+                    <div class="col-md-8">
 
-					
-					
-					
-					
-					
-					
-					<?php foreach($liste as $row){ ?>
+                      
+
+                        
+
+                        <?php foreach($liste as $row){ ?>
                        
                         <div class="blog-article">
 
@@ -215,12 +215,122 @@ $liste=$articleC->afficherarticle();
 					<?php } ?>
 
                         <ul class="pagination">
-                            <li class="active">
-							<a href="#">1</a></li>
+                            <li class="active"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#">4</a></li>
                         </ul>
+
+                    </div><!-- col -->
+                    <div class="col-md-4 pl-xl-5">
+
+                        <div class="widget widget-search">
+
+                            <form name="search" novalidate method="get" action="#">
+                                <fieldset>
+                                    <input id="s" type="search" name="search" placeholder="" required>
+                                    <label for="s">Search</label>
+                                    <span></span>
+                                    <input type="submit" name="submit" value="">
+                                </fieldset>
+                            </form>
+
+                        </div><!-- widget-search -->
+
+                        <div class="widget widget-archives">
+
+                            <h6 class="widget-title">Archives</h6>
+
+                            <ul>
+                                <li><a href="#">January 2019</a></li>
+                                <li><a href="#">December 2018</a></li>
+                                <li><a href="#">November 2018</a></li>
+                                <li><a href="#">October 2018</a></li>
+                                <li><a href="#">September 2018</a></li>
+                                <li><a href="#">August 2018</a></li>
+                            </ul>
+
+                        </div><!-- widget-archives -->
+
+                        <div class="widget widget-categories">
+
+                            <h5 class="widget-title">Specialities</h5>
+
+                            <ul>
+                                <li><a href="#">Internal Medicine</a></li>
+                                <li><a href="#">Emergency medicine</a></li>
+                                <li><a href="#">Medical tests</a></li>
+                                <li><a href="#">Dental surgery</a></li>
+                                <li><a href="#">Plastic surgery</a></li>
+                                <li><a href="#">Orthopedic surgery</a></li>
+                            </ul>
+
+                        </div><!-- widget-categories -->
+
+                        <div class="widget widget-recent-posts">
+
+                            <h5 class="widget-title">Latest News</h5>
+
+                            <ul>
+                                <li>
+                                    <a class="post-title" href="#">10 Strangest Medical Cases</a>
+                                    <div class="post-details">
+                                        by <a class="post-author" href="#">admin</a>
+                                        <a class="post-date" href="#">Jan 15, 2019</a>
+                                    </div><!-- post-details -->
+                                </li>
+                                <li>
+                                    <a class="post-title" href="#">Treatment of gingivitis</a>
+                                    <div class="post-details">
+                                        by <a class="post-author" href="#">admin</a>
+                                        <a class="post-date" href="#">Jan 12, 2019</a>
+                                    </div><!-- post-details -->
+                                </li>
+                                <li>
+                                    <a class="post-title" href="#">An 'Universal' blood test</a>
+                                    <div class="post-details">
+                                        by <a class="post-author" href="#">admin</a>
+                                        <a class="post-date" href="#">Jan 10, 2019</a>
+                                    </div><!-- post-details -->
+                                </li>
+                            </ul>
+
+                        </div><!-- widget-recent-posts -->
+
+                        <div class="widget widget-text">
+
+                            <h5 class="widget-title">Quote of day</h5>
+
+                            <div>
+
+                                <blockquote>
+                                    <p>&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo efficitur turpis
+                                        vitae efficitur. Etiam a accumsan libero eu nisl odio porttitor commodo elit.&quot;</p>
+                                </blockquote>
+
+                            </div>
+
+                        </div><!-- widget-text -->
+
+                        <div class="widget widget-tags">
+
+                            <h6 class="widget-title">Tags</h6>
+
+                            <div>
+
+                                <a href="#">surgery</a>
+                                <a href="#">medical</a>
+                                <a href="#">doctor</a>
+                                <a href="#">clinic</a>
+                                <a href="#">patient</a>
+                                <a href="#">blood</a>
+                                <a href="#">heart</a>
+                                <a href="#">dental</a>
+                                <a href="#">brain</a>
+
+                            </div>
+
+                        </div><!-- widget-tags -->
 
                     </div><!-- col -->
                 </div><!-- row -->
@@ -228,7 +338,124 @@ $liste=$articleC->afficherarticle();
 
         </div><!-- PAGE CONTENT -->
 
+ </div><!-- container -->
 
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <form id="contact-form" name="appointment-form" method="post" action="#">
+                            <fieldset>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="first_name" type="text" name="first_name" placeholder="" required>
+                                            <span></span>
+                                            <label for="first_name">First Name</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="last_name" type="text" name="last_name" placeholder="" required>
+                                            <span></span>
+                                            <label for="last_name">Last Name</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="email" type="text" name="email" placeholder="" required>
+                                            <span></span>
+                                            <label for="email">E-mail</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="phone" type="text" name="phone" placeholder="" required>
+                                            <span></span>
+                                            <label for="phone">Phone</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <select class="col-12" id="speciality" name="speciality">
+                                                <option value="-1" disabled selected>Choose a speciality</option>
+                                                <option value="1">Cardiology</option>
+                                                <option value="2">Neurology</option>
+                                                <option value="3">Surgery</option>
+                                                <option value="4">Gynaecology</option>
+                                                <option value="5">Ophthalmology</option>
+                                                <option value="6">Stomatology</option>
+                                            </select>
+                                            <span></span>
+                                            <i class="fa fa-angle-down"></i>
+                                            <label for="speciality">Speciality</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <select class="col-12" id="doctor" name="doctor">
+                                                <option value="-1" disabled selected>Choose a doctor</option>
+                                                <option value="1">Chris Martin</option>
+                                                <option value="2">Marisa Carter</option>
+                                                <option value="3">John William</option>
+                                                <option value="4">Martha Davis</option>
+                                                <option value="5">Maria Johnson</option>
+                                                <option value="6">John Haynes</option>
+                                            </select>
+                                            <span></span>
+                                            <i class="fa fa-angle-down"></i>
+                                            <label for="doctor">Doctor</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="date" type="date" name="date" required>
+                                            <span></span>
+                                            <label for="date">Date</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                    <div class="col-md-6 col-lg-3">
+
+                                        <p>
+                                            <input class="col-12" id="hours" type="time" name="hours" required>
+                                            <span></span>
+                                            <label for="hours">Hours</label>
+                                        </p>
+
+                                    </div><!-- col -->
+                                </div><!-- row -->
+
+                                <p>
+                                    <textarea class="col-12" id="observations" name="observations" rows="5" cols="25" placeholder="" required></textarea>
+                                    <span></span>
+                                    <label for="observations">Observations</label>
+                                </p>
+
+                                <button class="btn btn-default waves" id="submit" type="submit" name="submit" value="">Make appointment</button>
+
+                            </fieldset>
+                        </form>
+
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+        </div><!-- PAGE CONTENT -->
         <!-- FOOTER -->
         <footer id="footer-container">
 
@@ -262,7 +489,7 @@ $liste=$articleC->afficherarticle();
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:info@smart-pixel.xyz">info@santek-pixel.xyz</a>
+                                        <a href="mailto:info@smart-pixel.xyz">info@smart-pixel.xyz</a>
                                     </li>
                                 </ul>
 
@@ -286,7 +513,7 @@ $liste=$articleC->afficherarticle();
                                 <div>
 
                                     <p class="copyright">
-                                        <small>Template by <a href="#">WebON</a> &copy; All rights reserved</small>
+                                        <small>Template by <a href="#">SmartPixel</a> &copy; All rights reserved</small>
                                     </p>
 
                                 </div>
@@ -378,5 +605,5 @@ $liste=$articleC->afficherarticle();
 </body>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
 </html>

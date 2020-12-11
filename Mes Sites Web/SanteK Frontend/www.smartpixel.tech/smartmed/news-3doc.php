@@ -1,19 +1,19 @@
 <?php
 include  "../model/Article.php";
 include  "../controller/ArticleC.php";
-
-  $id=$_GET['id'];
-
-	$articleC= new articleC();
-	$article=$articleC->recupererarticle($id);
-	
+$articleC= new articleC();
+$liste=$articleC->afficherarticle();
 
 ?>
+
+
+
 <!doctype html>
+
 <html>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -65,6 +65,11 @@ include  "../controller/ArticleC.php";
     <!-- ALTERNATIVE STYLES -->
     <link rel="stylesheet" href="#" data-style="styles">
 
+	<link rel="stylesheet"
+	href="../resources/assets/plugins/bootstrap/css/bootstrap.min.css" />
+	
+	<link rel="stylesheet" href="../resources/assets/css/main.css"/>
+<link rel="stylesheet" href="../resources/assets/css/theme2.css"/>
 
 </head>
 
@@ -96,7 +101,7 @@ include  "../controller/ArticleC.php";
 
                             <ul class="menu clearfix" id="menu">
                                 <li class="dropdown">
-                                    <a href="index-2.html">Home</a>
+                                    <a href="index-2.html">Acceuil</a>
                                     <ul>
                                         <li><a class="waves" href="index-2.html">Home 1</a></li>
                                         <li><a class="waves" href="index-3.html">Home 2</a></li>
@@ -104,21 +109,21 @@ include  "../controller/ArticleC.php";
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="about.html">About</a>
+                                    <a href="about.html">A propos</a>
                                     <ul>
                                         <li><a class="waves" href="about.html">About 1</a></li>
                                         <li><a class="waves" href="about-2.html">About 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="services.html">Services</a>
+                                    <a href="services.html">Evennement</a>
                                     <ul>
                                         <li><a class="waves" href="services.html">Services 1</a></li>
                                         <li><a class="waves" href="services-2.html">Services 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="team.html">Team</a>
+                                    <a href="team.html">Produits</a>
                                     <ul>
                                         <li><a class="waves" href="team.html">Chris Martin</a></li>
                                         <li><a class="waves" href="team.html">Marisa Carter</a></li>
@@ -127,16 +132,14 @@ include  "../controller/ArticleC.php";
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news.html">News</a>
+                                   <a href="news.html">Articles</a>
                                     <ul>
-                                        <li><a class="waves" href="news.html">News right sidebar</a></li>
-                                        <li><a class="waves" href="news-2.html">News left sidebar</a></li>
-                                        <li><a class="waves" href="news-3.html">News no sidebar</a></li>
-                                        <li><a class="waves" href="news-single.html">News single</a></li>
+                                        <li><a class="waves" href="news-3doc.php">Ajouter un Article</a></li>
+                                        <li><a class="waves" href="news-3.php">Article</a></li>
+                                      
                                     </ul>
-                                </li>
                                 <li class="dropdown">
-                                    <a href="contact.html">Contact</a>
+                                    <a href="contact.html">Contactez nous</a>
                                     <ul>
                                         <li><a class="waves" href="contact.html">Contact 1</a></li>
                                         <li><a class="waves" href="contact-2.html">Contact 2</a></li>
@@ -152,12 +155,40 @@ include  "../controller/ArticleC.php";
 
         </header><!-- HEADER -->
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-		
-		
-		
-		
-		
         <!-- PAGE CONTENT -->
         <div id="page-content">
 
@@ -168,7 +199,97 @@ include  "../controller/ArticleC.php";
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1>ARTICLE</h1>
+
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->
+
+            </div><!-- page-header -->
+			
+			
+			
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+
+                        <?php foreach($liste as $row){ ?>
+                       
+                        <div class="blog-article">
+
+                            <div class="blog-article-thumbnail">
+
+                                <a class="date" href="#">
+                                    <small>Jan</small>
+                                    <span>10</span>
+                                    <small>2019</small>
+                                </a>
+                            <?php  echo  "<a href='news-single.php'>";
+							echo"<img src='", $row['image'], "' alt=''></a>" ;
+							?>
+
+                            </div><!-- blog-article-thumbnail -->
+
+                            <h4 class="blog-article-title"> <?php echo $row['titre'] ?> </h4>
+
+                            <div class="blog-article-details">
+							<P>  <?php  echo $row['datepub'] ?></P>
+                                <?php echo "<a class='author' href='modifierarticle.php?id=",$row['id'],"'> Modifier</a>"; 
+                              echo "<a class='category' href='supprimerarticle.php?id=" , $row['id'] , " '>supprimer</a>"; ?>
+                                <a class="comments" href="#">2 comments</a>
+                            </div><!-- blog-article-details -->
+
+                            <div class="blog-article-content">
+
+                                <p style="{ display: block; width: 10px; }" >Aliquam erat volutpat. Quisque facilisis neque cursus eros pharetra, id hendrerit nunc porta ut nulla lobortis, accumsan
+                                    arcu vitae, semper justo. Praesent ante leo, feugiat in lacus non, posuere ultricies nibh. Sed in sapien ut augue
+                                    volutpat ultrices non pharetra ante. Suspendisse urna nibh, pellentesque ac tincidunt egestas...</p>
+
+                             <?php echo  "<a href='news-single.php?id=", $row['id'] , " '>voir plus</a>";?>
+
+                            </div><!-- blog-article-content -->
+                        </div><!-- blog-article -->
+					
+					<?php } ?>
+					
+					
+					
+					
+					
+
+                        <ul class="pagination">
+                            <li class="active">
+							<a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                        </ul>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						    <!-- PAGE CONTENT -->
+        <div id="page-content">
+
+            <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
+                 style="background-image: url(images/backgrounds/page-header-4.jpg);">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <h1 >Ajouter un article</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -178,215 +299,88 @@ include  "../controller/ArticleC.php";
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
- <?php foreach($article as $row){ ?>
-                        <div class="blog-article">
+                    <div class="col-md-12">
 
-                            <div class="blog-article-thumbnail">
+                        <div class="headline text-center">
 
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>15</span>
-                                    <small>2019</small>
-                                </a>
-                               <?php echo"<img src='", $row['image'], "' alt=''>" ;?>
-
-                            </div><!-- blog-article-thumbnail -->
-                           <h4 class="blog-article-title"> <?php echo $row['titre'] ?> </h4>
-
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Stomatology</a>
-                                <a class="comments" href="#">2 comments</a>
-                            </div><!-- blog-article-details -->
-
-                            <div class="blog-article-content">
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque odio, pulvinar ut urna
-                                    ut, venenatis vene natis nisi. Nulla tempus. Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Sed neque odio, pulvinar ut urna ut, venenatis venenatis nisinulla tempus.</p>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet metus
-                                    pellentesque, iaculis nisl convallis, posuere orci. Ut in metus sed magna gravida porta.
-                                    Aliquam eu mi quam. Ut placerat auctor lacus, vel viverra nisi finibus eget. Aenean et nibh
-                                    id dolor fringilla aliquet. Nam rutrum, tellus id placerat congue, justo eros venenatis nisl,
-                                    sed tincidunt justo purus ut mauris. Nullam ultricies magna vel felis suscipit, eu varius
-                                    dolor cursus. In hac habitasse platea dictumst. Suspendisse tempor faucibus enim. Donec
-                                    euismod lobortis justo, et vestibulum purus mattis vitae. Quisque rutrum, quam sed gravida
-                                    congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi. Aenean
-                                    urna diam, scelerisque at eros sed, vulputate tincidunt nibh. Quisque rutrum, quam sed
-                                    gravida congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi.</p>
-
-                            </div><!-- blog-article-content -->
-
-                        </div><!-- blog-article -->
-
-						
- <?php }?>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-                        <div class="blog-article-author">
-
-                            <img src="images/blog/blog-post/post-author.jpg" alt="">
-
-                            <div class="blog-article-author-details">
-
-                                <h6>Daniel Wilson <span>(Author)</span></h6>
-
-                                <p>Pellentesque et erat accumsan, porttitor ipsum at, accumsan enim. Nulla sodales eros eget
-                                    gravida ultricies. Mauris vel mattis sem. Morbi dui risus, dictum quis.</p>
-
-                            </div><!-- blog-article-author-details -->
-
-                        </div><!-- blog-article-author -->
-
-                        <h6 class="commentlist-title">Comments (2)</h6>
-
-                        <ul class="commentlist">
-                            <li class="comment depth-1">
-                                <div class="comment-body">
-
-                                    <div class="comment-meta">
-
-                                        <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-1.jpg" alt="">
-                                            <a class="fn" href="#">Jane Doe</a>
-                                            <span class="says">says:</span>
-
-                                        </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
-
-                                    </div><!-- comment-meta -->
-
-                                    <div class="comment-content">
-
-                                        <p>Morbi accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam
-                                            non rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
-                                    </div><!-- reply -->
-
-                                </div><!-- comment-body -->
-                            </li>
-                            <li class="comment depth-1">
-                                <div class="comment-body">
-
-                                    <div class="comment-meta">
-
-                                        <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-2.jpg" alt="">
-                                            <a class="fn" href="#">Jane Smith</a>
-                                            <span class="says">says:</span>
-
-                                        </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
-
-                                    </div><!-- comment-meta -->
-
-                                    <div class="comment-content">
-
-                                        <p>Accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam non
-                                            rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
-                                    </div><!-- reply -->
-
-                                </div><!-- comment-body -->
-                            </li>
-                        </ul>
-
-                        <h6 class="commentform-title">Leave a comment</h6>
-
-                        <form id="commentform" name="commentform" novalidate method="post" action="#">
-                            <fieldset>
-
-                                <p class="commentform-author">
-                                    <input id="name" class="col-12" type="text" name="name" placeholder="" required>
-                                    <span></span>
-                                    <label for="name">Name</label>
-                                </p>
-
-                                <p class="commentform-email">
-                                    <input id="email" class="col-12" type="text" name="email" placeholder="" required>
-                                    <span></span>
-                                    <label for="email">E-mail</label>
-                                </p>
-
-                                <p class="commentform-url">
-                                    <input id="url" class="col-12" type="text" name="url" placeholder="" required>
-                                    <span></span>
-                                    <label for="url">URL</label>
-                                </p>
-
-                                <p class="commentform-comment">
-                                    <textarea id="comment" class="col-12" name="comment" rows="6" cols="25" placeholder="" required></textarea>
-                                    <span></span>
-                                    <label for="comment">Comment</label>
-                                </p>
-
-                                <p class="commentform-submit">
-                                    <button class="btn btn-default btn-outline waves waves-dark" id="submit" type="submit" name="submit" value="">Send
-                                        comment <i class="decode-icon-cursor"></i></button>
-                                </p>
-
-                            </fieldset>
-                        </form>
-
-                    </div><!-- col -->
-                    <div class="col-md-4 pl-xl-5">
-
-                        <div class="widget widget-search">
-
-                            <form name="search" novalidate method="get" action="#">
-                                <fieldset>
-                                    <input id="s" type="search" name="search" placeholder="" required>
-                                    <label for="s">Search</label>
-                                    <span></span>
-                                    <input type="submit" name="submit" value="">
-                                </fieldset>
-                            </form>
-
-                        </div><!-- widget-search -->
-                        </div><!-- col -->
-                        
-
-                        
-                 
+                            <h6 class="page-title">Best medical solutions</h6>
+                            <h1 class="page-title">Ajouter un nouveau article</h1>
+		</div><!-- col -->
+                    
                 </div><!-- row -->
             </div><!-- container -->
+                        </div><!-- headline -->
+						
+						
+<div class="container">
+			<div class="row">
+				<div class="col-md-12">
 
-        </div><!-- PAGE CONTENT -->
+					
+
+				
+					
+					
+					<form  action="new1.php" method="post" >
+					
+					
+					
+					
+					
+					
+					<div class="form-group">
+					 <label  class="form-label">Titre</label>
+					 <input  type="text" name="titre" class="form-control" placeholder="Titre.."> 
+					 
+					  </div>
+					
+					  
+					  
+					  <div class="form-group">
+					  <label   class="form-label">Image</label>
+					 <input class="form-control"  id="image" type="file" name="image" accept="image/png, image/jpeg" > 
+					  
+					 </div>
+					 <div class="form-group">
+					   <label  class="form-label">Description</label>
+					 <textarea class="form-control" id="desc" name="desc" rows="3" cols="25" placeholder="Description.." required></textarea>
+					
+					  </div>
+					  <div class="form-group">
+					<select class="custom-select" id="speciality" name="spec">
+                                                <option value="-1" disabled selected>Choose a speciality</option>
+                                                <option value="Cardiology">Cardiology</option>
+                                                <option value="Neurology">Neurology</option>
+                                                <option value="Surgery">Surgery</option>
+                                                <option value="Gynaecology">Gynaecology</option>
+                                                <option value="Ophthalmology">Ophthalmology</option>
+                                                <option value="Stomatology">Stomatology</option>
+                                            </select>
+											</div>
+											<br>
+					<center ><input  type="submit"  class="col-md-6" value="     Ajouter article    "><i class="decode-icon-cursor"><center>
+					</form>
+					
+
+				</div><!-- col -->
+                    
+                </div><!-- row -->
+            </div><!-- container -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<br>
+			<br>
+			
+			
+      
 
 
         <!-- FOOTER -->
@@ -422,7 +416,7 @@ include  "../controller/ArticleC.php";
                                     </li>
                                     <li>
                                         <i class="fa fa-envelope-o"></i>
-                                        <a href="mailto:info@smart-pixel.xyz">info@smart-pixel.xyz</a>
+                                        <a href="mailto:info@smart-pixel.xyz">info@santek-pixel.xyz</a>
                                     </li>
                                 </ul>
 
@@ -431,12 +425,12 @@ include  "../controller/ArticleC.php";
                             <div class="widget widget-pages">
 
                                 <ul class="inline">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Acceuil</a></li>
+                                    <li><a href="#">A propos</a></li>
+                                    <li><a href="#">Evennement</a></li>
+                                    <li><a href="#">Produits</a></li>
+                                    <li><a href="#">Articles</a></li>
+                                    <li><a href="#">Contactez nous</a></li>
                                 </ul>
 
                             </div><!-- widget-pages -->
@@ -446,7 +440,7 @@ include  "../controller/ArticleC.php";
                                 <div>
 
                                     <p class="copyright">
-                                        <small>Template by <a href="#">SmartPixel</a> &copy; All rights reserved</small>
+                                        <small>Template by <a href="#">WebONPixel</a> &copy; All rights reserved</small>
                                     </p>
 
                                 </div>
@@ -538,5 +532,5 @@ include  "../controller/ArticleC.php";
 </body>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:08 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/news-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
 </html>

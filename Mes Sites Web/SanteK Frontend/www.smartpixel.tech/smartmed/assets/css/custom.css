@@ -226,8 +226,33 @@ select:focus {
 	outline: none;
 }
 
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"] {
+	padding: 10px 30px;
+	border: none;
+	background-color: #000;
+	color: #fff;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
 
+button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+	background-color: #02a9ff;
+	cursor: pointer;
+}
 
+button,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus {
+	box-shadow: none;
+	outline: 0;
+}
 
 ::-moz-placeholder {
 	color: #c3c3c3;
@@ -516,6 +541,79 @@ dl {
 /***********************************************************************************
  *	+ BUTTONS
  ***********************************************************************************/
+
+.btn {
+	position: relative;
+	overflow: hidden;
+	padding: 12px 35px;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 20px;
+	margin-right: 15px;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.25s;
+			transition: all 0.25s;
+}
+
+.btn:last-child {
+	margin-right: 0;
+}
+
+.btn i {
+	margin-left: 10px;
+	margin-right: -5px;
+}
+
+.btn-lg {
+	padding: 9px 40px;
+	font-size: 15px;
+}
+
+.btn-xs {
+	padding: 5px 20px;
+	font-size: 11px;
+}
+
+.btn:focus,
+.btn:active {
+	outline: 0 !important;
+	box-shadow: none;
+}
+
+.btn:hover {
+	box-shadow: 0 16px 35px 0 rgba(0, 0, 0, 0.25);
+	-webkit-transform: scale(1.05);
+		-ms-transform: scale(1.05);
+			transform: scale(1.05);
+}
+
+
+/* DEFAULT BUTTON 1 */
+.btn-default {
+	background-color: #02a9ff;
+	color: #fff;
+}
+
+.btn-default:hover,
+.btn-default:focus {
+	color: #fff;
+}
+
+
+/* DEFAULT WHITE */
+.btn-white {
+	border: 1px solid #e1e1e1;
+	background-color: #fff;
+	color: #464646;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+	color: #464646;
+}
 
 /***********************************************************************************
  *	+ DIVIDERS

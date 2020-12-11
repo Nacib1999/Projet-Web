@@ -1,19 +1,8 @@
-<?php
-include  "../model/Article.php";
-include  "../controller/ArticleC.php";
-
-  $id=$_GET['id'];
-
-	$articleC= new articleC();
-	$article=$articleC->recupererarticle($id);
-	
-
-?>
 <!doctype html>
 <html>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:05 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/services-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:38:29 GMT -->
 <head>
 
     <meta charset="utf-8">
@@ -110,7 +99,7 @@ include  "../controller/ArticleC.php";
                                         <li><a class="waves" href="about-2.html">About 2</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown active">
                                     <a href="services.html">Services</a>
                                     <ul>
                                         <li><a class="waves" href="services.html">Services 1</a></li>
@@ -126,7 +115,7 @@ include  "../controller/ArticleC.php";
                                         <li><a class="waves" href="team.html">Martha Davis</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown active">
+                                <li class="dropdown">
                                     <a href="news.html">News</a>
                                     <ul>
                                         <li><a class="waves" href="news.html">News right sidebar</a></li>
@@ -153,22 +142,17 @@ include  "../controller/ArticleC.php";
         </header><!-- HEADER -->
 
 
-		
-		
-		
-		
-		
         <!-- PAGE CONTENT -->
         <div id="page-content">
 
             <div id="page-header" class="parallax" data-stellar-background-ratio="0.3"
-                 style="background-image: url(images/backgrounds/page-header-4.jpg);">
+                 style="background-image: url(images/backgrounds/page-header-2.jpg);">
 
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
 
-                            <h1>News</h1>
+                            <h1>Services</h1>
 
                         </div><!-- col -->
                     </div><!-- row -->
@@ -178,211 +162,204 @@ include  "../controller/ArticleC.php";
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
- <?php foreach($article as $row){ ?>
-                        <div class="blog-article">
+                    <div class="col-md-6 col-lg-4">
 
-                            <div class="blog-article-thumbnail">
+                        <div class="service-box style-2 wow fadeInUp">
 
-                                <a class="date" href="#">
-                                    <small>Jan</small>
-                                    <span>15</span>
-                                    <small>2019</small>
-                                </a>
-                               <?php echo"<img src='", $row['image'], "' alt=''>" ;?>
+                            <i class="smartmed-icon-lungs"></i>
 
-                            </div><!-- blog-article-thumbnail -->
-                           <h4 class="blog-article-title"> <?php echo $row['titre'] ?> </h4>
+                            <div class="service-box-content">
 
-                            <div class="blog-article-details">
-                                by <a class="author" href="#">Admin</a>
-                                in <a class="category" href="#">Stomatology</a>
-                                <a class="comments" href="#">2 comments</a>
-                            </div><!-- blog-article-details -->
+                                <h4>Internal Medicine</h4>
 
-                            <div class="blog-article-content">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Pellen tesque vitae
+                                    dui interdum, rhoncus velit ipsum enim sed est.</p>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque odio, pulvinar ut urna
-                                    ut, venenatis vene natis nisi. Nulla tempus. Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Sed neque odio, pulvinar ut urna ut, venenatis venenatis nisinulla tempus.</p>
+                            </div><!-- service-box-content -->
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet metus
-                                    pellentesque, iaculis nisl convallis, posuere orci. Ut in metus sed magna gravida porta.
-                                    Aliquam eu mi quam. Ut placerat auctor lacus, vel viverra nisi finibus eget. Aenean et nibh
-                                    id dolor fringilla aliquet. Nam rutrum, tellus id placerat congue, justo eros venenatis nisl,
-                                    sed tincidunt justo purus ut mauris. Nullam ultricies magna vel felis suscipit, eu varius
-                                    dolor cursus. In hac habitasse platea dictumst. Suspendisse tempor faucibus enim. Donec
-                                    euismod lobortis justo, et vestibulum purus mattis vitae. Quisque rutrum, quam sed gravida
-                                    congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi. Aenean
-                                    urna diam, scelerisque at eros sed, vulputate tincidunt nibh. Quisque rutrum, quam sed
-                                    gravida congue, quam sapien iaculis felis, ut eleifend libero risus eu nisl. Sed dui lectus,
-                                    sollicitudin sed tellus at, accumsan finibus metus. Suspendisse ac imperdiet nisi.</p>
-
-                            </div><!-- blog-article-content -->
-
-                        </div><!-- blog-article -->
-
-						
- <?php }?>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-                        <div class="blog-article-author">
-
-                            <img src="images/blog/blog-post/post-author.jpg" alt="">
-
-                            <div class="blog-article-author-details">
-
-                                <h6>Daniel Wilson <span>(Author)</span></h6>
-
-                                <p>Pellentesque et erat accumsan, porttitor ipsum at, accumsan enim. Nulla sodales eros eget
-                                    gravida ultricies. Mauris vel mattis sem. Morbi dui risus, dictum quis.</p>
-
-                            </div><!-- blog-article-author-details -->
-
-                        </div><!-- blog-article-author -->
-
-                        <h6 class="commentlist-title">Comments (2)</h6>
-
-                        <ul class="commentlist">
-                            <li class="comment depth-1">
-                                <div class="comment-body">
-
-                                    <div class="comment-meta">
-
-                                        <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-1.jpg" alt="">
-                                            <a class="fn" href="#">Jane Doe</a>
-                                            <span class="says">says:</span>
-
-                                        </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
-
-                                    </div><!-- comment-meta -->
-
-                                    <div class="comment-content">
-
-                                        <p>Morbi accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam
-                                            non rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
-                                    </div><!-- reply -->
-
-                                </div><!-- comment-body -->
-                            </li>
-                            <li class="comment depth-1">
-                                <div class="comment-body">
-
-                                    <div class="comment-meta">
-
-                                        <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-2.jpg" alt="">
-                                            <a class="fn" href="#">Jane Smith</a>
-                                            <span class="says">says:</span>
-
-                                        </div><!-- comment-author -->
-
-                                        <div class="comment-metadata">
-                                            <a href="#">Jan 22, 2019</a>
-                                        </div><!-- comment-metadata -->
-
-                                    </div><!-- comment-meta -->
-
-                                    <div class="comment-content">
-
-                                        <p>Accumsan odio lacus, sollicitudin pulvinar magna vulputate sed. Aliquam non
-                                            rutrum massa, sed dictum magna. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes.</p>
-
-                                    </div><!--  comment-content -->
-
-                                    <div class="reply">
-                                        <a class="comment-reply-link" href="#">Reply</a>
-                                    </div><!-- reply -->
-
-                                </div><!-- comment-body -->
-                            </li>
-                        </ul>
-
-                        <h6 class="commentform-title">Leave a comment</h6>
-
-                        <form id="commentform" name="commentform" novalidate method="post" action="#">
-                            <fieldset>
-
-                                <p class="commentform-author">
-                                    <input id="name" class="col-12" type="text" name="name" placeholder="" required>
-                                    <span></span>
-                                    <label for="name">Name</label>
-                                </p>
-
-                                <p class="commentform-email">
-                                    <input id="email" class="col-12" type="text" name="email" placeholder="" required>
-                                    <span></span>
-                                    <label for="email">E-mail</label>
-                                </p>
-
-                                <p class="commentform-url">
-                                    <input id="url" class="col-12" type="text" name="url" placeholder="" required>
-                                    <span></span>
-                                    <label for="url">URL</label>
-                                </p>
-
-                                <p class="commentform-comment">
-                                    <textarea id="comment" class="col-12" name="comment" rows="6" cols="25" placeholder="" required></textarea>
-                                    <span></span>
-                                    <label for="comment">Comment</label>
-                                </p>
-
-                                <p class="commentform-submit">
-                                    <button class="btn btn-default btn-outline waves waves-dark" id="submit" type="submit" name="submit" value="">Send
-                                        comment <i class="decode-icon-cursor"></i></button>
-                                </p>
-
-                            </fieldset>
-                        </form>
+                        </div><!-- service-box -->
 
                     </div><!-- col -->
-                    <div class="col-md-4 pl-xl-5">
+                    <div class="col-md-6 col-lg-4">
 
-                        <div class="widget widget-search">
+                        <div class="service-box style-2 wow fadeInUp" data-wow-delay="0.1s">
 
-                            <form name="search" novalidate method="get" action="#">
-                                <fieldset>
-                                    <input id="s" type="search" name="search" placeholder="" required>
-                                    <label for="s">Search</label>
-                                    <span></span>
-                                    <input type="submit" name="submit" value="">
-                                </fieldset>
-                            </form>
+                            <i class="smartmed-icon-first-aid-kit-2"></i>
 
-                        </div><!-- widget-search -->
-                        </div><!-- col -->
-                        
+                            <div class="service-box-content">
 
-                        
-                 
+                                <h4>Emergency medicine</h4>
+
+                                <p>Etiam eu nulla eget ligula mollis faucibus. Pellentesque habitant morbi
+                                    tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                            </div><!-- service-box-content -->
+
+                        </div><!-- service-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="service-box style-2 wow fadeInUp" data-wow-delay="0.2s">
+
+                            <i class="smartmed-icon-nuclear"></i>
+
+                            <div class="service-box-content">
+
+                                <h4>Radiology</h4>
+
+                                <p>Morbi aliquam augue velit, id dapibus elit accumsan ut. Pellentesque a sem sed metus
+                                    fringilla posuere eu ac metus ex non sapien.</p>
+
+                            </div><!-- service-box-content -->
+
+                        </div><!-- service-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="service-box style-2 wow fadeInUp">
+
+                            <i class="smartmed-icon-teeth"></i>
+
+                            <div class="service-box-content">
+
+                                <h4>Dental surgery</h4>
+
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Pellen tesque vitae
+                                    dui interdum, rhoncus velit ipsum enim sed est.</p>
+
+                            </div><!-- service-box-content -->
+
+                        </div><!-- service-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="service-box style-2 wow fadeInUp" data-wow-delay="0.1s">
+
+                            <i class="smartmed-icon-cardiogram-4"></i>
+
+                            <div class="service-box-content">
+
+                                <h4>Cardiothoracic surgery</h4>
+
+                                <p>Etiam eu nulla eget ligula mollis faucibus. Pellentesque habitant morbi
+                                    tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                            </div><!-- service-box-content -->
+
+                        </div><!-- service-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="service-box style-2 wow fadeInUp" data-wow-delay="0.2s">
+
+                            <i class="smartmed-icon-bones"></i>
+
+                            <div class="service-box-content">
+
+                                <h4>Orthopedic surgery</h4>
+
+                                <p>Morbi aliquam augue velit, id dapibus elit accumsan ut. Pellentesque a sem sed metus
+                                    fringilla posuere eu ac metus ex non sapien.</p>
+
+                            </div><!-- service-box-content -->
+
+                        </div><!-- service-box -->
+
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+            <br><br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 ml-auto mr-auto">
+
+                        <div class="embed-responsive embed-responsive-16by9 mb-5">
+                            <iframe src="https://www.youtube.com/embed/Fo4tf7NmX4Q" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                        </div><!-- embed-responsive -->
+
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+            <section class="full-section dark-section parallax" id="section-2" data-stellar-background-ratio="0.3">
+
+                <div class="full-section-overlay-color"></div>
+
+                <div class="full-section-container">
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+
+                                <h1>20 Years of Experience in various cases</h1>
+                                <p class="last">Etiam eu nulla eget ligula mollis faucibus. Pellentesque habitant morbi
+                                    tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                            </div><!-- col -->
+                            <div class="col-lg-4 text-lg-right">
+
+                                <a class="btn btn-default waves mb-2 mb-md-0 mt-3 mt-lg-0" href="contact.html">Contact Now</a>
+
+                            </div><!-- col -->
+                        </div><!-- row -->
+                    </div><!-- container -->
+
+                </div><!-- full-section-container -->
+            </section><!-- full-section -->
+
+            <div class="container mb-5">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="image-box">
+
+                            <div class="image-box-thumbnail">
+                                <img src="images/services/image-1.jpg" alt="">
+                            </div><!-- image-box-thumbnail -->
+
+                            <h4>Plastic Surgery</h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque odio, pulvinar ut urna ut venenatis.</p>
+
+                        </div><!-- image-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-4">
+
+                        <div class="image-box">
+
+                            <div class="image-box-thumbnail">
+                                <img src="images/services/image-2.jpg" alt="">
+                            </div><!-- image-box-thumbnail -->
+
+                            <h4>Medical tests</h4>
+
+                            <p>Mauris finibus eros et purus imperdiet, et blandit neque tincidunt. Nulla facilisi in elementum sed duis.</p>
+
+                        </div><!-- image-box -->
+
+                    </div><!-- col -->
+                    <div class="col-md-4">
+
+                        <div class="image-box">
+
+                            <div class="image-box-thumbnail">
+                                <img src="images/services/image-3.jpg" alt="">
+                            </div><!-- image-box-thumbnail -->
+
+                            <h4>Dental surgery</h4>
+
+                            <p>Integer sit amet pharetra nibh. Donec hendrerit ligula eget urna porta, finibus auctor tortor tincidunt.</p>
+
+                        </div><!-- image-box -->
+
+                    </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
 
@@ -538,5 +515,5 @@ include  "../controller/ArticleC.php";
 </body>
 
 
-<!-- Mirrored from www.smartpixel.tech/smartmed/news-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:39:08 GMT -->
+<!-- Mirrored from www.smartpixel.tech/smartmed/services-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:38:29 GMT -->
 </html>
