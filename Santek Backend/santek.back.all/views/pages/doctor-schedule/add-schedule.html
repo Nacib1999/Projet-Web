@@ -183,7 +183,7 @@
         <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
-                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/medjestic-logo-216x62.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
@@ -633,7 +633,7 @@
                 <span class="ms-toggler-bar bg-white"></span>
               </div>
               <div class="logo-sn logo-sm ms-d-block-sm">
-                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/medjestic-logo-84x41.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/logo.png" alt="logo"> </a>
               </div>
               <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
@@ -746,6 +746,8 @@
                 </div>
             </div>
         </div>
+
+<!----------------------------------------------AJOUTER EVENT------------------------------------------------------------->        
         <form name="e" method="POST" action="ajoutEvent.php">
 
                     
@@ -879,218 +881,7 @@
                    );
                });
           </script>
-                  <div class="calendar">
-                    <div class="header">
-                        <a data-action="prev-month" href="javascript:void(0)" title="Previous Month"><i></i></a>
-                        <div class="text" data-render="month-year"></div>
-                        <a data-action="next-month" href="javascript:void(0)" title="Next Month"><i></i></a>
-                    </div>
-                    <div class="months" data-flow="left">
-                        <div class="month month-a">
-                            <div class="render render-a"></div>
-                        </div>
-                        <div class="month month-b">
-                            <div class="render render-b"></div>
-                        </div>
-                    </div>
-                    <script>
-                        var Calendar = function(t) {
-                            this.divId = t.RenderID ? t.RenderID : '[data-render="calendar"]', this.DaysOfWeek = t.DaysOfWeek ? t.DaysOfWeek : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], this.Months = t.Months ? t.Months : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                            var e = new Date;
-                            this.CurrentMonth = e.getMonth(), this.CurrentYear = e.getFullYear();
-                            var r = t.Format;
-                            this.f = "string" == typeof r ? r.charAt(0).toUpperCase() : "M"
-                        };
-                        Calendar.prototype.nextMonth = function() {
-                            11 == this.CurrentMonth ? (this.CurrentMonth = 0, this.CurrentYear = this.CurrentYear + 1) : this.CurrentMonth = this.CurrentMonth + 1, this.divId = '[data-active="false"] .render', this.showCurrent()
-                        }, Calendar.prototype.prevMonth = function() {
-                            0 == this.CurrentMonth ? (this.CurrentMonth = 11, this.CurrentYear = this.CurrentYear - 1) : this.CurrentMonth = this.CurrentMonth - 1, this.divId = '[data-active="false"] .render', this.showCurrent()
-                        }, Calendar.prototype.previousYear = function() {
-                            this.CurrentYear = this.CurrentYear - 1, this.showCurrent()
-                        }, Calendar.prototype.nextYear = function() {
-                            this.CurrentYear = this.CurrentYear + 1, this.showCurrent()
-                        }, Calendar.prototype.showCurrent = function() {
-                            this.Calendar(this.CurrentYear, this.CurrentMonth)
-                        }, Calendar.prototype.checkActive = function() {
-                            1 == document.querySelector(".months").getAttribute("class").includes("active") ? document.querySelector(".months").setAttribute("class", "months") : document.querySelector(".months").setAttribute("class", "months active"), "true" == document.querySelector(".month-a").getAttribute("data-active") ? (document.querySelector(".month-a").setAttribute("data-active", !1), document.querySelector(".month-b").setAttribute("data-active", !0)) : (document.querySelector(".month-a").setAttribute("data-active", !0), document.querySelector(".month-b").setAttribute("data-active", !1)), setTimeout(function() {
-                                document.querySelector(".calendar .header").setAttribute("class", "header active")
-                            }, 200), document.querySelector("body").setAttribute("data-theme", this.Months[document.querySelector('[data-active="true"] .render').getAttribute("data-month")].toLowerCase())
-                        }, Calendar.prototype.Calendar = function(t, e) {
-                            "number" == typeof t && (this.CurrentYear = t), "number" == typeof t && (this.CurrentMonth = e);
-                            var r = (new Date).getDate(),
-                                n = (new Date).getMonth(),
-                                a = (new Date).getFullYear(),
-                                o = new Date(t, e, 1).getDay(),
-                                i = new Date(t, e + 1, 0).getDate(),
-                                u = 0 == e ? new Date(t - 1, 11, 0).getDate() : new Date(t, e, 0).getDate(),
-                                s = "<span>" + this.Months[e] + " &nbsp; " + t + "</span>",
-                                d = '<div class="table">';
-                            d += '<div class="row head">';
-                            for (var c = 0; c < 7; c++) d += '<div class="cell">' + this.DaysOfWeek[c] + "</div>";
-                            d += "</div>";
-                            for (var h, l = dm = "M" == this.f ? 1 : 0 == o ? -5 : 2, v = (c = 0, 0); v < 6; v++) {
-                                d += '<div class="row">';
-                                for (var m = 0; m < 7; m++) {
-                                    if ((h = c + dm - o) < 1) d += '<div class="cell disable">' + (u - o + l++) + "</div>";
-                                    else if (h > i) d += '<div class="cell disable">' + l++ + "</div>";
-                                    else {
-                                        d += '<div class="cell' + (r == h && this.CurrentMonth == n && this.CurrentYear == a ? " active" : "") + '"><span>' + h + "</span></div>", l = 1
-                                    }
-                                    c % 7 == 6 && h >= i && (v = 10), c++
-                                }
-                                d += "</div>"
-                            }
-                            d += "</div>", document.querySelector('[data-render="month-year"]').innerHTML = s, document.querySelector(this.divId).innerHTML = d, document.querySelector(this.divId).setAttribute("data-date", this.Months[e] + " - " + t), document.querySelector(this.divId).setAttribute("data-month", e)
-                        }, window.onload = function() {
-                            var t = new Calendar({
-                                RenderID: ".render-a",
-                                Format: "M"
-                            });
-                            t.showCurrent(), t.checkActive();
-                            var e = document.querySelectorAll(".header [data-action]");
-                            for (i = 0; i < e.length; i++) e[i].onclick = function() {
-                                if (document.querySelector(".calendar .header").setAttribute("class", "header"), "true" == document.querySelector(".months").getAttribute("data-loading")) return document.querySelector(".calendar .header").setAttribute("class", "header active"), !1;
-                                var e;
-                                document.querySelector(".months").setAttribute("data-loading", "true"), this.getAttribute("data-action").includes("prev") ? (t.prevMonth(), e = "left") : (t.nextMonth(), e = "right"), t.checkActive(), document.querySelector(".months").setAttribute("data-flow", e), document.querySelector('.month[data-active="true"]').addEventListener("webkitTransitionEnd", function() {
-                                    document.querySelector(".months").removeAttribute("data-loading")
-                                }), document.querySelector('.month[data-active="true"]').addEventListener("transitionend", function() {
-                                    document.querySelector(".months").removeAttribute("data-loading")
-                                })
-                            }
-                        };
-                        </script>
-                </div>
-                <br><br><br>
-            
-                
 
-        <!--
-            <div class="content-body">
-           
-
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Créer Evenement</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="create-event-form">
-                                    <form action="#">
-                                        <h5 class="mb-3">Info génerale</h5>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                            <label for="title">titre d'évenements</label>
-                                            <input type="title" class="form-control" id="title" placeholder="">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                            <label for="name">Organisateur</label>
-                                            <input type="name" class="form-control" id="name" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="inputCity">Type</label>
-                                                <select id="inputState" class="form-control">
-                                                    <option value="19">Appearance or Signing</option>
-                                                    <option value="17">Attraction</option>
-                                                    <option value="18">Camp, Trip, or Retreat</option>
-                                                    <option value="9">Class, Training, or Workshop</option>
-                                                    <option value="6">Concert or Performance</option>
-                                                    <option value="1">Conference</option>
-                                                    <option value="4">Convention</option>
-                                                    <option value="8">Dinner or Gala</option>
-                                                    <option value="5">Festival </option>
-                                                    <option value="14">Game or Competition</option>
-                                                    <option value="10">Meeting or Networking Event</option>
-                                                    <option value="100">Other</option>
-                                                    <option value="11">Party or Social Gathering</option>
-                                                    <option value="15">Race or Endurance Event</option>
-                                                    <option value="12">Rally</option>
-                                                    <option value="7">Screening</option>
-                                                    <option value="2">Seminar or Talk</option>
-                                                    <option value="16">Tour</option>
-                                                    <option value="13">Tournament</option>
-                                                    <option value="3">Tradeshow, Consumer Show, or Expo</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                            <label for="inputState">Catégorie</label>
-                                            <select id="inputState" class="form-control">
-                                                <option value="118">Auto, Boat &amp; Air</option>
-                                                <option value="101">Business &amp; Professional</option>
-                                                <option value="111">Charity &amp; Causes</option>
-                                                <option value="113">Community &amp; Culture</option>
-                                                <option value="115">Family &amp; Education</option>
-                                                <option value="106">Fashion &amp; Beauty</option>
-                                                <option value="104">Film, Media &amp; Entertainment</option>
-                                                <option value="110">Food &amp; Drink</option>
-                                                <option value="112">Government &amp; Politics</option>
-                                                <option value="107">Health &amp; Wellness</option>
-                                                <option value="119">Hobbies &amp; Special Interest</option>
-                                                <option value="117">Home &amp; Lifestyle</option>
-                                                <option value="103">Music</option>
-                                                <option value="199">Other</option>
-                                                <option value="105">Performing &amp; Visual Arts</option>
-                                                <option value="114">Religion &amp; Spirituality</option>
-                                                <option value="120">School Activities</option>
-                                                <option value="102">Science &amp; Technology</option>
-                                                <option value="116">Seasonal &amp; Holiday</option>
-                                                <option value="108">Sports &amp; Fitness</option>
-                                                <option value="109">Travel &amp; Outdoor</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="inputCity">Localisation</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected value="online">Evenement en ligne</option>
-
-                                                <option value="tba">To be announced</option>
-                                            </select>
-                                            </select>
-                                        </div>
-
-                                        <h5 class="my-4">Date et horaire</h5>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label for="inputCity">Début d'évenements</label>
-                                                <input type="datetime" class="form-control" id="datetime" placeholder="">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputState">Commance à(heur)</label>
-                                                <input type="datetime" class="form-control" id="datetime" placeholder="">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputCity">Fin d'évenements</label>
-                                                <input type="datetime" class="form-control" id="datetime" placeholder="">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="inputState">Termine à(heur)</label>
-                                                <input type="datetime" class="form-control" id="datetime" placeholder="">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">
-                                                rappelle-moi
-                                            </label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <!-- SCRIPTS -->
         <!-- Global Required Scripts Start -->
         <script src="../../assets/js/jquery-3.3.1.min.js"></script>

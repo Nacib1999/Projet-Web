@@ -100,7 +100,7 @@
         <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
-                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/medjestic-logo-216x62.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
@@ -550,7 +550,7 @@
                 <span class="ms-toggler-bar bg-white"></span>
               </div>
               <div class="logo-sn logo-sm ms-d-block-sm">
-                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/medjestic-logo-84x41.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/logo.png" alt="logo"> </a>
               </div>
               <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
@@ -666,22 +666,6 @@
  
             <!-- js placed at the end of the document so the pages load faster -->
 <!------------------------------recherche----------------------------------------->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  
-  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
-
-  <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--external css-->
-  <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="../../css/style.css" rel="stylesheet">
-  <link href="../../css/style-responsive.css" rel="stylesheet">
-  <link href="../../css/stylePromos.css" rel="stylesheet">
-  <!---Animated Icons---->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 
 
             <div class="container box">
@@ -722,7 +706,7 @@
    buttons: [
     
    ],
-   "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ]
+   "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "All"] ]
   });
   
  });
@@ -733,7 +717,7 @@
 
         <!-- SCRIPTS -->
         <!-- Global Required Scripts Start -->
-        <script src="../../assets/js/jquery-3.3.1.min.js"></script>
+        
         <script src="../../assets/js/popper.min.js"></script>
         <script src="../../assets/js/bootstrap.min.js"></script>
         <script src="../../assets/js/perfect-scrollbar.js"> </script>

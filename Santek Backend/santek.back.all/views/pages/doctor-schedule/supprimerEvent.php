@@ -1,4 +1,3 @@
-
 <?PHP
 include "../../../controller/eventC.php";
 include "../../../config.php";

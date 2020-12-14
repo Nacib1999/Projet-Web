@@ -146,14 +146,27 @@ function afficherEvent($evenement){
             echo 'Erreur: '.$e->getMessage();
         }
         
-    }
+    }/*
+    public function chercherEvent($nom_event){
+        $sql="SELECT * From evenement where nom_event='".$nom_event."'";
+        $db=config::getConnexion();
+        try{
+            
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' .$e->getMessage());
+        }
+        
+}*/
 
     
-    function afficherStatut($id_par){
+    function afficherStatut($participant){
      
-        $sql="SELECT * from participant where id_par=$id_par";
-        $sql="SELECT * from evenement ORDER BY nom_event ASC";
-        //$sql="SElECT participant.id_par,evenement.nom_event,evenement.date_debut From evenement,participant where participant.id_par='$participant' and evenement.id_event=evenement.id_event ";
+        // $sql="SELECT * from participant where id_par=$id_par";
+        // $sql="SELECT * from evenement ORDER BY nom_event ASC";
+        $sql="SElECT participant.id_par,evenement.nom_event,evenement.date_debut,evenement.date_fin From evenement,participant where participant.id_par='$participant' and evenement.id_event=evenement.id_event ";
         $db = config::getConnexion();
         try{
         $liste=$db->query($sql);
@@ -178,7 +191,45 @@ function afficherEvent($evenement){
             die('Erreur: '.$e->getMessage());
         }
     }
-	
+    function rechercherEventID($id_event){
+		$sql="SELECT * from evenement where id_event=$id_event";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function rechercherEventNOM($nom_event){
+		$sql="SELECT * from evenement where nom_event=$nom_event";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function participerevent($id_event){
+        $sql="UPDATE evenement SET nb_par =nb_par+1 where id_event=$id_event";
+        $sql="SELECT * from evenement where id_event=$id_event";
+        $db = config::getConnexion();
+        
+        try{
+            
+            $req->execute();
+            return $liste;
+            }
+            
+        catch(Exception $e){
+            die('Erreur:' .$e->getMessage());
+        }		
+    }
+
+
 }
 
 ?>

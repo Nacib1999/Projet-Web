@@ -75,7 +75,7 @@
         <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
-                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/medjestic-logo-216x62.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
@@ -525,7 +525,7 @@
                 <span class="ms-toggler-bar bg-white"></span>
               </div>
               <div class="logo-sn logo-sm ms-d-block-sm">
-                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/medjestic-logo-84x41.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/logo.png" alt="logo"> </a>
               </div>
               <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
@@ -638,6 +638,7 @@
                 </div>
             </div>
         </div>
+<!-------------------------------------------------------AJOUTER PARTICIPANT---------------------------------------------------->
 <form name="e" method="POST" action="ajouterParticipant.php">
 
 <div class="ms-panel-header ms-panel-custome">
@@ -739,8 +740,9 @@
                 
             
                     <td>
-                      <form method="POST" action="supprimerParticipant.php"><a href='participant.php'><input type="submit" name="supprimer" value="supprimer"></a>
-                          <input type="hidden" value="<?PHP echo $row['nom_par']; ?>" name="nom_par">
+                    <a href='participant.php'><form method="POST" action="supprimerParticipant.php">
+                          <input type="submit" name="supprimer" value="supprimer">
+                          <input type="hidden" value="<?PHP echo $row['id_par']; ?>" name="id_par">
                          </form>
                     </td>
                     <td><a href="modifierParticipant.php?id_par=<?PHP echo $row['id_par']; ?>">Modifier</a></td>

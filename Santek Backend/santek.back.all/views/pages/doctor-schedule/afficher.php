@@ -77,7 +77,7 @@
         <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
-                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/medjestic-logo-216x62.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
@@ -527,7 +527,7 @@
                 <span class="ms-toggler-bar bg-white"></span>
               </div>
               <div class="logo-sn logo-sm ms-d-block-sm">
-                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/medjestic-logo-84x41.png" alt="logo"> </a>
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index-2.html"><img src="../../assets/img/logo.png" alt="logo"> </a>
               </div>
               <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
@@ -640,6 +640,7 @@
                 </div>
             </div>
         </div>
+<!--------------------------------------------------AFFICHAGE------------------------------------------------------------------------->        
         <form name="e" method="POST" action="ajoutEvent.php">
                  
           <div class="controls">
@@ -708,6 +709,7 @@
               <!--footer start-->
              
             </section>
+<!--------------------------------------- SUPPRIMER + MODIFIER ------------------------------------------------------>            
             <?PHP
             include "../../../controller/eventC.php";
             include "../../../config.php";
@@ -749,7 +751,7 @@
                 <td><?PHP echo $row['date_fin']; ?></td>
             
                     <td>
-                      <form method="POST" action="supprimerEvent.php"><a href='ajoutEvent.html'><input type="submit" name="supprimer" value="supprimer"></a>
+                      <form method="POST" action="supprimerEvent.php"><a href='afficher.php'><input type="submit" name="supprimer" value="supprimer"></a>
                           <input type="hidden" value="<?PHP echo $row['nom_event']; ?>" name="nom_event">
                          </form>
                     </td>
@@ -759,7 +761,7 @@
                 <?PHP
             }
             ?>
-<!--------------------------------------------Modifier------------------------------------------------->
+<!-------------------------------------------- END Suprimer +Modifier ------------------------------------------------->
 
 
 

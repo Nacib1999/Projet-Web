@@ -53,14 +53,14 @@ class participantC{
         }	
 	}
 	
-	function supprimerPrticipants($nom_par){
-		$sql="DELETE FROM participant where nom_par= :nom_par";
+	function supprimerPrticipants($id_par){
+		$sql="DELETE FROM participant where id_par= :id_par";
 		$db = config::getConnexion();
         $req=$db->prepare($sql);
-		$req->bindValue(':nom_par',$nom_par);
+		$req->bindValue(':id_par',$id_par);
 		try{
             $req->execute();
-           header('Location: afficherParticipant.php');
+           header('Location: participant.php');
         }
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
@@ -121,11 +121,12 @@ class participantC{
     }*/
 
     
-  /*  function afficherStatut($id_par){
+    function afficherStatut($evenement){
      
-        $sql="SELECT * from participant where id_par=$id_par";
-        $sql="SELECT * from evenement ORDER BY nom_event ASC";
-        //$sql="SElECT participant.id_par,evenement.nom_event,evenement.date_debut From evenement,participant where participant.id_par='$participant' and evenement.id_event=evenement.id_event ";
+         $sql="SELECT * from participant ORDER BY id_par ASC";
+         $sql="SELECT * from evenement ORDER BY nom_event ASC";
+
+        //$sql="SElECT participant.id_event,evenement.nom_event,evenement.date_debut evenement.date_fin From evenement,participant where participant.id_par='$participant' and participant.id_event=evenement.id_event ";
         $db = config::getConnexion();
         try{
         $liste=$db->query($sql);
@@ -135,7 +136,18 @@ class participantC{
             die('Erreur: '.$e->getMessage());
         }   
     }
-
+    function recupererParticipant($id_par){
+        $sql="SELECT * from participant where id_par=$id_par";
+        $db = config::getConnexion();
+        try{
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (PDOException $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+/*
     function ArchvierEvents($id_event,$id_par){
         $sql="DELETE FROM participant where id_event= :id_event and id_par=:id_par" ;
         $db = config::getConnexion();
@@ -149,9 +161,9 @@ class participantC{
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }
-    }
+    }*/
     function rechercherEvent($id_event){
-		$sql="SELECT * from evenement where id_event=$id_event";
+		$sql="SELECT * from evenement where id_event like id_event";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -160,7 +172,22 @@ class participantC{
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }
-	}*/
+    }
+    
+    function counts($participant){
+        $sql="SELECT COUNT(*) AS nb_par FROM evenement where id_event='".$id_event."'";
+        $db=config::getConnexion();
+        try{
+        $query = $db->prepare($sql);
+        $query->execute();
+        $result = $query->fetch();
+        $nb_par = (int) $result['nb_par'];
+        return $nbArticles;
+        }
+        catch(Exception $e){
+            die('Erreur:' .$e->getMessage());
+        }
+}
 	
 }
 

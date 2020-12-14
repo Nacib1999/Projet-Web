@@ -1,6 +1,6 @@
 <?PHP
 include "../controllers/eventC.php";
-include "../models/event.php";
+include "../model/event.php";
 include "../config.php";
 
 $event1C=new eventC();
@@ -64,26 +64,58 @@ $listeEvent=$event1C->afficherEvents();
     <!-- ALTERNATIVE STYLES -->
     <link rel="stylesheet" href="#" data-style="styles">
     <style>
+
 .col-md-5{
     background-color: #ccc;
   padding: 20px;
   display: inline;
+  font-size: 50px;
 }
 .col-md-5:hover {
-    background: #02a9ff;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background: PaleTurquoise;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.20);
+    font-size: 80px;
 }
 
 h1 {
     text-align: center;
-    color: blue;
+    color: #02a9ff;
 }
+h3 {
+    text-align: center;
+    color: aqua;
+}
+
 .archive{
     text-align: center;
 }
 </style>
-</head>
+<!-------------------------------------head recherche----------------------------------------------------->
 
+<style>
+#button5{
+	background-color: #555555;
+	height: 50px;
+	width: 150px;
+} </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+
+  <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../css/style-responsive.css" rel="stylesheet">
+  <link href="../../css/stylePromos.css" rel="stylesheet">
+  <!---Animated Icons---->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+<!------------------------------------------------------------------------------------------------------------------------------>
+</head>
 <body class="sticky-header header-classic footer-parallax">
 
     <div id="main-container">
@@ -127,11 +159,11 @@ h1 {
                                     </ul>
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="services.html">Evenements</a>
+                                    <a href="services.php">Evenements</a>
                                     <ul>
-                                        <li><a class="waves" href="services.html">Participer</a></li>
-                                        <li><a class="waves" href="services-2.html">Action de don</a></li>
+                                    <li><a class="waves" href="services.php">Participer</a></li>
                                         <li><a class="waves" href="services-3.php">Nos evenements</a></li>
+                                        <li><a class="waves" href="services-2.php">Action de don</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -186,30 +218,72 @@ h1 {
 
             </div><!-- page-header -->           
             <div class="col-md-4 pl-xl-5">
+</div>
+    <!----------------------------------------CHERCHER EVENT---------------------------------------------------------->            <div class="container box">
+    <br />
+  <h8><small> 
+    <table id="customer_data" style="width:100%">
+     <thead>
+      <tr >
 
-<div class="widget widget-search"><!-- widget-search -->
-    <form name="search" novalidate method="get" action="#">
-        <fieldset>
-            <input id="s" type="search" name="search" placeholder="" required>
-            <label for="s">Search</label>
-            <span></span>
-            <input type="submit" name="submit" value="">
-        </fieldset>
-    </form>
-</div><!-- widget-search --></div>
+       <th><b>nom event</b></th>
+       <th><b>lieu event</b></th>
+       <th><b>date début</b></th>
+       <th><b>date fin</b></th>
+
+      </tr>
+     </thead>
+    </table>
+   </div>
+  </div>
+  <br />
+  <br />
+
+</small>
+</h8>
+
+
+<script type="text/javascript" language="javascript" >
+ $(document).ready(function(){
+
+  $('#customer_data').DataTable({
+   "processing" : true,
+   "serverSide" : true,
+   "ajax" : {
+    url:"fetch.php",
+    type:"POST"
+   },
+   dom: 'lBfrtip',
+   buttons: [
+    "pdf","copy","excel"
+   ],
+   "lengthMenu": [ [1, -1], [1, "All"] ]
+  });
+  
+ });
+ 
+</script>  
+
+        <!-- SCRIPTS -->
+        <!-- Global Required Scripts Start -->
+
+    <!---------------------------------------- END CHERCHER EVENT---------------------------------------------------------->        
+  <!----------------------------------AFFICHER EVENTS------------------------------------------>
+
               <?PHP
             foreach($listeEvent as $row){
             
                 ?>
                 
                  <h1> <p><?PHP echo $row['nom_event']; ?><br>
-                 à <?PHP echo $row['lieu_event']; ?><p><h1>
-                
-                      <center><form class="bouton1" method="POST" action="statusEvent.php"><a href='services-3.php'><input type="submit" name="participer" value="participer"></a>
+                <h3> à <?PHP echo $row['lieu_event']; ?></h3><p><h1>
+                <center>  
+<form method="POST" action="addPart.php"><input type="submit" name="participer" value="participer">
+
+                      
                           <input type="hidden" value="<?PHP echo $row['nom_event']; ?>" name="nom_event"><br>
                          </form></center>           
 
-                <!---------------------------------------------------------------->
             <div class="container mb-5">
                 <div class="row">
                     <div class="col-md-12">
@@ -220,16 +294,18 @@ h1 {
                                 <div class="col-md-5 mr-auto timeline-item wow fadeInUp">
 
                                     <h4>
-                                                  
-                                                     lancement: <br><?PHP echo $row['date_debut']; ?><br></h4>
+                                                    <small> Lancement </small><br></h4>
+                                                   <sup><?PHP echo $row['date_debut']; ?></sup>
+                                                    <br>
                                     
-
                                 </div><!-- col -->
                                 <div class="col-md-5 ml-auto timeline-item wow fadeInUp">
 
                                     <h4>
                                     
-                                                     cloture:<br><?PHP echo $row['date_fin']; ?></h4>
+                                        <small> Cloture</small><br></h4>
+                                        <sup><?PHP echo $row['date_fin']; ?></sup>
+                                    
                                                     
                                         
                                     
@@ -240,7 +316,7 @@ h1 {
                         </div><!-- col -->
                     </div><!-- row -->
                 </div><!-- container -->
-
+<h6>Nombre de participants |<?PHP echo $row['nb_par']; ?></h6>
              <!-- row -->
              </div>
 
@@ -248,10 +324,11 @@ h1 {
                 }
                 ?>
            
-            
-  <!---------------------------------------------------------------------------->
-            </div>
-        <!-- FOOTER -->
+           </div>
+           
+  <!----------------------------------END AFFICHER EVENTS------------------------------------------>
+
+    <!-- FOOTER -->
         <footer id="footer-container">
 
             <div id="footer">
@@ -264,7 +341,7 @@ h1 {
 
                                 <div class="text-center">
 
-                                    <p><img src="assets/images/logo-white.png" alt=""></p>
+                                    <p><img src="assets/images/logo.png" alt=""></p>
                                     <p class="text-uppercase">Best medical solutions</p>
 
                                 </div>
@@ -335,7 +412,7 @@ h1 {
 
 
     <!-- jQUERY -->
-    <script src="assets/plugins/jquery/jquery-2.2.4.min.js"></script>
+   
 
     <!-- BOOTSTRAP JS -->
     <script src="assets/bootstrap/js/popper.min.js"></script>
