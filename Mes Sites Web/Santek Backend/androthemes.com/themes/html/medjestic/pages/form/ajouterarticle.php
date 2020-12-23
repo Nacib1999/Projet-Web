@@ -1,8 +1,9 @@
 <?php
 include  "../model/Article.php";
 include  "../controller/ArticleC.php";
+session_start();
 $articleC= new articleC();
-$iduser=1;
+$iduser=$_SESSION['id'];
 $liste=$articleC->afficherarticlemed($iduser);
 
 ?>
@@ -645,7 +646,7 @@ $liste=$articleC->afficherarticlemed($iduser);
 													<th>Date de publication</th>
 												<th>Spécialité</th>
                                                 <th>Description</th>
-                                                
+                                                 <th>Action</th>
 												
                                             </tr>
                                         </thead>
@@ -784,17 +785,17 @@ $liste=$articleC->afficherarticlemed($iduser);
 					  <div class="form-group">
 					<select class="custom-select" id="speciality" name="spec" required >
                                                 <option value="-1" disabled selected>Choose a speciality</option>
-                                                 <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                 <option value="Cardiologie ">Cardiologie</option>
+                                                <option value="Neurologie">Neurologie</option>
+                                                <option value="Surgerie" >Surgerie</option>
+                                                <option value="Gynaecologie">Gynaecologie</option>
+                                                <option value="Ophthalmologie">Ophthalmologie</option>
+                                                <option value="Stomatologie">Stomatologie</option>
                                             </select>
 											<p id="val" style="color:red" ></p>
 											</div>
 											<br>
-					<center ><input  type="submit"  class="col-md-6" value="     Ajouter article     "   ><i class="decode-icon-cursor"><center>
+					<center ><input  type="submit" class="btn btn-primary mt-4 d-inline w-20"  class="col-md-6" value="                Ajouter article                  "   ><i class="decode-icon-cursor"></i><center>
 					</form>
 					
 

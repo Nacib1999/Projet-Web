@@ -2,6 +2,7 @@
 include  "../Model/Question.php";
 include  "../Controller/questionC.php"; 
 
+session_start();
 echo $_POST['ques'];
 $id=$_POST['id'];
 $nbcommentaire=$_POST['i']+1;
@@ -15,7 +16,7 @@ echo $id;
 
 $_POST['ques']);
 $question->setIdarticle($id);
-$question->setIduser(3);
+$question->setIduser($_SESSION['id']);
 
 
 

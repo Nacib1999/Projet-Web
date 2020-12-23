@@ -2,7 +2,7 @@
 include  "../Model/commentaire.php";
 include  "../Controller/commentaireC.php"; 
 
-
+session_start();
 echo $_POST['comm'];
 $id=$_POST['id'];
 $ida=$_POST['idart'];
@@ -17,7 +17,7 @@ echo $id;
 
 $_POST['comm']);
 $commentaire->setIdquestion($id);
-$commentaire->setIduser(3);
+$commentaire->setIduser($_SESSION['id']);
 $commentairec= new commentaireC;
 $commentairec->ajoutercommentaire($commentaire);
 

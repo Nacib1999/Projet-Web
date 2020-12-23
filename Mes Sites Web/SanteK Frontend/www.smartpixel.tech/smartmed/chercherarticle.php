@@ -317,14 +317,14 @@ $pages = ceil($nbArticles / $parPage);
 									  <div class="form-group">
 									 <select  class="custom-select" id="speciality" name="search" required >
                                                 
-												<option value="all" >Afficher tout</option>
+													<option value="all" >Afficher tout</option>
 												<option value="tri" >afficher par nb likes</option>
-                                                    <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                    <option value="Cardiologie ">Cardiologie</option>
+                                                <option value="Neurologie">Neurologie</option>
+                                                <option value="Surgerie" >Surgerie</option>
+                                                <option value="Gynaecologie">Gynaecologie</option>
+                                                <option value="Ophthalmologie">Ophthalmologie</option>
+                                                <option value="Stomatologie">Stomatologie</option>
                                             </select>
                                      
 									 </div>

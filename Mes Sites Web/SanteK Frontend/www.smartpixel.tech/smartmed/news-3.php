@@ -1,10 +1,13 @@
 
 <?php
+session_start();
 include  "../model/Article.php";
 include  "../controller/ArticleC.php";
+include_once '../Model/Utilisateur.php';
+include_once '../Controller/UtilisateurC.php';
 $articleC= new articleC();
 
-
+$userC = new UtilisateurC();
 
 
 
@@ -221,14 +224,14 @@ $pages = ceil($nbArticles / $parPage);
 									  <div class="form-group">
 									 <select  class="custom-select" id="speciality" name="search" required >
                                             
-												<option value="all" >Afficher tout</option>
+													<option value="all" >Afficher tout</option>
 												<option value="tri" >afficher par nb likes</option>
-                                                <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                    <option value="Cardiologie ">Cardiologie</option>
+                                                <option value="Neurologie">Neurologie</option>
+                                                <option value="Surgerie" >Surgerie</option>
+                                                <option value="Gynaecologie">Gynaecologie</option>
+                                                <option value="Ophthalmologie">Ophthalmologie</option>
+                                                <option value="Stomatologie">Stomatologie</option>
                                             </select>
                                      
 									 </div>
@@ -242,7 +245,9 @@ $pages = ceil($nbArticles / $parPage);
 					
 					<?php $i=0;?>
 					
-					<?php foreach($liste as $row){ ?>
+					<?php foreach($liste as $row){
+
+$doc=$userC->recupererusers($row['idmed']);				?>
                        
 					   <?php $i++; ?>
 					   
@@ -315,17 +320,18 @@ $pages = ceil($nbArticles / $parPage);
                             <h4 class="blog-article-title"><a href="news-single.html"> <?php echo $row['titre'] ?> </a></h4>
 
                             <div class="blog-article-details">
-                              <a class="author" style="color:#26C4EC">Mr:Admin</a>
+                              <?php foreach($doc as $users){ ?>
+                              <a class="author" style="color:#26C4EC">Dr:<?php echo $users['nom'] ?> <?php echo $users['prenom'] ?> </a>  <?php } ?>
 							 	
                                 <a class="category" style="color:#26C4EC"><?php echo $row['specialite'] ?></a>
-                                 <a class="likes" style="color:#26C4EC" ><?php echo $row['nblike'] ?></a>
+                                 <a class="likes" style="color:#26C4EC" ><?php echo $row['nblike'] ?> <i class="fa fa-thumbs-o-up" data-toggle="tooltip" title="J'aime"></i></a>
                             </div><!-- blog-article-details -->
 
                             <div    class="blog-article-content">
 
                                 <p id="<?php echo "desc".$i ?>"></p>
 
-                               <?php echo  "<a href='news-single.php?id=", $row['id'] , " '>voir plus</a>";?>
+                               <?php  echo  "<a href='news-single.php?id=", $row['id'] ,"'>voir plus</a>";?>
 
 
                             </div><!-- blog-article-content -->

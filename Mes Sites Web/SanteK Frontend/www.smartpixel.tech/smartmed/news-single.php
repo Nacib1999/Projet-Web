@@ -5,11 +5,16 @@ include  "../Model/Question.php";
 include  "../Controller/questionC.php";
 include  "../Model/Article.php";
 include  "../Controller/ArticleC.php";
+include_once '../Model/Utilisateur.php';
+include_once '../Controller/UtilisateurC.php';
+
 
 include  "../model/jaime.php";
 include  "../controller/likedislikeC.php";
+session_start();
 $id=$_GET['id'];
-$iduser=3;
+$iduser=$_SESSION['id'];
+echo $_SESSION['id'];
 	$articleC= new articleC();
 	$article=$articleC->recupererarticle($id);
 	
@@ -17,7 +22,7 @@ $iduser=3;
 $questionC= new questionC();
 $liste=$questionC->afficherquestion($id);
 
-
+$userC = new UtilisateurC();
   
 
 
@@ -226,12 +231,12 @@ $liste=$questionC->afficherquestion($id);
                                                 
 												<option value="all" >Afficher tout</option>
 												<option value="tri" >afficher par nb likes</option>
-                                                    <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                    <option value="Cardiologie ">Cardiologie</option>
+                                                <option value="Neurologie">Neurologie</option>
+                                                <option value="Surgerie" >Surgerie</option>
+                                                <option value="Gynaecologie">Gynaecologie</option>
+                                                <option value="Ophthalmologie">Ophthalmologie</option>
+                                                <option value="Stomatologie">Stomatologie</option>
                                             </select>
                                      
                                      
@@ -246,7 +251,9 @@ $liste=$questionC->afficherquestion($id);
 					
 					<?php $i=0;?>
 					
-					<?php foreach($article as $row){ ?>
+					<?php foreach($article as $row){ 
+					$doc=$userC->recupererusers($row['idmed']);
+					?>
                        
 					   <?php $i++; ?>
 					   
@@ -314,7 +321,8 @@ $liste=$questionC->afficherquestion($id);
 							<br><br>
 			
 							              <div class="blog-article-details">
-                              <a class="author" style="color:#26C4EC">Mr:Admin</a>
+										  <?php foreach($doc as $users){ ?>
+                              <a class="author" style="color:#26C4EC">Dr:<?php echo $users['nom'] ?> <?php echo $users['prenom'] ?> </a>  <?php } ?>
                                 <a class="category" style="color:#26C4EC"><?php echo $row['specialite'] ?></a>
 								<a class="category" style="color:#26C4EC" ><?php echo $row['nbcomment'] ?> commentaires </a>
                                <?php  
@@ -380,12 +388,18 @@ $liste=$questionC->afficherquestion($id);
 		    				
 		<?php   $i=0; ?>
 		
-<?php foreach($liste as $row){ ?>
+<?php foreach($liste as $row){
+
+
+$user=$userC->recupererusers($row['iduser']);
+
+	?>
          
 			  <div class="blog-article-author">
-
-                            <img src="images/blog/blog-post/post-author.jpg" alt="">
-
+  <?php foreach($user as $users){ ?>
+                            <img src="<?php echo $users['image'] ?>"   alt="">
+                           <a class="fn"  > <?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
+			  <?php } ?>  
                             <div class="blog-article-author-details">
 					
                             <?php   $i++;
@@ -465,15 +479,11 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
 							
 						$idq=$row['id'];	?>
 							
-			<?php foreach($listecomm as $row){ ?>	 
-				 
-				  
-				 
-			
+			<?php foreach($listecomm as $row){ 	 
 				 
 				 
-				 
-				 
+		$User=$userC->recupererusers($row['iduser']);		 
+				 ?>
 				 
 				 
 				 
@@ -489,10 +499,10 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
                                     <div class="comment-meta">
 
                                         <div class="comment-author">
-
-                                            <img class="avatar" src="images/blog/blog-post/author-comment-1.jpg" alt="">
-                                            <a class="fn" href="#">Jane Doe</a>
-                                         
+ <?php foreach($User as $users){ ?>
+                                            <img class="avatar" src="<?php echo $users['image'] ?>" alt="">
+                                            <a class="fn" ><?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
+ <?php } ?>
 										
                                         </div><!-- comment-author -->
 <label>  <?php echo $row['commentaire']?></label>

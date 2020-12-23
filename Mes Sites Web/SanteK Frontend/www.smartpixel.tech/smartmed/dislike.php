@@ -2,8 +2,9 @@
 <?php
 include  "../model/jaime.php";
 include  "../controller/likedislikeC.php";
+session_start();
 $likedislikeC= new likedislikeC();
-$iduser=3;
+$iduser=$_SESSION['id'];
 $idarticle=$_GET['idarticle'];
 echo $idarticle;
 

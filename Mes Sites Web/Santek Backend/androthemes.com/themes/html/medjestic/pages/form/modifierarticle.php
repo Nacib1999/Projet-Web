@@ -648,7 +648,8 @@ include  "../controller/ArticleC.php";
 						echo "<input type='text' name='id' value= " , $row['id'] ," hidden >";
 					echo"<div class='form-group'>";
 					echo" <label  class='form-label'>Titre</label>";
-				echo "<input  type='text' name='titre' class='form-control' placeholder='Titre..' value=",$row['titre']," > ";
+					
+				echo "<input  type='text' name='titre' class='form-control'  value='",$row['titre'],"' > ";
 					echo "</div>";
 					
 					
@@ -658,12 +659,13 @@ include  "../controller/ArticleC.php";
 					   echo"<label   class='form-label'>Image</label>";
 					   echo "</div>";
 					   echo " <img src=" ,$row['image'] , " width='1000' height='100' ></a>";
-					 echo "<input  id='image' type='file' name='image' class='form-control'  accept='image/png, image/jpeg'  > ";
+					 echo "<input  id='image' type='file' name='image' class='form-control'  accept='image/png, image/jpeg'   > ";
 					
 					
 					 echo"<div class='form-group'>";
 					   echo"<label   class='form-label'>Description</label>";
-					echo " <input type='text' name='desc' class='form-control' placeholder='description..' value=",$row['description']," >" ;
+					
+					echo " <textarea  name='desc' class='form-control'  > ",$row['description']," </textarea>" ;
 					echo "</div>";
 				?>	
 <br>
@@ -702,20 +704,20 @@ for (let i = 0; i < liste.options.length; i++) {
 	<?php } ?>
 				<div class="form-group">
 				 
-					   <label   class="form-label">Description</label>
+					   <label   class="form-label">Specialité</label>
 					<select class="custom-select" id="liste" name="specialite">
                                                 
-                                                     <option value="Cardiology ">Cardiologie</option>
-                                                <option value="Neurology">Neurologie</option>
-                                                <option value="Surgery" >Surgerie</option>
-                                                <option value="Gynaecology">Gynaecologie</option>
-                                                <option value="Ophthalmology">Ophthalmologie</option>
-                                                <option value="Stomatology">Stomatologie</option>
+                                                     <option value="Cardiologie ">Cardiologie</option>
+                                                <option value="Neurologie">Neurologie</option>
+                                                <option value="Surgerie" >Surgerie</option>
+                                                <option value="Gynaecologie">Gynaecologie</option>
+                                                <option value="Ophthalmologie">Ophthalmologie</option>
+                                                <option value="Stomatologie">Stomatologie</option>
                                             </select>
 											</div>
 				<?php	
 					
-					echo "<center ><input type='submit'  class='col-md-6' value='modifier'></center >";
+					echo "<center ><input type='submit'  class='btn btn-primary mt-4 d-inline w-20' class='col-md-6' value='sauvgarder'></center >";
 					
 				echo"	</form>";
 	

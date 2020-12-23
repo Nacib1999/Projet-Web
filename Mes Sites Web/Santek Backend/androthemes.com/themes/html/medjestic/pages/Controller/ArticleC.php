@@ -74,13 +74,13 @@ public function spprimerarticle($id){
 
 public function updatearticle($article)
 			{
-			$sql="UPDATE article SET titre=:titre,image=:image,description=:description ,specialite=:specialite where id=:id ";
+			$sql="UPDATE article SET titre=:titre,description=:description ,specialite=:specialite where id=:id ";
 			$db=config::getConnexion();
 			try{
 			$req=$db->prepare($sql);
 			$id=$article->getId();
 			$titre=$article->getTitre();
-			$image=$article->getImage();
+		
 		$description=$article->getDescription();
 				$specialite=$article->getSpecialite();
 			
@@ -88,7 +88,7 @@ public function updatearticle($article)
 			$req->bindValue(':id',$id);
 			$req->bindValue(':titre',$titre);
 			
-			$req->bindValue(':image',$image);
+
 					
 				$req->bindValue(':description',$description);
 				$req->bindValue(':specialite',$specialite);
