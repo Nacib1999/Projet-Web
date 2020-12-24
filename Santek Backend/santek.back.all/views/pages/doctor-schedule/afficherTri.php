@@ -1,6 +1,26 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+=======
+
+<?php
+	include "../../../model/class.php";
+	require_once "../../../controller/function.php";
+
+	$function=new consul;
+	$listeRdv=$function->afficherRdv();
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+    
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/appointment/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:30 GMT -->
+=======
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 <head>
     <link href="../../pages/calendar.php">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -24,8 +44,52 @@
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
+<<<<<<< HEAD
     
 </head>
+=======
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+        <!-- Page Specific Css (Datatables.css) -->
+        <link href="../../assets/css/datatables.min.css" rel="stylesheet">
+           <!---------------------------------recherche------------------------------------->
+  <style>
+#button5{
+	background-color: #225599;
+	height: 200px;
+	width: 150px;
+} </style>
+<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+ 
+ <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+ <script type="text/javascript" src="https://code.jquery.com-1.12.4.js"></script>
+ <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+ <script type="text/javascript" src=" https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+
+  <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../css/style-responsive.css" rel="stylesheet">
+  <link href="../../css/stylePromos.css" rel="stylesheet">
+  <!---Animated Icons---->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+<!----------------------------------------------------------------RECHERCHE HEADER------------------------------------------------------------------------------------------------------------------------------------------------>
+    </head>
+=======
+    
+</head>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
     <body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
         <!-- Setting Panel -->
         <div class="ms-toggler ms-settings-toggle ms-d-block-lg">
@@ -77,8 +141,18 @@
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
                 <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
+<<<<<<< HEAD
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
+=======
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+                <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/cartelo.png" alt="logo"></a>
+                <h5 class="text-center text-white mt-2">BryanCartel KENFACK</h5>
+=======
+                <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
+                <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                 <h6 class="text-center text-white mb-3">Admin</h6>
             </div>
             <!-- Navigation -->
@@ -132,11 +206,22 @@
                     <span><i class="fas fa-list-alt"></i>Doctor Schedule</span>
                     </a>
                     <ul id="schedule" class="collapse" aria-labelledby="schedule" data-parent="#side-nav-accordion">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+                        <li> <a href="../doctor-schedule/add-schedule.html">Add Schedule</a> </li>
+                        <li> <a href="../doctor-schedule/schedule-list.html">Schedule List</a> </li>
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                         <li> <a href="add-schedule.html">Ajouter un évenement</a> </li>
                         <li> <a href="afficher.php">afficher tous les évenements</a> </li>
                         <li> <a href="participant.php">ajouter un participant</a> </li>
                         <li> <a href="afficherTri.php">Trier les évenements</a> </li>
                         <li> <a href="chercher.php">Chercher un évenement</a> </li>
+<<<<<<< HEAD
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     </ul>
                 </li>
                 <!-- /Schedule -->
@@ -146,8 +231,16 @@
                     <span><i class="far fa-check-square"></i>Appointment</span>
                     </a>
                     <ul id="appointment" class="collapse" aria-labelledby="appointment" data-parent="#side-nav-accordion">
+<<<<<<< HEAD
                         <li> <a href="../appointment/add-appointment.html">Add Appointment</a> </li>
                         <li> <a href="../appointment/appointment-list.html">Appointment List</a> </li>
+=======
+                    <li> <a href="add-appointment.html">Ajouter un RDV</a> </li>
+          <li> <a href="appointment-list.php">Afficher et chercher dans la liste des RDV</a> </li>
+          <li> <a href="modifierRdv.php">Modifier RDV</a> </li>
+          <li> <a href="dossier.php">Ajouter Un Dossier</a> </li>
+          <li> <a href="showDossier.php">Modifier RDV</a> </li>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     </ul>
                 </li>
                 <!-- /Appointment -->
@@ -356,7 +449,11 @@
                 <!-- /Pages -->
                 <!-- Bonus Pages -->
                 <li class="menu-item">
+<<<<<<< HEAD
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonus" aria-expanded="false">
+=======
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonus" aria-expanded="false" >
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     <span><i class="material-icons fs-16">dashboard</i>Bonus Pages </span>
                     </a>
                     <ul id="bonus" class="collapse"  data-parent="#side-nav-accordion">
@@ -572,10 +669,23 @@
                   </ul>
                 </li>
                 <li class="ms-nav-item ms-nav-user dropdown">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+                  <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/dashboard/cartelo.png" alt="people"> </a>
+                  <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+                    <li class="dropdown-menu-header">
+                      <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">BryanCartel KENFACK</span></h6>
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                   <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/dashboard/me.png" alt="people"> </a>
                   <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                     <li class="dropdown-menu-header">
                       <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Dr NACIB</span></h6>
+<<<<<<< HEAD
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     </li>
                     <li class="dropdown-divider"></li>
                     <li class="ms-dropdown-list">
@@ -606,10 +716,125 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb pl-0">
                                 <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+                                <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Appointment List</li>
+                            </ol>
+                        </nav>
+                        <div class="ms-panel">
+                            <div class="ms-panel-header ms-panel-custome">
+                                <h6>Chercher Un Rendez-Vous</h6>
+                                <a href="add-appointment.html" class="ms-text-primary">Add Appointment</a>
+                            </div>
+<!------------------------------------recherche----------------------------------------------------------------->
+<div class="container box">
+   <br />
+   <div class="table-responsive">
+    <table id="customer_data" class="table table-bordered table-striped">
+     <thead>
+      <tr>
+      <th>Id_rdv</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>E-mail</th>
+				<th>Phone</th>
+				<th>Speciality</th>
+				<th>Date</th>
+				<th>Hours</th>
+				<th>Description</th>
+      </tr>
+     </thead>
+    </table>
+   </div>
+  </div>
+  <br />
+  <br />
+  <style type="text/css"></style>
+
+<script type="text/javascript" language="javascript" >
+ $(document).ready(function(){
+
+  $('#customer_data').DataTable({
+   "processing" : true,
+   "serverSide" : true,
+   "ajax" : {
+    url:"fetch.php",
+    type:"POST"
+   },
+   dom: 'lBfrtip',
+   buttons: [
+    'excel', 'csv', 'pdf', 'print'
+   ],
+   "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "All"] ]
+  });
+  
+ });
+ 
+</script>
+
+
+<!------------------------------------------------------------------------------------------------>
+<div class="ms-panel">
+                            <div class="ms-panel-header ms-panel-custome">
+                                <h6>Voir Tous les Rendez-Vous</h6>
+                                <a href="add-appointment.html" class="ms-text-primary">Add Appointment</a>
+                            </div>
+<!----------------------------------------------------------Affichage----------------------------------------------------------------------------->                            
+			<?PHP
+				foreach($listeRdv as $rdv){
+      ?>
+      
+      <div class="ms-panel-body">
+                                <ul class="ms-activity-log">
+                                    <li>
+                                        <div class="ms-btn-icon btn-pill icon btn-success">
+                                            <i class="flaticon-tick-inside-circle"></i>
+                                        </div>
+                                        <h6> ID du Rendez_vous:  <?PHP echo $rdv['id_rdv']; ?><br><?PHP echo $rdv['first_name']; ?> <?PHP echo $rdv['last_name']; ?></h6>
+                                        <p> Avec numero de tételphone :<?PHP echo $rdv['phone']; ?><br>Email: <?PHP echo $rdv['email']; ?></p>
+                                        <p> <i class="material-icons"></i>Date et heur: <?PHP echo $rdv['date1']; ?> à <?PHP echo $rdv['hours']; ?></p>
+                                        <p class="fs-14">Specialité: <?PHP echo $rdv['speciality']; ?></hp>
+                                        <p> Description: <?PHP echo $rdv['description']; ?> <br></p>
+                                    </li>
+                                </ul>
+   
+			
+					
+<center>
+					<button type="button" class="btn btn-warning mt-4 d-inline w-20">	<a href="supprimerRdv.php?id=<?PHP echo $rdv['id_rdv']; ?>"> Supprimer </a></button>
+					<button type="button" class="btn btn-warning mt-4 d-inline w-20">	<a href="modifierRdv.php?id=<?PHP echo $rdv['id_rdv']; ?>"> Modifier </a></button>
+        </center>
+			<?PHP
+				}
+      ?>
+     
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+
+	                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- MODALS -->
+        <!-- Reminder Modal -->
+        <div class="modal fade" id="reminder-modal" tabindex="-1" role="dialog" aria-labelledby="reminder-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-secondary">
+                        <h5 class="modal-title has-icon text-white"> New Reminder</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                                 <li class="breadcrumb-item"><a href="#">Doctor Schedule</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Ajouter un évenement</li>
                             </ol>
                         </nav>
+<<<<<<< HEAD
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     </div>
 <div class="col-xl-12 col-md-12">
     <!-- Notes Modal -->
@@ -640,7 +865,23 @@
             </div>
         </div>
 <!-----------------------------------------------------AFFICHER TRI-------------------------------------------------------------------->        
+<<<<<<< HEAD
         <form name="e" method="POST" action="ajoutEvent.php">                    
+=======
+        <form name="e" method="POST" action="ajoutEvent.php">
+            <div id='cssmenu'>
+          <ul>     
+             <li class='active'><a href='#'>Ajouter un évenement</a></li>
+             <li><a href='afficher.php'>afficher tous les évenements</a></li>
+             <li><a href='participant.php'>Ajouter un Participant</a></li>
+             <li><a href='afficherEventri.php'>Trier les évenements</a></li>
+             <li><a href='recherche.php'>Chercher un évenement</a></li>
+
+
+          </ul>
+          </div>
+                    
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
           <div class="controls">
               <label class="control-label">Nom de l'évenement</label>
               <input class=" form-control" style="width: 45%" id="nom_event" type="text" name="nom_event">
@@ -787,7 +1028,19 @@
         <script src="../../assets/js/framework.js"></script>
         <!-- Settings -->
         <script src="../../assets/js/settings.js"></script>
+<<<<<<< HEAD
     </body>
 
 <!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+=======
+    
+   
+      </body>
+
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/appointment/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:30 GMT -->
+=======
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 </html>

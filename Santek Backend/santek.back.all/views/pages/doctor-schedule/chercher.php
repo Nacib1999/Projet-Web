@@ -7,7 +7,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
+<<<<<<< HEAD
         <title>SanteK</title>
+=======
+        <title>Medjestic</title>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
         <!-- Iconic Fonts -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="../../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
@@ -28,6 +32,7 @@
   <!---------------------------------recherche------------------------------------->
   <style>
 #button5{
+<<<<<<< HEAD
 	background-color: #225599;
 	height: 200px;
 	width: 150px;
@@ -46,6 +51,18 @@
 
   <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
   <script type="text/javascript" src="  https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+=======
+	background-color: #555555;
+	height: 50px;
+	width: 150px;
+} </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script>
+
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
   <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!--external css-->
   <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -56,7 +73,11 @@
   <!---Animated Icons---->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+<<<<<<< HEAD
 <!----------------------------------------------------------------RECHERCHE HEADER------------------------------------------------------------------------------------------------------------------------------------------------>
+=======
+
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 </head>
     <body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
         <!-- Setting Panel -->
@@ -671,6 +692,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="ms-content-wrapper">
 
                         <div class="ms-panel">
@@ -681,6 +703,13 @@
             <!-- js placed at the end of the document so the pages load faster -->
 <!------------------------------recherche----------------------------------------->
 
+=======
+ 
+            <!-- js placed at the end of the document so the pages load faster -->
+<!------------------------------recherche----------------------------------------->
+
+
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
             <div class="container box">
    <br />
    <div class="table-responsive">
@@ -717,7 +746,11 @@
    },
    dom: 'lBfrtip',
    buttons: [
+<<<<<<< HEAD
     'copy', 'csv', 'excel', 'pdf', 'print'
+=======
+    
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
    ],
    "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "All"] ]
   });

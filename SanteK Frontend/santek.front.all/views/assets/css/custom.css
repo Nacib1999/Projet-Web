@@ -556,7 +556,10 @@ dl {
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
 			transition: all 0.25s;
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 }
 
 .btn:last-child {

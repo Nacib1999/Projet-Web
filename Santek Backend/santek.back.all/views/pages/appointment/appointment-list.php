@@ -9,9 +9,14 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
     
 <!-- Mirrored from androthemes.com/themes/html/medjestic/pages/appointment/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:30 GMT -->
+=======
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
 <head>
+    <link href="../../pages/calendar.php">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -33,6 +38,7 @@
 
         <!-- Favicon -->
         <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
         <!-- Page Specific Css (Datatables.css) -->
         <link href="../../assets/css/datatables.min.css" rel="stylesheet">
            <!---------------------------------recherche------------------------------------->
@@ -69,6 +75,10 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
 <!----------------------------------------------------------------RECHERCHE HEADER------------------------------------------------------------------------------------------------------------------------------------------------>
     </head>
+=======
+    
+</head>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
     <body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
         <!-- Setting Panel -->
         <div class="ms-toggler ms-settings-toggle ms-d-block-lg">
@@ -120,8 +130,13 @@
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
                 <a class="pl-0 ml-0 text-center" href="../../index-2.html"> <img src="../../assets/img/logo.png" alt="logo"> </a>
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
                 <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/cartelo.png" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">BryanCartel KENFACK</h5>
+=======
+                <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/me.png" alt="logo"></a>
+                <h5 class="text-center text-white mt-2">Mariem NACIB</h5>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
                 <h6 class="text-center text-white mb-3">Admin</h6>
             </div>
             <!-- Navigation -->
@@ -175,8 +190,16 @@
                     <span><i class="fas fa-list-alt"></i>Doctor Schedule</span>
                     </a>
                     <ul id="schedule" class="collapse" aria-labelledby="schedule" data-parent="#side-nav-accordion">
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
                         <li> <a href="../doctor-schedule/add-schedule.html">Add Schedule</a> </li>
                         <li> <a href="../doctor-schedule/schedule-list.html">Schedule List</a> </li>
+=======
+                        <li> <a href="add-schedule.html">Ajouter un évenement</a> </li>
+                        <li> <a href="afficher.php">afficher tous les évenements</a> </li>
+                        <li> <a href="participant.php">ajouter un participant</a> </li>
+                        <li> <a href="afficherTri.php">Trier les évenements</a> </li>
+                        <li> <a href="chercher.php">Chercher un évenement</a> </li>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
                     </ul>
                 </li>
                 <!-- /Schedule -->
@@ -402,7 +425,7 @@
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonus" aria-expanded="false" >
                     <span><i class="material-icons fs-16">dashboard</i>Bonus Pages </span>
                     </a>
-                    <ul id="bonus" class="collapse" data-parent="#side-nav-accordion">
+                    <ul id="bonus" class="collapse"  data-parent="#side-nav-accordion">
                         <li> <a href="../dashboard/web-analytics.html"> Web Analytics </a> </li>
                         <li> <a href="../dashboard/social-media.html">Social Media Management</a> </li>
                         <li> <a href="../dashboard/project-management.html">Department Management</a> </li>
@@ -573,17 +596,6 @@
               </div>
               <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
-                <li class="ms-nav-item  ms-d-none">
-                  <a href="#mymodal" class="text-white" data-toggle="modal"><i class="flaticon-spreadsheet mr-2"></i> Make an appointment</a>
-                </li>
-
-                <li class="ms-nav-item ms-d-none">
-                  <a href="#prescription" class="text-white" data-toggle="modal"><i class="flaticon-pencil mr-2"></i> Write a prescription</a>
-                </li>
-
-                <li class="ms-nav-item ms-d-none">
-                  <a href="#report1" class="text-white" data-toggle="modal"><i class="flaticon-list mr-2"></i> Generate Report</a>
-                </li>
 
                 <li class="ms-nav-item dropdown">
                   <a href="#" class="text-disabled ms-has-notification" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-bell"></i></a>
@@ -626,10 +638,17 @@
                   </ul>
                 </li>
                 <li class="ms-nav-item ms-nav-user dropdown">
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
                   <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/dashboard/cartelo.png" alt="people"> </a>
                   <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                     <li class="dropdown-menu-header">
                       <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">BryanCartel KENFACK</span></h6>
+=======
+                  <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/dashboard/me.png" alt="people"> </a>
+                  <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+                    <li class="dropdown-menu-header">
+                      <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Dr NACIB</span></h6>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
                     </li>
                     <li class="dropdown-divider"></li>
                     <li class="ms-dropdown-list">
@@ -660,6 +679,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb pl-0">
                                 <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
                                 <li class="breadcrumb-item"><a href="#">Appointment</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Appointment List</li>
                             </ol>
@@ -766,48 +786,15 @@
                     <div class="modal-header bg-secondary">
                         <h5 class="modal-title has-icon text-white"> New Reminder</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+=======
+                                <li class="breadcrumb-item"><a href="#">Doctor Schedule</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Ajouter un évenement</li>
+                            </ol>
+                        </nav>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
                     </div>
-                    <form>
-                        <div class="modal-body">
-                            <div class="ms-form-group">
-                                <label>Remind me about</label>
-                                <textarea class="form-control" name="reminder"></textarea>
-                            </div>
-                            <div class="ms-form-group">
-                                <span class="ms-option-name fs-14">Repeat Daily</span>
-                                <label class="ms-switch float-right">
-                                <input type="checkbox">
-                                <span class="ms-switch-slider round"></span>
-                                </label>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="ms-form-group">
-                                        <input type="text" class="form-control datepicker" name="reminder-date" value="" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="ms-form-group">
-                                        <select class="form-control" name="reminder-time">
-                                            <option value="">12:00 pm</option>
-                                            <option value="">1:00 pm</option>
-                                            <option value="">2:00 pm</option>
-                                            <option value="">3:00 pm</option>
-                                            <option value="">4:00 pm</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">Add Reminder</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Notes Modal -->
+<div class="col-xl-12 col-md-12">
+    <!-- Notes Modal -->
         <div class="modal fade" id="notes-modal" tabindex="-1" role="dialog" aria-labelledby="notes-modal">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -834,311 +821,150 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog ms-modal-dialog-width">
-            <div class="modal-content ms-modal-content-width">
-              <div class="modal-header  ms-modal-header-radius-0">
-                <h4 class="modal-title text-white">Make An Appointment</h4>
-                <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">x</button>
-
-              </div>
-              <div class="modal-body p-0 text-left">
-                <div class="col-xl-12 col-md-12">
-                  <div class="ms-panel ms-panel-bshadow-none">
-                    <div class="ms-panel-header">
-                      <h6>Patient Information</h6>
-                    </div>
-                    <div class="ms-panel-body">
-                      <form class="needs-validation" novalidate>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom01">Patient Name</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Name" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">Date Of Birth</label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" id="validationCustom02" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom03">Disease</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom03" placeholder="Disease" required>
-
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-2">
-                            <label for="validationCustom04">Address</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom04" placeholder="Add Address" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom05">Phone no.</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom05" placeholder="Enter Phone No." required>
-
-                            </div>
-
-                          </div>
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom06">Department Name</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom06" placeholder="Enter Department Name" required>
-
-                            </div>
-                          </div>
-                        </div>
+<!-----------------------------------------------------AFFICHER TRI-------------------------------------------------------------------->        
+        <form name="e" method="POST" action="ajoutEvent.php">
+            <div id='cssmenu'>
+          <ul>     
+             <li class='active'><a href='#'>Ajouter un évenement</a></li>
+             <li><a href='afficher.php'>afficher tous les évenements</a></li>
+             <li><a href='participant.php'>Ajouter un Participant</a></li>
+             <li><a href='afficherEventri.php'>Trier les évenements</a></li>
+             <li><a href='recherche.php'>Chercher un évenement</a></li>
 
 
-
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom07">Appointment With</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom07" placeholder="Enter Doctor Name" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom08">Appointment Date</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom08" placeholder="Enter Appointment Date" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label>Sex</label>
-                            <ul class="ms-list d-flex">
-                              <li class="ms-list-item pl-0">
-                                <label class="ms-checkbox-wrap">
-                                  <input type="radio" name="radioExample" value="">
-                                  <i class="ms-checkbox-check"></i>
-                                </label>
-                                <span> Male </span>
-                              </li>
-                              <li class="ms-list-item">
-                                <label class="ms-checkbox-wrap">
-                                  <input type="radio" name="radioExample" value="" checked="">
-                                  <i class="ms-checkbox-check"></i>
-                                </label>
-                                <span> Female </span>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <button class="btn btn-warning mt-4 d-inline w-20" type="submit">Reset</button>
-                        <button class="btn btn-primary mt-4 d-inline w-20" type="submit">Add Appointment</button>
-                      </form>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          </ul>
           </div>
-        </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="prescription" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog ms-modal-dialog-width">
-            <div class="modal-content ms-modal-content-width">
-              <div class="modal-header  ms-modal-header-radius-0">
-                <h4 class="modal-title text-white">Make a prescription</h4>
-                <button type="button" class="close  text-white" data-dismiss="modal" aria-hidden="true">x</button>
-
-              </div>
-              <div class="modal-body p-0 text-left">
-                <div class="col-xl-12 col-md-12">
-                  <div class="ms-panel ms-panel-bshadow-none">
-                    <div class="ms-panel-header">
-                      <h6>Patient Information</h6>
-                    </div>
-                    <div class="ms-panel-body">
-                      <form class="needs-validation" novalidate>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom09">Patient Name</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom09" placeholder="Enter Name" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom10">Date Of Birth</label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" id="validationCustom10" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-2">
-                            <label for="validationCustom11">Address</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom11" placeholder="Add Address" required>
-
-                            </div>
-                          </div>
-
-                        </div>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom12">Phone no.</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom12" placeholder="Enter Phone No." required>
-
-                            </div>
-
-                          </div>
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom13">Medication</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom13" placeholder="Acetaminophen" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom14">Period Of medication</label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" id="validationCustom14" placeholder="" required>
-
-                            </div>
-                          </div>
-                        </div>
-
-
-
-                        <div class="form-row">
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom15">Appointment With</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom15" placeholder="Enter Doctor Name" required>
-
-                            </div>
-                          </div>
-
-                        </div>
-                        <button class="btn btn-warning mt-4 d-inline w-20" type="submit">Save Prescription</button>
-                        <button class="btn btn-primary mt-4 d-inline w-20" type="submit">Save & Print</button>
-                      </form>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
+                    
+          <div class="controls">
+              <label class="control-label">Nom de l'évenement</label>
+              <input class=" form-control" style="width: 45%" id="nom_event" type="text" name="nom_event">
+              <div class="error-message"></div>
+              <p>
           </div>
-        </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="report1" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog ms-modal-dialog-width">
-            <div class="modal-content ms-modal-content-width">
-              <div class="modal-header  ms-modal-header-radius-0">
-                <h4 class="modal-title text-white">Generate report</h4>
-                <button type="button" class="close  text-white" data-dismiss="modal" aria-hidden="true">x</button>
-
-              </div>
-              <div class="modal-body p-0 text-left">
-                <div class="col-xl-12 col-md-12">
-                  <div class="ms-panel ms-panel-bshadow-none">
-                    <div class="ms-panel-header">
-                      <h6>Patient Information</h6>
-                    </div>
-                    <div class="ms-panel-body">
-                      <form class="needs-validation" novalidate>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom16">Patient Name</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom16" placeholder="Enter Name" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom17">Date Of Birth</label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" id="validationCustom17" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-2">
-                            <label for="validationCustom22">Address</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom22" placeholder="Add Address" required>
-
-                            </div>
-                          </div>
-
-                        </div>
-                        <div class="form-row">
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom18">Phone no.</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom18" placeholder="Enter Phone No." required>
-
-                            </div>
-
-                          </div>
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom19">Report Type</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom19" placeholder="Diseases Report" required>
-
-                            </div>
-                          </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom23">Report Period</label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" id="validationCustom23" placeholder="" required>
-
-                            </div>
-                          </div>
-                        </div>
-
-
-
-                        <div class="form-row">
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom20">Appointment With</label>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="validationCustom20" placeholder="Enter Doctor Name" required>
-
-                            </div>
-                          </div>
-
-                        </div>
-                        <button class="btn btn-warning mt-4 d-inline w-20" type="submit">Generate Report</button>
-                        <button class="btn btn-primary mt-4 d-inline w-20" type="submit">Generate & Print</button>
-                      </form>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <br>
+          <div class="form-group">
+          <label for="pays">Lieu <span class="controls"></label>               
+          <select class=" form-control" style="width: 100%" class="controls" name="lieu_event" id="lieu_event">
+              <option>Select un lieu</option>    
+              <option value="Sfax">Sfax</option>    
+              <option value="Ariana">Ariana</option>    
+              <option value="Cité ghazala">Cité ghazala</option>    
+              <option value="Soukra">Soukra </option>    
+              <option value="Ben Arous">Ben Arous</option>    
+              <option value="Nabeul">Nabeul</option>    
+              <option value="Gabes">Gabes</option>    
+              <option value="Zaghouan">Zaghouan</option>
+              <option value="Bizerte">Bizerte</option>
+              <option value="Béja">Béja</option>
+              <option value="Gafsa">Gafsa</option>
+              <option value="Djerba">Bjerba</option>
+              <option value="sousse">Sousse</option>
+              <option value="Monastir">Monastir</option>
+              <option value="Tozeur">Tozeur</option>  
+          </select>
+           <div class="error-message"></div>
           </div>
-        </div>
-        <!-- SCRIPTS -->
+          
+          <div>
+            <label for="pays">Date debut</label>
+          <input type="date" id="date_debut" name="date_debut" min="2019-01-01" class=" form-control" style="width: 30%" />
+           <div class="error-message"></div>
+          </div>
+          <br>
+          
+          <div>
+            <label for="pays">Date fin</label>
+          <input type="date" id="fin" name="date_fin" min="2019-01-01" class=" form-control" style="width: 30%" />
+           <div class="error-message"></div>
+          </div>
+          <br>
+          
+          <div>
+          <input type="submit" value="Valider" name="ajouter" class="btn btn-primary" id="ajouter"/>
+          <input type="button" value="Reset" class="btn btn-primary" onclick="reset()"/>
+          </div>
+          
+              <p>
+          </div>
+          <br/>
+          
+          
+              </form>
+                    </div>
+                    <!-- /col-lg-6 -->
+                  </div>
+                  <!--/ row -->
+                </section>
+                <!-- /wrapper -->
+              </section>
+              <!-- /MAIN CONTENT -->
+              <!--main content end-->
+              <!--footer start-->
+             
+            </section>
+
+
+            <?PHP
+            include "../../../controller/eventC.php";
+            include "../../../config.php";
+            
+            $event1C=new EventC();
+            $listeEvent=$event1C->trierEvents();
+            
+            //var_dump($listeEmployes->fetchAll());
+            ?>
+            <div class="row">
+            <div class="col-md-12">
+            <div class="content-panel">
+            <h4><i class="fa fa-angle-right"></i>Les évenements :</h4>
+            <hr>
+            <table class="table">
+            
+            <thead>
+            <tr>
+              <th>Nom d'évenement</th>
+              <th>Lieu d'évenement</th>
+              <th>Date de début d'évenement</th>
+              <th>Date de fin d'évenement</th>
+              <th><i class="fas fa-trash-alt"></i></th>
+              <th><i class="fas fa-edit"></i></th>
+            </tr>
+            </thead>
+            
+            <?PHP
+            foreach($listeEvent as $row){
+            
+                ?>
+              <tbody>
+              <tr>
+                <td><?PHP echo $row['nom_event']; ?></td>
+                <td><?PHP echo $row['lieu_event']; ?></td>
+                
+                <td><?PHP echo $row['date_debut']; ?></td>
+                <td><?PHP echo $row['date_fin']; ?></td>
+            
+                <td>
+                      <form method="POST" action="supprimerEvent.php"><a href='ajoutEvent.html'><input type="submit" name="supprimer" value="supprimer"></a>
+                          <input type="hidden" value="<?PHP echo $row['nom_event']; ?>" name="nom_event">
+                         </form>
+                    </td>
+              <td><a href="modifierEvent.php?id_event=<?PHP echo $row['id_event']; ?>">Modifier</a></td>
+              </tr>
+              </tbody>
+            <?php
+            }
+            ?>
+            </table>
+            </div>
+            </div>
+            </div>
+            
+                <p>
+            </div>
+            <br/>
+            
+
+  
         <!-- Global Required Scripts Start -->
         <script src="../../assets/js/jquery-3.3.1.min.js"></script>
         <script src="../../assets/js/popper.min.js"></script>
@@ -1153,14 +979,15 @@
         <!-- Page Specific Scripts Finish -->
         <!-- Medjestic core JavaScript -->
         <script src="../../assets/js/framework.js"></script>
-        <!-- Page Specific Scripts Start -->
-        <script src="../../assets/js/datatables.min.js"> </script>
-        <script src="../../assets/js/data-tables.js"> </script>
         <!-- Settings -->
         <script src="../../assets/js/settings.js"></script>
     
    
       </body>
 
+<<<<<<< HEAD:Santek Backend/santek.back.all/views/pages/appointment/appointment-list.php
 <!-- Mirrored from androthemes.com/themes/html/medjestic/pages/appointment/appointment-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:30 GMT -->
+=======
+<!-- Mirrored from androthemes.com/themes/html/medjestic/pages/doctor-schedule/add-schedule.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Nov 2020 13:45:29 GMT -->
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Santek Backend/santek.back.all/views/pages/doctor-schedule/afficherTri.php
 </html>

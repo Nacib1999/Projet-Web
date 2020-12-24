@@ -7,6 +7,10 @@ function afficherEvent($evenement){
         echo "lieu_event: ".$evenement->getlieu_event()."<br>";
         echo "date_debut: ".$evenement->getdate_debut()."<br>";
         echo "date_fin: ".$evenement->getdate_fin()."<br>";
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 	}
 	
 	function ajouterEvent($evenement){

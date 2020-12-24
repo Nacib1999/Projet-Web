@@ -137,7 +137,11 @@
                         <li> <a href="afficher.php">afficher tous les évenements</a> </li>
                         <li> <a href="participant.php">Ajouter un participant</a> </li>
                         <li> <a href="afficherTri.php">Trier les évenements</a> </li>
+<<<<<<< HEAD
                         <li> <a href="chercher.php">Chercher un évenement</a> </li>
+=======
+                        <li> <a href="chercher.html">Chercher un évenement</a> </li>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                     </ul>
                 </li>
                 <!-- /Schedule -->
@@ -640,7 +644,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 <!--------------------------------------------------Ajout------------------------------------------------------------------------->        
+=======
+<!--------------------------------------------------AFFICHAGE------------------------------------------------------------------------->        
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
         <form name="e" method="POST" action="ajoutEvent.php">
                  
           <div class="controls">
@@ -709,7 +717,11 @@
               <!--footer start-->
              
             </section>
+<<<<<<< HEAD
 <!--------------------------------------- Affichage + SUPPRIMER + MODIFIER ------------------------------------------------------>            
+=======
+<!--------------------------------------- SUPPRIMER + MODIFIER ------------------------------------------------------>            
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
             <?PHP
             include "../../../controller/eventC.php";
             include "../../../config.php";
@@ -761,8 +773,11 @@
                 <?PHP
             }
             ?>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 <!-------------------------------------------- END Suprimer +Modifier ------------------------------------------------->
 
 

@@ -148,18 +148,10 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-<<<<<<< HEAD:SanteK Frontend/santek.front.all/views/ajouterRdv.php
                                     <a href="services.html">Services</a>
                                     <ul>
                                         <li><a class="waves" href="services.html">Services 1</a></li>
                                         <li><a class="waves" href="services-2.html">Services 2</a></li>
-=======
-                                    <a href="services.php">Evenements</a>
-                                    <ul>
-                                        <li><a class="waves" href="services.php">Participer</a></li>
-                                        <li><a class="waves" href="services-2.php">Action de don</a></li>
-                                        <li><a class="waves" href="services-3.php">Nos evenements</a></li>
->>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:SanteK Frontend/santek.front.all/views/appointment.html
                                     </ul>
                                 </li>
                                 <li class="dropdown">

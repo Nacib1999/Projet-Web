@@ -93,7 +93,10 @@ h3 {
 <!-------------------------------------head recherche----------------------------------------------------->
 
 <style>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 #button5{
 	background-color: #555555;
 	height: 50px;
@@ -256,7 +259,11 @@ h3 {
    },
    dom: 'lBfrtip',
    buttons: [
+<<<<<<< HEAD
     'copy','excel','print'
+=======
+    "pdf","copy","excel"
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
    ],
    "lengthMenu": [ [1, -1], [1, "All"] ]
   });
@@ -279,10 +286,17 @@ h3 {
                  <h1> <p><?PHP echo $row['nom_event']; ?><br>
                 <h3> à <?PHP echo $row['lieu_event']; ?></h3><p><h1>
                 <center>  
+<<<<<<< HEAD
                 <form method="POST" action="addPart.php"><input type="submit" name="participer" value="participer">
 
                       
                           <div id="font"><input type="hidden" value="<?PHP echo $row['nom_event']; ?>" name="nom_event"><br></div>
+=======
+<form method="POST" action="addPart.php"><input type="submit" name="participer" value="participer">
+
+                      
+                          <input type="hidden" value="<?PHP echo $row['nom_event']; ?>" name="nom_event"><br>
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
                          </form></center>           
 
             <div class="container mb-5">

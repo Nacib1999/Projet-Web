@@ -11,6 +11,7 @@ $event1=new evenement($_POST['nom_event'],$_POST['lieu_event'],$_POST['date_debu
 $event1C=new eventC();
 $event1C->ajouterEvent($event1);
 
+<<<<<<< HEAD
 ini_set('smtp_port', 587);
  $header="MIME-Version: 1.0\r\n";
  $header.='From:"SanteK"<rajianacib@gmail.com>'."\n";
@@ -41,6 +42,18 @@ header('Location: afficher.php');
 	
 
 
+=======
+/*ini_set('smtp_port', 587);
+ $header="MIME-Version: 1.0\r\n";
+ $header.='From:"SanteK.tn"<SanteK.tn>'."\n";
+ $header.='Content-Type:text/html; charset="uft-8"'."\n";
+ $header.='Content-Transfer-Encoding: 8bit';
+ $message="Cher Client, \n Un Nouveau Evenement Est Disponnible Dans Notre Site Web ";
+ mail("mariem.nacib@esprit.tn", "Nouveau event !", $message, $header); 
+*/
+header('Location: afficher.php');
+	
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94
 }else{
 	echo "vérifier les champs";
 }

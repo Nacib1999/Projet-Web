@@ -179,6 +179,74 @@ include 'send.php';
                     </div><!-- col -->
                 </div><!-- row -->
             </div><!-- container -->
+<<<<<<< HEAD:SanteK Frontend/santek.front.all/views/services-2.php
+=======
+
+<center>
+                            <div class="ms-panel-body">
+                                <form class="needs-validation" name="e" method="POST" action="" >
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nom_exp">Nom et Prenom Expéditeur</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="nom_exp" name="nom_exp" placeholder="Entrez votre prénom et prénom"  required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="RIB">RIB </label>
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" id="RIB" name="RIB" placeholder="111" style="width: 5%" required>
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="111" style="width: 12%">
+                                                <input type="number"placeholder="1" style="width: 10%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="login_don">Adresse Electronique</label>
+                                            <div class="input-group">
+                                                <input type="email" class="form-control" id="login_don" name="login_don" placeholder="Entrez votre e-mail" required>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="date_trans">Date de transfert</label>
+                                            <div class="input-group">
+                                                <input type="date" class="form-control" id="date_trans" name="date_trans" placeholder="date de transfert" required>
+
+                                            </div>
+                                        </div>
+                                    </div>                          
+                                        <div class="col-md-6 mb-3">
+                                            <label for="mode_payement">Mode de payement</label>
+                                            <div class="input-group">
+                                                <select class="form-control" id="mode_pay" name="mode_pay" required>
+                                                    <option value="Credit-card">Credit card</option>
+                                                    <option value="Debit-card">Debit card</option>
+                                                    <option value="Paypal">Paypal</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+         <div>
+          <input type="submit" value="Inscrire" name="Inscrire" class="btn btn-primary" id="Inscrire"/> 
+          
+          <input type="button" value="Reprendre" class="btn btn-primary" onclick="reset()"/>
+        </div>
+
+</form>
+
+    </center>
+
+      <!-- Reminder Modal -->
+<!-----------------------------------------------------END Formmulaire de don-------------------------------------------------------------->
+>>>>>>> 4ecf84758bd905c40109806f555a39b9e49d5b94:Mes Sites Web/SanteK Frontend/www.smartpixel.tech/smartmed/services-2.html
 
 <center>
                             <div class="ms-panel-body">
