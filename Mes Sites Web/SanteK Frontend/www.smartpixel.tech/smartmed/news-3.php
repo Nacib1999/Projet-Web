@@ -132,34 +132,19 @@ $pages = ceil($nbArticles / $parPage);
                             <ul class="menu clearfix" id="menu">
                                 <li class="dropdown">
                                     <a href="index-2.html">Acceuil</a>
-                                    <ul>
-                                        <li><a class="waves" href="index-2.html">Home 1</a></li>
-                                        <li><a class="waves" href="index-3.html">Home 2</a></li>
-                                        <li><a class="waves" href="index-4.html">Home 3</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown">
                                     <a href="about.html">A propos</a>
-                                    <ul>
-                                        <li><a class="waves" href="about.html">About 1</a></li>
-                                        <li><a class="waves" href="about-2.html">About 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown">
                                     <a href="services.html">Evennement</a>
-                                    <ul>
-                                        <li><a class="waves" href="services.html">Services 1</a></li>
-                                        <li><a class="waves" href="services-2.html">Services 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown">
                                     <a href="team.html">Produit</a>
-                                    <ul>
-                                        <li><a class="waves" href="team.html">Chris Martin</a></li>
-                                        <li><a class="waves" href="team.html">Marisa Carter</a></li>
-                                        <li><a class="waves" href="team.html">John William</a></li>
-                                        <li><a class="waves" href="team.html">Martha Davis</a></li>
-                                    </ul>
+                                    
                                 </li>
                                 <li class="dropdown active">
                                     <a href="news-3.php">Article</a>
@@ -167,10 +152,7 @@ $pages = ceil($nbArticles / $parPage);
                                 </li>
                                 <li class="dropdown">
                                     <a href="contact.html">Contactez nous</a>
-                                    <ul>
-                                        <li><a class="waves" href="contact.html">Contact 1</a></li>
-                                        <li><a class="waves" href="contact-2.html">Contact 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                             </ul>
 
@@ -312,7 +294,7 @@ $doc=$userC->recupererusers($row['idmed']);				?>
                                 </a>
 							</div>	
                             <?php  echo  "<a href='news-single.php?id=", $row['id'] ,  " '>";
-							echo"<img src='", $row['image'], "' alt=''></a> " ;
+							echo"<img src='", $row['image'], "'  width='1000' height='1000' alt=''></a> " ;
 							?>
 
                             </div><!-- blog-article-thumbnail -->

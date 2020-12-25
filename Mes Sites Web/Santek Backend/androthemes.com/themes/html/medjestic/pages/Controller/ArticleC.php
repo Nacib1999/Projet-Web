@@ -24,7 +24,7 @@ public function afficherarticlemed($iduser){
 			}
 }
 public function ajouterarticle($article){
-			$sql="insert into article(titre,image,description,specialite) values(:titre,:image,:description,:specialite)";
+			$sql="insert into article(titre,image,description,specialite,idmed) values(:titre,:image,:description,:specialite,:idmed)";
 			$db=config::getConnexion();
 			try{
 			$req=$db->prepare($sql);
@@ -36,7 +36,7 @@ public function ajouterarticle($article){
 			$description=$article->getDescription();
 			
 			$specialite=$article->getSpecialite();
-			
+			$idmed=$article->getIdmed();
 			
 			$req->bindValue(':titre',$titre);
 			
@@ -44,7 +44,7 @@ public function ajouterarticle($article){
 					
 				$req->bindValue(':description',$description);
 				$req->bindValue(':specialite',$specialite);
-					
+					$req->bindValue(':idmed',$idmed);
 				
 			$req->execute();
 			}

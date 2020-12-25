@@ -7,14 +7,15 @@ include  "../Model/Article.php";
 include  "../Controller/ArticleC.php";
 include_once '../Model/Utilisateur.php';
 include_once '../Controller/UtilisateurC.php';
-
+include  "../Model/noter.php";
+include  "../Controller/noterC.php";
 
 include  "../model/jaime.php";
 include  "../controller/likedislikeC.php";
 session_start();
 $id=$_GET['id'];
 $iduser=$_SESSION['id'];
-echo $_SESSION['id'];
+
 	$articleC= new articleC();
 	$article=$articleC->recupererarticle($id);
 	
@@ -57,7 +58,7 @@ $userC = new UtilisateurC();
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
-    <!-- FONT AWESOME -->
+    <!-- FONT AWESOME lel icons -->
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
 
     <!-- JUSTICE ICONS -->
@@ -84,6 +85,14 @@ $userC = new UtilisateurC();
 
     <!-- ALTERNATIVE STYLES -->
     <link rel="stylesheet" href="#" data-style="styles">
+	
+	
+	<link rel="stylesheet" href="yass/plugins/bootstrap/css/bootstrap.min.css" />
+
+
+<!-- Core css -->
+<link rel="stylesheet" href="yass/css/main.css"/>
+<link rel="stylesheet" href="yass/css/theme2.css"/>
 
 
 </head>
@@ -119,45 +128,27 @@ $userC = new UtilisateurC();
                             <ul class="menu clearfix" id="menu">
                                 <li class="dropdown">
                                     <a href="index-2.html">Acceuil</a>
-                                    <ul>
-                                        <li><a class="waves" href="index-2.html">Home 1</a></li>
-                                        <li><a class="waves" href="index-3.html">Home 2</a></li>
-                                        <li><a class="waves" href="index-4.html">Home 3</a></li>
-                                    </ul>
+                                    
                                 </li>
                                 <li class="dropdown">
                                     <a href="about.html">A propos</a>
-                                    <ul>
-                                        <li><a class="waves" href="about.html">About 1</a></li>
-                                        <li><a class="waves" href="about-2.html">About 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown">
                                     <a href="services.html">Evennement</a>
-                                    <ul>
-                                        <li><a class="waves" href="services.html">Services 1</a></li>
-                                        <li><a class="waves" href="services-2.html">Services 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown">
                                     <a href="team.html">Produits</a>
-                                    <ul>
-                                        <li><a class="waves" href="team.html">Chris Martin</a></li>
-                                        <li><a class="waves" href="team.html">Marisa Carter</a></li>
-                                        <li><a class="waves" href="team.html">John William</a></li>
-                                        <li><a class="waves" href="team.html">Martha Davis</a></li>
-                                    </ul>
+                                   
                                 </li>
                                 <li class="dropdown active">
-                                    <a href="news.html">Article</a>
+                                    <a href="news-3.php">Article</a>
                                     
                                 </li>
                                 <li class="dropdown">
                                     <a href="contact.html">Contactez nous</a>
-                                    <ul>
-                                        <li><a class="waves" href="contact.html">Contact 1</a></li>
-                                        <li><a class="waves" href="contact-2.html">Contact 2</a></li>
-                                    </ul>
+                                   
                                 </li>
                             </ul>
 
@@ -198,7 +189,7 @@ $userC = new UtilisateurC();
 			
 			
 			
-			
+			                       
 			
 			
 			
@@ -315,7 +306,7 @@ $userC = new UtilisateurC();
                                 </a>
 							</div>	
                             <?php 
-							echo"<img src='", $row['image'], "' alt=''></a> " ;
+							echo"<img src='", $row['image'], "' height='1000' width='1000' alt=''></a> " ;
 							?>
 							
 							<br><br>
@@ -340,7 +331,9 @@ $userC = new UtilisateurC();
                                            
 								?> <i class="fa fa-thumbs-o-down" data-toggle="tooltip" title="Je n'aime pas"></i> </a>
  
-								
+ 
+ 
+ 
                             </div><!-- blog-article-details -->
                             </div><!-- blog-article-thumbnail -->
 
@@ -358,7 +351,116 @@ $userC = new UtilisateurC();
 							
 							
                         </div><!-- blog-article -->
-					<?php } ?>
+					
+						
+						
+						
+						
+						
+
+						
+						
+						    <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Performance</h3>
+                                <div class="card-options">
+														
+						<?php  $noteC= new noteC();
+
+
+$exist=$noteC->existe($id,$iduser);
+ if($exist==0)
+ {          
+								echo " <a href='excellent.php?idarticle=" , $row['id'] , "' > <li class='icons-list-item'><i class='fa fa-star' data-toggle='tooltip' title='exellent'></i></li></a>";
+                                   
+                                   echo " <a href='moyenne.php?idarticle=" , $row['id'] , "'>  <li class='icons-list-item'><i class='fa fa-star-half-empty' data-toggle='tooltip' title='moyenne'></i></li></a>";
+                                    
+                             echo " <a href='faible.php?idarticle=" , $row['id'] , "'> <li class='icons-list-item'><i class='fa fa-star-o' data-toggle='tooltip' title='faible'></i></li></a>"; }
+else
+ echo "tu as déja noté" ;	?>
+                                   <!-- <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>-->
+                                    <div class="item-action dropdown ml-2">
+                                        <!--<a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>-->
+                                        <div class="dropdown-menu dropdown-menu-right">
+										
+										
+										
+										
+										
+										
+										
+										
+										
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>                                            
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
+                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div id="chart_donut"></div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-vcenter text-nowrap card-table table_custom">
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+														
+																	<?php $excellent=($noteC->count3($id)/$noteC->countt($id))*100;
+									?>
+                                                            <div class="float-left"><strong><?php echo $excellent; ?> %</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Excellent</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-azure" role="progressbar" style="width:<?php echo $excellent; ?> %" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+														<?php $moyenne=($noteC->count2($id)/$noteC->countt($id))*100; ?>
+                                                            <div class="float-left"><strong><?php echo $moyenne; ?>%</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Moyenne</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-green" role="progressbar" style="width: <?php echo $moyenne; ?> %" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>                                            
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+															<?php $faible=($noteC->count1($id)/$noteC->countt($id))*100;
+									?>
+										
+                                                            <div class="float-left"><strong><?php echo $faible; ?> %</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Faible</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-orange" role="progressbar" style="width: <?php echo $faible; ?> %" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                               
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 						
 						
 						
@@ -367,6 +469,27 @@ $userC = new UtilisateurC();
 						
 						
 						
+						
+						
+						<?php } ?>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+			
 						
 											 
 <script >
@@ -397,8 +520,8 @@ $user=$userC->recupererusers($row['iduser']);
          
 			  <div class="blog-article-author">
   <?php foreach($user as $users){ ?>
-                            <img src="<?php echo $users['image'] ?>"   alt="">
-                           <a class="fn"  > <?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
+                            <img  src="<?php echo $users['image'] ?>"   width="50" height="50" alt="">
+                         &nbsp&nbsp&nbsp <a class="fn"  > <?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
 			  <?php } ?>  
                             <div class="blog-article-author-details">
 					
@@ -500,8 +623,8 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
 
                                         <div class="comment-author">
  <?php foreach($User as $users){ ?>
-                                            <img class="avatar" src="<?php echo $users['image'] ?>" alt="">
-                                            <a class="fn" ><?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
+                                            <img class="avatar" src="<?php echo $users['image'] ?>" width="50" height="50" alt="">
+                                       <a class="fn" ><?php echo $users['nom'] ?> <?php echo $users['prenom'] ?></a>
  <?php } ?>
 										
                                         </div><!-- comment-author -->
@@ -715,6 +838,23 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
     </div><!-- MAIN CONTAINER -->
 
 
+	
+	
+	
+<script src="yass/bundles/lib.vendor.bundle.js"></script>
+
+<script src="yass/bundles/apexcharts.bundle.js"></script>
+
+<script src="yass/bundles/jvectormap1.bundle.js"></script>
+<script src="yass/bundles/c3.bundle.js"></script>
+<script src="yass/bundles/knobjs.bundle.js"></script>
+<script src="yass/bundles/morris.bundle.js"></script>
+
+<script src="yass/js/core.js"></script>
+<script src="yass/js/page/w-statistics.js"></script>
+	
+	
+	
     <!-- SCROLL UP -->
     <a id="scroll-up" class="waves"><i class="fa fa-angle-up"></i></a>
 
@@ -785,6 +925,7 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
 
     <!-- CUSTOM JS -->
     <script src="assets/js/custom.js"></script>
+	
 
 </body>
 

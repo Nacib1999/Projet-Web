@@ -88,13 +88,13 @@ $liste=$articleC->afficherarticlemed($iduser);
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
                 <a class="pl-0 ml-0 text-center" > <img src="logo.png" alt="logo"> </a>
-                <a href="#" class="text-center ms-logo-img-link"> <img src="../../assets/img/dashboard/doctor-3.jpg" alt="logo"></a>
+                <a href="#" class="text-center ms-logo-img-link"> <img src="webon.png" height="500" width="500" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">WebON</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
             </div>
             <!-- Navigation -->
             <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
-                <!-- Dashboard -->
+                <!-- Dashboard
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
                     <span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
@@ -104,7 +104,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Dashboard -->
-                <!-- Doctor -->
+                <!-- Doctor 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#doctor" aria-expanded="false" aria-controls="doctor">
                     <span><i class="fas fa-stethoscope"></i>Doctor</span>
@@ -115,7 +115,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- Doctor -->
-                <!-- Patient -->
+                <!-- Patient
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#patient" aria-expanded="false" aria-controls="patient">
                     <span><i class="fas fa-user"></i>Patient</span>
@@ -126,7 +126,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Patient -->
-                <!-- Department -->
+                <!-- Department 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#department" aria-expanded="false" aria-controls="department">
                     <span><i class="fas fa-sitemap"></i>Department</span>
@@ -137,7 +137,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Department -->
-                <!-- Schedule -->
+                <!-- Schedule 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#schedule" aria-expanded="false" aria-controls="schedule">
                     <span><i class="fas fa-list-alt"></i>Doctor Schedule</span>
@@ -148,7 +148,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Schedule -->
-                <!-- Appointment -->
+                <!-- Appointment
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#appointment" aria-expanded="false" aria-controls="appointment">
                     <span><i class="far fa-check-square"></i>Appointment</span>
@@ -159,7 +159,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Appointment -->
-                <!-- Payment -->
+                <!-- Payment 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#payment" aria-expanded="false" aria-controls="payment">
                     <span><i class="fas fa-credit-card"></i>Payment</span>
@@ -171,7 +171,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Payment -->
-                <!-- Report -->
+                <!-- Report 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#report" aria-expanded="false" aria-controls="report">
                     <span><i class="fas fa-file-alt"></i>Report</span>
@@ -183,7 +183,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Report -->
-                <!-- Human Resource -->
+                <!-- Human Resource
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#human-resource" aria-expanded="false" aria-controls="human-resource">
                     <span><i class="far fa-user-circle"></i>Human Resource</span>
@@ -200,7 +200,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Human Resource -->
-                <!-- Bed -->
+                <!-- Bed 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bed" aria-expanded="false" aria-controls="bed">
                     <span><i class="fas fa-bed"></i>Bed Manager</span>
@@ -211,7 +211,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Bed-->
-                <!-- Notice -->
+                <!-- Notice 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#notice" aria-expanded="false" aria-controls="notice">
                     <span><i class="far fa-file-alt"></i>Notice</span>
@@ -221,13 +221,13 @@ $liste=$articleC->afficherarticlemed($iduser);
                         <li> <a href="../notice/notice-list.html">Notice List</a> </li>
                     </ul>
                 </li>
-                <!-- /Notice -->
+                <!-- /Notice 
                 <li class="menu-item">
                     <a href="../widgets.html">
                     <span><i class="material-icons fs-16">widgets</i>Widgets</span>
                     </a>
                 </li>
-                <!-- Basic UI Elements -->
+                <!-- Basic UI Elements 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
                     <span><i class="material-icons fs-16">filter_list</i>Basic UI Elements</span>
@@ -247,7 +247,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Basic UI Elements -->
-                <!-- Advanced UI Elements -->
+                <!-- Advanced UI Elements 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#advanced-elements" aria-expanded="false" aria-controls="advanced-elements">
                     <span><i class="material-icons fs-16">code</i>Advanced UI Elements</span>
@@ -262,7 +262,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                         <li> <a href="../ui-advanced/range-slider.html">Range Slider</a> </li>
                     </ul>
                 </li>
-                <!-- /Advanced UI Elements -->
+                <!-- /Advanced UI Elements 
                 <li class="menu-item">
                     <a href="../animation.html">
                     <span><i class="material-icons fs-16">format_paint</i>Animations</span>
@@ -270,7 +270,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                 </li>
                 <!-- Form Elements -->
                 <li class="menu-item">
-                    <a href="#" class="has-chevron" >
+                    <a href="" class="has-chevron" >
                     <span><i class="material-icons fs-16">input</i>Article</span>
                     </a>
                    <!-- <ul id="form-elements" class="collapse" aria-labelledby="form-elements" data-parent="#side-nav-accordion">
@@ -280,8 +280,23 @@ $liste=$articleC->afficherarticlemed($iduser);
                         <li> <a href="form-wizard.html">Form Wizard</a> </li>
                     </ul>-->
                 </li>
+				 <li class="menu-item">
+                    <a  class="has-chevron" >
+                    <span><i class="material-icons fs-16" >input </i>produit </span>
+                    </a>
+					</li>
+						 <li class="menu-item">
+                    <a  class="has-chevron" >
+                    <span><i class="material-icons fs-16" >input </i>evennement </span>
+                    </a>
+					</li>
+						 <li class="menu-item">
+                    <a  class="has-chevron" >
+                    <span><i class="material-icons fs-16" >input </i>consultation</span>
+                    </a>
+					</li>
                 <!-- /Form Elements -->
-                <!-- Charts -->
+                <!-- Charts 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#charts" aria-expanded="false" aria-controls="charts">
                     <span><i class="material-icons fs-16">equalizer</i>Charts</span>
@@ -292,7 +307,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Charts -->
-                <!-- Tables -->
+                <!-- Tables
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
                     <span><i class="material-icons fs-16">tune</i>Tables</span>
@@ -303,7 +318,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Tables -->
-                <!-- Popups -->
+                <!-- Popups
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#popups" aria-expanded="false" aria-controls="popups">
                     <span><i class="material-icons fs-16">message</i>Popups</span>
@@ -314,7 +329,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Popups -->
-                <!-- Icons -->
+                <!-- Icons 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
                     <span><i class="material-icons fs-16">border_color</i>Icons</span>
@@ -326,7 +341,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Icons -->
-                <!-- Maps -->
+                <!-- Maps 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#maps" aria-expanded="false" aria-controls="maps">
                     <span><i class="material-icons fs-16">map</i>Maps</span>
@@ -337,7 +352,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Maps -->
-                <!-- Pages -->
+                <!-- Pages
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages">
                     <span><i class="material-icons fs-16">insert_drive_file</i>Pages</span>
@@ -362,7 +377,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Pages -->
-                <!-- Bonus Pages -->
+                <!-- Bonus Pages 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonus" aria-expanded="false" >
                     <span><i class="material-icons fs-16">dashboard</i>Bonus Pages </span>
@@ -375,7 +390,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                     </ul>
                 </li>
                 <!-- /Bonus Pages -->
-                <!-- Apps -->
+                <!-- Apps 
                 <li class="menu-item">
                     <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps">
                     <span><i class="material-icons fs-16">phone_iphone</i>Apps</span>
@@ -591,7 +606,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                   </ul>
                 </li>
                 <li class="ms-nav-item ms-nav-user dropdown">
-                  <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/dashboard/doctor-3.jpg" alt="people"> </a>
+                  <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="<?php echo $_SESSION['image'] ?> " title="<?php echo $_SESSION['nom'] ?> <?php echo $_SESSION['prenom'] ?>"> </a>
                   <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
                     <li class="dropdown-menu-header">
                       <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">Welcome, Dr Samuel Deo</span></h6>
