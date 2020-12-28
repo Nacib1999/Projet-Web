@@ -1,5 +1,5 @@
 <?PHP
-include "config.php";
+require_once "config.php";
 //include "../entities/promotion.php";
 
 
@@ -16,23 +16,23 @@ function afficherPromotion ($promotion){
 
     function ajouterPromotion($promotion)
     {
-        $sql="insert into produit
-        (id,nomProduit,prix,categorie,imageProduit) 
-        values (:id, :nomProduit,:prix,:categorie,:imageProduit)";
+        $sql="insert into produit (nomProduit,prix,categorie,imageProduit,iduser) 
+        values ( :nomProduit,:prix,:categorie,:imageProduit,:iduser)";
         $db = config::getConnexion();
         try{
         $req=$db->prepare($sql);
 
-        $id=$promotion->getId();
         $nomProduit=$promotion->getnomProduit();
         $prix=$promotion->getPrix();
         $categorie=$promotion->getcategorie();
         $imageProduit=$promotion->getimageProduit();
-
+        $iduser=$promotion->getIduser();
         
-        $req->bindValue(':id',$id);
         $req->bindValue(':nomProduit',$nomProduit);
         $req->bindValue(':prix',$prix);
+        $req->bindValue(':prix',$prix);
+        $req->bindValue(':iduser',$iduser);
+
         $req->bindValue(':categorie',$categorie);
         $req->bindValue(':imageProduit',$imageProduit);
 
@@ -71,20 +71,18 @@ function afficherPromotion ($promotion){
             die('Erreur: '.$e->getMessage());
         }
 	}
-	function modifierPromotion($promotion,$id){
-		$sql="UPDATE produit SET id=:idd, nomProduit=:nomProduit,prix=:prix,categorie=:categorie, imageProduit=:imageProduit WHERE id=:id";
+	function modifierPromotion($promotion){
+		$sql="UPDATE produit SET nomProduit=:nomProduit,prix=:prix,categorie=:categorie, imageProduit=:imageProduit WHERE id=:id";
 		
 		$db = config::getConnexion();
 		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 try{		
         $req=$db->prepare($sql);
-		$idd=$promotion->getId();
+        $id=$promotion->getid();
         $nomProduit=$promotion->getnomProduit();
         $prix=$promotion->getPrix();
         $categorie=$promotion->getcategorie();
         $imageProduit=$promotion->getimageProduit();
-        $datas = array(':idd'=>$idd, ':id'=>$id, ':nomProduit'=>$nomProduit,':prix'=>$prix,':categorie'=>$categorie,':imageProduit'=>$imageProduit);
-        $req->bindValue(':idd',$idd);
         $req->bindValue(':id',$id);
 		$req->bindValue(':nomProduit',$nomProduit);
         $req->bindValue(':prix',$prix);
@@ -101,9 +99,7 @@ try{
         }
         catch (Exception $e){
             echo " Erreur ! ".$e->getMessage();
-   echo " Les datas : " ;
-  print_r($datas);
-        }
+           }
 		
 	}
 	function recupererPromotion($id){

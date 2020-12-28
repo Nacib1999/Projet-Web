@@ -9,10 +9,10 @@ class promotion
   private $prix;
   private $categorie;
   private $imageProduit;
-  
-  function __construct($id,$nomProduit,$prix,$categorie,$imageProduit)
-  {
-  $this->id=$id;
+  private $iduser;
+  private $note;
+  function __construct($nomProduit,$prix,$categorie,$imageProduit)
+  { 
   $this->nomProduit=$nomProduit;
   $this->prix=$prix;
   $this->categorie=$categorie;
@@ -21,6 +21,10 @@ class promotion
   function getId()
   {
     return $this->id;
+  }
+  function getIduser()
+  {
+    return $this->iduser;
   }
   function getnomProduit()
   {
@@ -43,6 +47,10 @@ class promotion
   function setId($id)
   {
     $this->id=$id;
+  }
+  function setIduser($iduser)
+  {
+    $this->iduser=$iduser;
   }
   function setnomProduit($nomProduit)
   {

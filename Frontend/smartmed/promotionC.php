@@ -48,7 +48,7 @@ function afficherPromotion ($promotion){
 	
 	function afficherPromotions(){
 		//$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
-		$sql="SElECT * From produit";
+		$sql="SElECT * From produit ORDER  BY prix";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);

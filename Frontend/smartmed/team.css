@@ -1,8 +1,13 @@
+
+
+
+
 .containerprod{
+    background-color:burlywood;
     width: 70%;
     margin: 2% 15%;
     display:flex;
-    border: 3px solid grey;
+    border: 2px solid black;
     
 }
 
@@ -12,16 +17,21 @@
     padding: 5%;
 }
 
-
+.nb{
+    color: blue;
+}
 .nmpr{
     display: flex;
 }
 
-.nameprod{
-    color: grey;
+.nameprod{font-size: 30px;
+    color: firebrick;
+    font-family: LaPolice;
+    src : url(police/Langar-Regular.ttf);
+
 }
 
-.defprod{
+.defprod{color: black;
     padding: 0% 15px;
 }
 .containerRecherche { 
@@ -33,14 +43,17 @@
 }
 
 .searchfor{
+    background-color: burlywood;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid black;
+
 }
 
 .inpu{
-
+background-color: black;
     display: flex;
     justify-content: center;
 

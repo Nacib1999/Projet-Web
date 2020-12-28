@@ -25,7 +25,6 @@ echo "Liste de Produits";
 
 <table border="3">
 <tr>
-<td>id</td>
 <td>nomProduit</td>
 <td>prix</td>
 <td>categorie</td>
@@ -41,7 +40,6 @@ echo "Liste de Produits";
 foreach($listePromotions as $row){
 	?>
 	<tr>
-	<td><?PHP echo $row['id']; ?></td>
 	<td><?PHP echo $row['nomProduit']; ?></td>
 	<td><?PHP echo $row['prix']; ?></td>
 	<td><?PHP echo $row['categorie']; ?></td>
@@ -56,7 +54,8 @@ foreach($listePromotions as $row){
 	<td><a href="modifierPromotion.php?id=<?PHP echo $row['id']; ?>">
 	Modifier</a></td>
 	</tr>
+	
 	<?PHP
-}
+
 ?>
 </table>

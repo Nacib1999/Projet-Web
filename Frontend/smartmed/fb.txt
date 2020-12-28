@@ -1,0 +1,4 @@
+<?php echo "<a  class='comment-reply-link' href='bien.php?idproduit=" , $row['id'] , "'>  bien </a>"; ?>
+								<?php echo "<a  class='comment-reply-link' href='excellent.php?idarticle=" , $row['id'] , "'>  excellent </a>"; ?>
+
+<?php echo "<a  class='comment-reply-link' href='faible.php?idproduit=" , $row['id'] , "'>  faible </a>"; ?>

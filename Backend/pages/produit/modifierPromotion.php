@@ -34,10 +34,7 @@ $imageProduit=$row['imageProduit'];
 <form method="POST">
 <table>
 <caption>Modifier Promotion</caption>
-<tr>
-<td>id</td>
-<td><input type="number" name="id" value="<?PHP echo $id ?>"></td>
-</tr>
+
 <tr>
 <td>nomProduit</td>
 <td><input type="text" name="nomProduit" value="<?PHP echo $nomProduit ?>"></td>
@@ -69,9 +66,9 @@ $imageProduit=$row['imageProduit'];
 }
 if(isset($_POST['modifier']))
 {
-$promotionvar=new promotion($_POST['id'],$_POST['nomProduit'],$_POST['prix'],$_POST['categorie'],$_POST['imageProduit']);
-$promotionCvar->modifierPromotion($promotionvar,$_POST['id_ini']);
-echo $_POST['id_ini'];
+$promotionvar=new promotion($_POST['nomProduit'],$_POST['prix'],$_POST['categorie'],$_POST['imageProduit']);
+$promotionvar->setId($_GET['id']);
+$promotionCvar->modifierPromotion($promotionvar);
 header('Location: afficherPromotion.php');
 }
 ?>
