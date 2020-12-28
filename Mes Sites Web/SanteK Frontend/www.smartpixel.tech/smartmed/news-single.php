@@ -16,6 +16,7 @@ session_start();
 $id=$_GET['id'];
 $iduser=$_SESSION['id'];
 
+
 	$articleC= new articleC();
 	$article=$articleC->recupererarticle($id);
 	
@@ -25,9 +26,11 @@ $liste=$questionC->afficherquestion($id);
 
 $userC = new UtilisateurC();
   
-
-
-	
+ $noteC= new noteC();
+ $total=$noteC->countt($id);
+ 
+	 
+	 
 
 ?>
 <!doctype html>
@@ -139,7 +142,7 @@ $userC = new UtilisateurC();
                                    
                                 </li>
                                 <li class="dropdown">
-                                    <a href="team.html">Produits</a>
+                                    <a href="team.html">Produit</a>
                                    
                                 </li>
                                 <li class="dropdown active">
@@ -352,8 +355,7 @@ $userC = new UtilisateurC();
 							
                         </div><!-- blog-article -->
 					
-						
-						
+				
 						
 						
 						
@@ -365,7 +367,7 @@ $userC = new UtilisateurC();
                                 <h3 class="card-title">Performance</h3>
                                 <div class="card-options">
 														
-						<?php  $noteC= new noteC();
+						<?php 
 
 
 $exist=$noteC->existe($id,$iduser);
@@ -400,11 +402,12 @@ else
                                             <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
                                             <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
                                             <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-                                            <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+                                           
                                         </div>
                                     </div>
                                 </div>
                             </div>
+							 <?php if ($total!=0) { ?>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12">
@@ -417,13 +420,13 @@ else
                                                     <td>
                                                         <div class="clearfix">
 														
-																	<?php $excellent=($noteC->count3($id)/$noteC->countt($id))*100;
-									?>
+																	
+									<?php $excellent=($noteC->count3($id)/$noteC->countt($id))*100; ?>
                                                             <div class="float-left"><strong><?php echo $excellent; ?> %</strong></div>
                                                             <div class="float-right"><small class="text-muted">Excellent</small></div>
                                                         </div>
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-azure" role="progressbar" style="width:<?php echo $excellent; ?> %" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-azure" role="progressbar" style="width: <?php echo $excellent; ?>% " aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -435,21 +438,79 @@ else
                                                             <div class="float-right"><small class="text-muted">Moyenne</small></div>
                                                         </div>
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-green" role="progressbar" style="width: <?php echo $moyenne; ?> %" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-green" role="progressbar" style="width: <?php echo $moyenne; ?>%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>                                            
                                                 <tr>
                                                     <td>
                                                         <div class="clearfix">
-															<?php $faible=($noteC->count1($id)/$noteC->countt($id))*100;
-									?>
-										
+									
+										<?php $faible=($noteC->count1($id)/$noteC->countt($id))*100; ?>
                                                             <div class="float-left"><strong><?php echo $faible; ?> %</strong></div>
                                                             <div class="float-right"><small class="text-muted">Faible</small></div>
                                                         </div>
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-orange" role="progressbar" style="width: <?php echo $faible; ?> %" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-orange" role="progressbar" style="width: <?php echo $faible; ?>%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                               
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+					<?php }
+					else {
+						?>
+					
+					
+					  <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12">
+                                        <div id="chart_donut"></div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-vcenter text-nowrap card-table table_custom">
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+														
+																	
+									
+                                                            <div class="float-left"><strong>0 %</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Excellent</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-azure" role="progressbar" style="width:0% " aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+														
+                                                            <div class="float-left"><strong>0%</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Moyenne</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-green" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>                                            
+                                                <tr>
+                                                    <td>
+                                                        <div class="clearfix">
+									
+										
+                                                            <div class="float-left"><strong>0%</strong></div>
+                                                            <div class="float-right"><small class="text-muted">Faible</small></div>
+                                                        </div>
+                                                        <div class="progress progress-xs">
+                                                            <div class="progress-bar bg-orange" role="progressbar" style="width:0%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -460,6 +521,7 @@ else
                                     </div>
                                 </div>
                             </div>
+							<?php } ?>
                         </div>
 						
 						
@@ -849,9 +911,49 @@ $listecomm=$commentaireC->affichercommentaire($row['id']);
 <script src="yass/bundles/c3.bundle.js"></script>
 <script src="yass/bundles/knobjs.bundle.js"></script>
 <script src="yass/bundles/morris.bundle.js"></script>
+		
+						<script>
+$(document).ready(function() {
+    var options = {
+        chart: {
+            height: 250,
+            type: 'radialBar',
+        },
+        colors: [ '#e8769f', '#6c7989', '#9aa2ac'],
+        plotOptions: {
+            radialBar: {
+                dataLabels: {
+                    name: {
+                        fontSize: '22px',
+                    },
+                    value: {
+                        fontSize: '16px',
+                    },
+                    total: {
+                        show: true,
+                        label: 'Total',
+                        formatter: function (w) {
+                            // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                            return <?php  echo $noteC->countt($id)?>
+                        }
+                    }
+                }
+            }
+        },
+        series: [ <?php echo $excellent; ?>, <?php echo $moyenne; ?>, <?php echo $faible; ?>],
+        labels: ['excellent', 'moyenne', 'faible'],        
+    }
+    var chart = new ApexCharts(
+        document.querySelector("#chart_donut"),
+        options
+    );    
+    chart.render();
+});
 
+
+ </script>
 <script src="yass/js/core.js"></script>
-<script src="yass/js/page/w-statistics.js"></script>
+
 	
 	
 	

@@ -1,17 +1,7 @@
-<?php
-include  "../model/Article.php";
-include  "../controller/ArticleC.php";
+<?php include  "../controller/ArticleC.php";
 session_start();
 $articleC= new articleC();
-$iduser=$_SESSION['id'];
-$liste=$articleC->afficherarticlemed($iduser);
-
-?>
-
-
-
-
-
+$iduser=$_SESSION['id']; ?>
 <!DOCTYPE html>
 <html lang="en">
     
@@ -87,23 +77,198 @@ $liste=$articleC->afficherarticlemed($iduser);
         <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
             <!-- Logo -->
             <div class="logo-sn ms-d-block-lg">
-                <a class="pl-0 ml-0 text-center" href="http://localhost/Projet-Web-main/Mes%20Sites%20Web/SanteK%20Frontend/www.smartpixel.tech/smartmed/index-2.php"> <img src="logo.png" alt="logo"> </a>
-                <a  class="text-center ms-logo-img-link"> <img src="webon.png" height="500" width="500" alt="logo"></a>
+                <a class="pl-0 ml-0 text-center" > <img src="logo.png" alt="logo"> </a>
+                <a href="#" class="text-center ms-logo-img-link"> <img src="webon.png" height="500" width="500" alt="logo"></a>
                 <h5 class="text-center text-white mt-2">WebON</h5>
                 <h6 class="text-center text-white mb-3">Admin</h6>
             </div>
             <!-- Navigation -->
             <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
+                <!-- Dashboard
                 <li class="menu-item">
-                    <a  class="has-chevron" >
-                    <span><i class="material-icons fs-16" >input </i>Compte client</span>
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+                    <span><i class="material-icons fs-16">dashboard</i>Dashboard </span>
                     </a>
-					</li>
+                    <ul id="dashboard" class="collapse" aria-labelledby="dashboard" data-parent="#side-nav-accordion">
+                        <li> <a href="../../index-2.html">Medjestic</a> </li>
+                    </ul>
+                </li>
+                <!-- /Dashboard -->
+                <!-- Doctor 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#doctor" aria-expanded="false" aria-controls="doctor">
+                    <span><i class="fas fa-stethoscope"></i>Doctor</span>
+                    </a>
+                    <ul id="doctor" class="collapse" aria-labelledby="doctor" data-parent="#side-nav-accordion">
+                        <li> <a href="../doctor/add-doctor.html">Add Doctor</a> </li>
+                        <li> <a href="../doctor/doctor-list.html">Doctor List</a> </li>
+                    </ul>
+                </li>
+                <!-- Doctor -->
+                <!-- Patient
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#patient" aria-expanded="false" aria-controls="patient">
+                    <span><i class="fas fa-user"></i>Patient</span>
+                    </a>
+                    <ul id="patient" class="collapse" aria-labelledby="patient" data-parent="#side-nav-accordion">
+                        <li> <a href="../patient/add-patient.html">Add Patient</a> </li>
+                        <li> <a href="../patient/patient-list.html">Patient List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Patient -->
+                <!-- Department 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#department" aria-expanded="false" aria-controls="department">
+                    <span><i class="fas fa-sitemap"></i>Department</span>
+                    </a>
+                    <ul id="department" class="collapse" aria-labelledby="department" data-parent="#side-nav-accordion">
+                        <li> <a href="../department/add-department.html">Add Department</a> </li>
+                        <li> <a href="../department/department-list.html">Department List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Department -->
+                <!-- Schedule 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#schedule" aria-expanded="false" aria-controls="schedule">
+                    <span><i class="fas fa-list-alt"></i>Doctor Schedule</span>
+                    </a>
+                    <ul id="schedule" class="collapse" aria-labelledby="schedule" data-parent="#side-nav-accordion">
+                        <li> <a href="../doctor-schedule/add-schedule.html">Add Schedule</a> </li>
+                        <li> <a href="../doctor-schedule/schedule-list.html">Schedule List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Schedule -->
+                <!-- Appointment
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#appointment" aria-expanded="false" aria-controls="appointment">
+                    <span><i class="far fa-check-square"></i>Appointment</span>
+                    </a>
+                    <ul id="appointment" class="collapse" aria-labelledby="appointment" data-parent="#side-nav-accordion">
+                        <li> <a href="../appointment/add-appointment.html">Add Appointment</a> </li>
+                        <li> <a href="../appointment/appointment-list.html">Appointment List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Appointment -->
+                <!-- Payment 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#payment" aria-expanded="false" aria-controls="payment">
+                    <span><i class="fas fa-credit-card"></i>Payment</span>
+                    </a>
+                    <ul id="payment" class="collapse" aria-labelledby="payment" data-parent="#side-nav-accordion">
+                        <li> <a href="../payment/add-payment.html">Add Payment</a> </li>
+                        <li> <a href="../payment/payment-list.html">Payment List</a> </li>
+                        <li> <a href="../payment/payment-invoice.html">Payment Invoice</a> </li>
+                    </ul>
+                </li>
+                <!-- /Payment -->
+                <!-- Report 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#report" aria-expanded="false" aria-controls="report">
+                    <span><i class="fas fa-file-alt"></i>Report</span>
+                    </a>
+                    <ul id="report" class="collapse" aria-labelledby="report" data-parent="#side-nav-accordion">
+                        <li> <a href="../report/patient-report.html">Patient Wise Report</a> </li>
+                        <li> <a href="../report/doctor-report.html">Doctor Wise Report</a> </li>
+                        <li> <a href="../report/total-report.html">Total Report</a> </li>
+                    </ul>
+                </li>
+                <!-- /Report -->
+                <!-- Human Resource
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#human-resource" aria-expanded="false" aria-controls="human-resource">
+                    <span><i class="far fa-user-circle"></i>Human Resource</span>
+                    </a>
+                    <ul id="human-resource" class="collapse" aria-labelledby="human-resource" data-parent="#side-nav-accordion">
+                        <li> <a href="../human-resource/add-employee.html">Add Employee</a> </li>
+                        <li> <a href="../human-resource/employee-list.html">Employee List</a> </li>
+                        <li> <a href="../human-resource/add-nurse.html">Add Nurse</a> </li>
+                        <li> <a href="../human-resource/nurse-list.html">Nurse List</a> </li>
+                        <li> <a href="../human-resource/add-pharmacist.html">Add Pharmacist</a> </li>
+                        <li> <a href="../human-resource/pharmacist-list.html">Pharmacist List</a> </li>
+                        <li> <a href="../human-resource/add-representative.html">Add Representative</a> </li>
+                        <li> <a href="../human-resource/representative-list.html">Representative List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Human Resource -->
+                <!-- Bed 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bed" aria-expanded="false" aria-controls="bed">
+                    <span><i class="fas fa-bed"></i>Bed Manager</span>
+                    </a>
+                    <ul id="bed" class="collapse" aria-labelledby="bed" data-parent="#side-nav-accordion">
+                        <li> <a href="../bed-manager/add-bed.html">Add Bed</a> </li>
+                        <li> <a href="../bed-manager/bed-list.html">Bed List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Bed-->
+                <!-- Notice 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#notice" aria-expanded="false" aria-controls="notice">
+                    <span><i class="far fa-file-alt"></i>Notice</span>
+                    </a>
+                    <ul id="notice" class="collapse" aria-labelledby="notice" data-parent="#side-nav-accordion">
+                        <li> <a href="../notice/add-notice.html">Add Notice</a> </li>
+                        <li> <a href="../notice/notice-list.html">Notice List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Notice 
+                <li class="menu-item">
+                    <a href="../widgets.html">
+                    <span><i class="material-icons fs-16">widgets</i>Widgets</span>
+                    </a>
+                </li>
+                <!-- Basic UI Elements 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
+                    <span><i class="material-icons fs-16">filter_list</i>Basic UI Elements</span>
+                    </a>
+                    <ul id="basic-elements" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+                        <li> <a href="../ui-basic/accordions.html">Accordions</a> </li>
+                        <li> <a href="../ui-basic/alerts.html">Alerts</a> </li>
+                        <li> <a href="../ui-basic/buttons.html">Buttons</a> </li>
+                        <li> <a href="../ui-basic/breadcrumbs.html">Breadcrumbs</a> </li>
+                        <li> <a href="../ui-basic/badges.html">Badges</a> </li>
+                        <li> <a href="../ui-basic/cards.html">Cards</a> </li>
+                        <li> <a href="../ui-basic/progress-bars.html">Progress Bars</a> </li>
+                        <li> <a href="../ui-basic/preloaders.html">Pre-loaders</a> </li>
+                        <li> <a href="../ui-basic/pagination.html">Pagination</a> </li>
+                        <li> <a href="../ui-basic/tabs.html">Tabs</a> </li>
+                        <li> <a href="../ui-basic/typography.html">Typography</a> </li>
+                    </ul>
+                </li>
+                <!-- /Basic UI Elements -->
+                <!-- Advanced UI Elements 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#advanced-elements" aria-expanded="false" aria-controls="advanced-elements">
+                    <span><i class="material-icons fs-16">code</i>Advanced UI Elements</span>
+                    </a>
+                    <ul id="advanced-elements" class="collapse" aria-labelledby="advanced-elements" data-parent="#side-nav-accordion">
+                        <li> <a href="../ui-advanced/draggables.html">Draggables</a> </li>
+                        <li> <a href="../ui-advanced/sliders.html">Sliders</a> </li>
+                        <li> <a href="../ui-advanced/modals.html">Modals</a> </li>
+                        <li> <a href="../ui-advanced/rating.html">Rating</a> </li>
+                        <li> <a href="../ui-advanced/tour.html">Tour</a> </li>
+                        <li> <a href="../ui-advanced/cropper.html">Cropper</a> </li>
+                        <li> <a href="../ui-advanced/range-slider.html">Range Slider</a> </li>
+                    </ul>
+                </li>
+                <!-- /Advanced UI Elements 
+                <li class="menu-item">
+                    <a href="../animation.html">
+                    <span><i class="material-icons fs-16">format_paint</i>Animations</span>
+                    </a>
+                </li>
+                <!-- Form Elements -->
                 <li class="menu-item">
                     <a href="" class="has-chevron" >
                     <span><i class="material-icons fs-16">input</i>Article</span>
                     </a>
-                   
+                   <!-- <ul id="form-elements" class="collapse" aria-labelledby="form-elements" data-parent="#side-nav-accordion">
+                        <li> <a href="form-elements.html">Form Elements</a> </li>
+                        <li> <a href="form-layout.html">Form Layouts</a> </li>
+                        <li> <a href="form-validation.html">Form Validation</a> </li>
+                        <li> <a href="form-wizard.html">Form Wizard</a> </li>
+                    </ul>-->
                 </li>
 				 <li class="menu-item">
                     <a  class="has-chevron" >
@@ -120,7 +285,113 @@ $liste=$articleC->afficherarticlemed($iduser);
                     <span><i class="material-icons fs-16" >input </i>consultation</span>
                     </a>
 					</li>
-               
+                <!-- /Form Elements -->
+                <!-- Charts 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#charts" aria-expanded="false" aria-controls="charts">
+                    <span><i class="material-icons fs-16">equalizer</i>Charts</span>
+                    </a>
+                    <ul id="charts" class="collapse" aria-labelledby="charts" data-parent="#side-nav-accordion">
+                        <li> <a href="../charts/chartjs.html">Chart JS</a> </li>
+                        <li> <a href="../charts/morris-charts.html">Morris Chart</a> </li>
+                    </ul>
+                </li>
+                <!-- /Charts -->
+                <!-- Tables
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
+                    <span><i class="material-icons fs-16">tune</i>Tables</span>
+                    </a>
+                    <ul id="tables" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+                        <li> <a href="../tables/basic-tables.html">Basic Tables</a> </li>
+                        <li> <a href="../tables/data-tables.html">Data tables</a> </li>
+                    </ul>
+                </li>
+                <!-- /Tables -->
+                <!-- Popups
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#popups" aria-expanded="false" aria-controls="popups">
+                    <span><i class="material-icons fs-16">message</i>Popups</span>
+                    </a>
+                    <ul id="popups" class="collapse" aria-labelledby="popups" data-parent="#side-nav-accordion">
+                        <li> <a href="../popups/sweet-alerts.html">Sweet Alerts</a> </li>
+                        <li> <a href="../popups/toast.html">Toast</a> </li>
+                    </ul>
+                </li>
+                <!-- /Popups -->
+                <!-- Icons 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
+                    <span><i class="material-icons fs-16">border_color</i>Icons</span>
+                    </a>
+                    <ul id="icons" class="collapse" aria-labelledby="icons" data-parent="#side-nav-accordion">
+                        <li> <a href="../icons/fontawesome.html">Fontawesome</a> </li>
+                        <li> <a href="../icons/flaticons.html">Flaticons</a> </li>
+                        <li> <a href="../icons/materialize.html">Materialize</a> </li>
+                    </ul>
+                </li>
+                <!-- /Icons -->
+                <!-- Maps 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#maps" aria-expanded="false" aria-controls="maps">
+                    <span><i class="material-icons fs-16">map</i>Maps</span>
+                    </a>
+                    <ul id="maps" class="collapse" aria-labelledby="maps" data-parent="#side-nav-accordion">
+                        <li> <a href="../maps/google-maps.html">Google Maps</a> </li>
+                        <li> <a href="../maps/vector-maps.html">Vector Maps</a> </li>
+                    </ul>
+                </li>
+                <!-- /Maps -->
+                <!-- Pages
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages">
+                    <span><i class="material-icons fs-16">insert_drive_file</i>Pages</span>
+                    </a>
+                    <ul id="pages" class="collapse" aria-labelledby="pages" data-parent="#side-nav-accordion">
+                        <li class="menu-item">
+                            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#authentication" aria-expanded="false" aria-controls="authentication">Authentication</a>
+                            <ul id="authentication" class="collapse" aria-labelledby="authentication" data-parent="#pages">
+                                <li> <a href="../prebuilt-pages/default-login.html">Default Login</a> </li>
+                                <li> <a href="../prebuilt-pages/modal-login.html">Modal Login</a> </li>
+                                <li> <a href="../prebuilt-pages/default-register.html">Default Registration</a> </li>
+                                <li> <a href="../prebuilt-pages/modal-register.html">Modal Registration</a> </li>
+                                <li> <a href="../prebuilt-pages/lock-screen.html">Lock Screen</a> </li>
+                            </ul>
+                        </li>
+                        <li> <a href="../prebuilt-pages/coming-soon.html">Coming Soon</a> </li>
+                        <li> <a href="../prebuilt-pages/error.html">Error Page</a> </li>
+                        <li class="menu-item"> <a href="../prebuilt-pages/faq.html"> FAQ </a> </li>
+                        <li class="menu-item"> <a href="../prebuilt-pages/portfolio.html"> Portfolio </a> </li>
+                        <li class="menu-item"> <a href="../prebuilt-pages/user-profile.html"> User Profile </a> </li>
+                        <li class="menu-item"> <a href="../prebuilt-pages/invoice.html"> Invoice </a> </li>
+                    </ul>
+                </li>
+                <!-- /Pages -->
+                <!-- Bonus Pages 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonus" aria-expanded="false" >
+                    <span><i class="material-icons fs-16">dashboard</i>Bonus Pages </span>
+                    </a>
+                    <ul id="bonus" class="collapse" data-parent="#side-nav-accordion">
+                        <li> <a href="../dashboard/web-analytics.html"> Web Analytics </a> </li>
+                        <li> <a href="../dashboard/social-media.html">Social Media Management</a> </li>
+                        <li> <a href="../dashboard/project-management.html">Department Management</a> </li>
+                        <li> <a href="../dashboard/client-management.html">Patient Management</a> </li>
+                    </ul>
+                </li>
+                <!-- /Bonus Pages -->
+                <!-- Apps 
+                <li class="menu-item">
+                    <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps">
+                    <span><i class="material-icons fs-16">phone_iphone</i>Apps</span>
+                    </a>
+                    <ul id="apps" class="collapse" aria-labelledby="apps" data-parent="#side-nav-accordion">
+                        <li> <a href="../apps/chat.html">Chat</a> </li>
+                        <li> <a href="../apps/email.html">Email</a> </li>
+                        <li> <a href="../apps/to-do-list.html">To-do List</a> </li>
+                    </ul>
+                </li>
+                <!-- /Apps -->
             </ul>
         </aside>
         <!-- Sidebar Right -->
@@ -364,118 +635,7 @@ $liste=$articleC->afficherarticlemed($iduser);
                             </ol>
                         </nav>
                     </div>
-                   
-                   <div class="col-lg-12">
-                        <div class="card">
-                            
-                            <div   class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped mb-0">
-                                        <thead>
-										 
-                                            <tr>
-                                                <th>#</th>
-												 <th>image</th>
-                                                <th>Titre</th>
-													<th>Date de publication</th>
-												<th>Spécialité</th>
-                                                <th>Description</th>
-                                                 <th>Action</th>
-												
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-										<?php  $i=0;
-										
-										 foreach($liste as $row){
-											 $i++; ?> 
-                                            <tr>
-                                                <th scope="row"><?php  echo $i ?></th>
-                                                <td>  <img src='<?php  echo $row['image'] ?> '   width="1000" height="1000"></a>    </td>
-                                                <td><?php echo $row['titre'] ?></td>
-                                                <td>   <?php  echo $row['datepub'] ?></td> 
-												    <td><?php  echo $row['specialite'] ?></td> 
-													
-													    <td><?php  echo $row['description'] ?></td> 
-														 <td><?php echo "<a class='author' href='modifierarticle.php?id=",$row['id'],"'> Modifier</a>"; ?></td>
-                                      <td><?php echo "<a class='category' href='supprimerarticle.php?id=" , $row['id'] , " '>supprimer</a>";?></td>													 
-                                            </tr>
-											
-											
-											
-											
-											
-											
-											
-											
-											
-					<script>						
-											
-											
-											function saisirtitre() {
-        //Regex for Valid Characters i.e.  Numbers.
-        var regex = /^[0-9]+$/
-		 
-		  var x="<?php echo $row['titre'] ; ?>";
-		//alert(x);
-
-        //Validate TextBox value against the Regex.
-        var isValid = regex.test(document.getElementById("titre").value);
-		 var isValid2 = regex.test(document.getElementById("desc").value);
-		ok=true;
-		if(document.getElementById("speciality").value=="-1")
-		{ document.getElementById("val3").textContent="veillez choisir une spécialité";
-			ok=false;
-		}
-		if(x==document.getElementById("titre").value)
-		{ alert("Le titre est déja existant");
-	 ok=false;
-	}
-        if (isValid) {
-          
-		   document.getElementById("val").textContent="Le titre ne doit pas contenir seulement des lettres alphanumériques.";
-		   ok=false;
-        }
-  if (isValid2) {
-          
-		   document.getElementById("val2").textContent="La déscription ne doit pas contenir seulement des lettres alphanumériques.";
-		   ok=false;
-        }
-        return ok ;
-    }
-	
-    
-
-	
-	
-	
-	
-	
-	
-	
-</script>
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-											
-										<?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+     
                    
 				   <br>
 				   <br>
@@ -490,7 +650,7 @@ $liste=$articleC->afficherarticlemed($iduser);
 				
 					
 					
-					<form onsubmit="return saisirtitre()" action="new1.php" method="post"  >
+					<form onsubmit="return saisirtitre()" action="ajouterutilisateur.php" method="post"  >
 					
 					
 					
@@ -498,38 +658,52 @@ $liste=$articleC->afficherarticlemed($iduser);
 					
 					
 					<div class="form-group">
-					 <label  class="form-label">Titre</label>
-					 <input   id="titre" type="text" name="titre" class="form-control" placeholder="Titre.." required> 
+					 <label  class="form-label">Nom</label>
+					 <input   id="titre" type="text" name="nom" class="form-control" placeholder="Titre.." required> 
 					 <p id="val" style="color:red" ></p>
 					  </div>
 					
-					  
-					  
 					  <div class="form-group">
+					 <label  class="form-label">Prenom</label>
+					 <input   id="titre" type="text" name="prenom" class="form-control" placeholder="Titre.." required> 
+					 <p id="val" style="color:red" ></p>
+					  </div>
+					   <div class="form-group">
 					  <label   class="form-label">Image</label>
 					 <input class="form-control"  id="image" type="file" name="image" accept="image/png, image/jpeg" required > 
 					  
 					 </div>
+					  <div class="form-group">
+					  <label   class="form-label">Email</label>
+					 
+					  <input type="email" name="email" class="form-control" placeholder="Enter email">
+					 </div>
+					 <div>
+					   <label   class="form-label">Login</label>
+					  <input   id="titre" type="text" name="login" class="form-control" placeholder="Titre.." required> 
+					  
+					 </div>
+				
+					 
+					 
 					 <div class="form-group">
-					   <label  class="form-label">  Description     </label>
-					 <textarea class="form-control" id="desc" name="desc" rows="3" cols="25" placeholder="Description.." required></textarea>
-					 <p id="val2" style="color:red" ></p>
+					   <label  class="form-label"> Mot de passe   </label>
+					  <input type="password"  name="mdp" class="form-control" placeholder="Password">
 					  </div>
 					 
-					  <div class="form-group">
-					<select class="custom-select" id="speciality" name="spec" required >
-                                                <option value="-1" disabled selected>Choose a speciality</option>
-                                                 <option value="Cardiologie ">Cardiologie</option>
-                                                <option value="Neurologie">Neurologie</option>
-                                                <option value="Surgerie" >Surgerie</option>
-                                                <option value="Gynaecologie">Gynaecologie</option>
-                                                <option value="Ophthalmologie">Ophthalmologie</option>
-                                                <option value="Stomatologie">Stomatologie</option>
+					 
+							  <div class="form-group">
+					<select class="custom-select" id="speciality" name="role" required >
+                                                <option value="-1" disabled selected>Role</option>
+                                                 <option value="docteur">docteur</option>
+                                                <option value="fourniseur">fourniseur</option>
+                                                <option value="utilisateur" >utilisateur</option>
+                                                
                                             </select>
 											<p id="val" style="color:red" ></p>
 											</div>
-											<br>
-					<center ><input  type="submit" class="btn btn-primary mt-4 d-inline w-20"  class="col-md-6" value="                Ajouter article                  "   ><i class="decode-icon-cursor"></i><center>
+					 					
+					<center ><input  type="submit" class="btn btn-primary mt-4 d-inline w-20"  class="col-md-6" value="                crée un nouveau compte                  "   ><i class="decode-icon-cursor"></i><center>
 					</form>
 					
 

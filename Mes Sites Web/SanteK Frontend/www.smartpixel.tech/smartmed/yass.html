@@ -100,7 +100,7 @@
                                                             <div class="float-right"><small class="text-muted">visitor from Canada</small></div>
                                                         </div>
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-green" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-green" role="progressbar" style="width:100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </td>
                                                 </tr>                                            
@@ -962,9 +962,48 @@
 <script src="yass/bundles/c3.bundle.js"></script>
 <script src="yass/bundles/knobjs.bundle.js"></script>
 <script src="yass/bundles/morris.bundle.js"></script>
+<script>
+$(document).ready(function() {
+    var options = {
+        chart: {
+            height: 300,
+            type: 'radialBar',
+        },
+        colors: [ '#e8769f', '#6c7989', '#9aa2ac'],
+        plotOptions: {
+            radialBar: {
+                dataLabels: {
+                    name: {
+                        fontSize: '22px',
+                    },
+                    value: {
+                        fontSize: '16px',
+                    },
+                    total: {
+                        show: true,
+                        label: 'Total',
+                        formatter: function (w) {
+                            // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                            return 400
+                        }
+                    }
+                }
+            }
+        },
+        series: [ 100, 67, 83],
+        labels: ['Canada', 'India', 'UK'],        
+    }
+    var chart = new ApexCharts(
+        document.querySelector("#chart_donut"),
+        options
+    );    
+    chart.render();
+});
 
+
+ </script>
 <script src="yass/js/core.js"></script>
-<script src="yass/js/page/w-statistics.js"></script>
+
 
 
 
