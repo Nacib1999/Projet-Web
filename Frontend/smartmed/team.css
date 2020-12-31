@@ -1,14 +1,55 @@
+@font-face{ 
+    font-family: 'y';
+    src:url(police/y.ttf); }
+    @font-face{ 
+        font-family: 'ts';
+        src:url(police/ts.ttf); }
 
+    @font-face{ 
+        font-family: 'mk';
+        src:url(police/mk.ttf); }
 
-
+@font-face {
+    font-family: 'LovedbytheKing-Regular';
+    src : url(Police/LovedbytheKing-Regular.ttf);
+}
+@font-face{
+    font-family: 'Galada-Regular';
+    src : url(police/Galada-Regular.ttf)
+}
 
 .containerprod{
-    background-color:burlywood;
+    background-color:rgb(241, 240, 240);
     width: 70%;
     margin: 2% 15%;
     display:flex;
-    border: 2px solid black;
+    border: 1px solid rgb(4, 21, 170);
     
+}
+.rd {
+    width: 70%;
+    margin: 2% 15%;
+    display:flex;
+
+border: 2px solid black;    
+}
+.nt {
+    color: rgb(39, 64, 139);
+    margin-top: 25px;
+}
+.nameprodd {font-size: 25px;
+    font-family: 'LovedbytheKing-Regular';
+
+    src : url(Police/LovedbytheKing-Regular.ttf);
+    color: black;
+}
+.bt{
+    font-family: 'y';
+    src:url(police/y.ttf);;
+    font-size: 35px;
+    color: black;
+    float:right;
+    margin-top: 50px;
 }
 
 .prodright{
@@ -25,13 +66,15 @@
 }
 
 .nameprod{font-size: 30px;
-    color: firebrick;
-    font-family: LaPolice;
-    src : url(police/Langar-Regular.ttf);
+    color: rgb(39, 64, 139);
+    
+    font-family: 'mk';
+        src:url(police/mk.ttf);
 
 }
 
-.defprod{color: black;
+.defprod{ 
+    color: black;
     padding: 0% 15px;
 }
 .containerRecherche { 
@@ -43,7 +86,7 @@
 }
 
 .searchfor{
-    background-color: burlywood;
+    background-color:rgb(211, 231, 248);
     width: 100%;
     display: flex;
     justify-content: center;
